@@ -50,12 +50,10 @@
 <body class="bg-background-light dark:bg-background-dark text-text-main-light dark:text-text-main-dark antialiased min-h-screen flex flex-col">
     <nav class="absolute top-0 left-0 w-full p-6 z-10">
         <div class="flex items-center gap-3 cursor-pointer" onclick="window.location.href='befour log in home page.html'">
-           <div class="flex items-center gap-2">
-    <img src="assetes/logo.png" alt="NeXLace Logo" class="h-10 w-auto object-contain" />
-    <h2 class="text-xl font-black tracking-tight text-[#0d121b] dark:text-white">NeXLace</h2>
+            <div class="flex items-center gap-2">
+    <a href="index.html"><img src="assetes/logo.png" alt="NeXLace Logo" class="h-10 w-auto object-contain" /></a>
+    <a href="index.html"><h2 class="text-xl font-black tracking-tight text-[#0d121b] dark:text-white">NeXLace</h2></a>
 </div>
-
-        </div>
     </nav>
     
     <div class="flex flex-1 min-h-screen">
@@ -86,7 +84,7 @@
                             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-text-sub-light dark:text-text-sub-dark group-focus-within:text-primary transition-colors">
                                 <span class="material-symbols-outlined">mail</span>
                             </div>
-                            <input class="w-full h-12 pl-10 pr-4 rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-surface-dark text-text-main-light dark:text-white placeholder:text-text-sub-light/60 dark:placeholder:text-text-sub-dark/60 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-base" placeholder="name@example.com" type="email" required/>
+                            <input class="w-full h-12 pl-10 pr-4 rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-surface-dark text-text-main-light dark:text-white placeholder:text-text-sub-light/60 dark:placeholder:text-text-sub-dark/60 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-base" placeholder="name@example.com" type="text" required/>
                         </div>
                     </label>
                     
@@ -106,7 +104,7 @@
                         </div>
                     </label>
                     
-                   <button type="submit" class="w-full h-12 bg-primary hover:bg-primary/90 text-white font-bold rounded-lg shadow-sm hover:shadow-md transition-all flex items-center justify-center gap-2 mt-2 group">
+                    <button type="submit" class="w-full h-12 bg-primary hover:bg-primary/90 text-white font-bold rounded-lg shadow-sm hover:shadow-md transition-all flex items-center justify-center gap-2 mt-2 group">
                         Sign In
                         <span class="material-symbols-outlined text-[18px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
                     </button>
@@ -139,7 +137,7 @@
                 <div class="text-center mt-2">
                     <p class="text-sm text-text-sub-light dark:text-text-sub-dark">
                         Don't have an account? 
-                        <a class="text-primary font-bold hover:underline" href="registration.html">Join NeXLace</a>
+                        <a class="text-primary font-bold hover:underline" href="sign up page.html">Join NeXLace</a>
                     </p>
                 </div>
             </div>
@@ -153,24 +151,31 @@
     </div>
 
     <script>
-        // Password visibility toggle
-        document.querySelector('.toggle-password').addEventListener('click', function() {
-            const input = document.getElementById('password');
-            const icon = this.querySelector('span');
-            if (input.type === 'password') {
-                input.type = 'text';
-                icon.textContent = 'visibility';
-            } else {
-                input.type = 'password';
-                icon.textContent = 'visibility_off';
-            }
+        // Password visibility toggle - Fixed version
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleBtn = document.querySelector('.toggle-password');
+            const passwordInput = document.getElementById('password');
+            const icon = toggleBtn.querySelector('span');
+            
+            // Set initial icon correctly
+            icon.textContent = 'visibility_off';
+            
+            toggleBtn.addEventListener('click', function() {
+                if (passwordInput.type === 'password') {
+                    passwordInput.type = 'text';
+                    icon.textContent = 'visibility';
+                } else {
+                    passwordInput.type = 'password';
+                    icon.textContent = 'visibility_off';
+                }
+            });
         });
 
-        // Form submission
+        // Form submission (unchanged)
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const email = this.querySelector('input[type="email"]').value;
+            const email = this.querySelector('input[type="text"]').value;
             const password = document.getElementById('password').value;
             
             if (!email || !password) {
@@ -178,7 +183,6 @@
                 return;
             }
             
-            // Simple validation
             if (password.length < 1) {
                 alert('Please enter your password.');
                 return;
