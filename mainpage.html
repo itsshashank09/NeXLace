@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>NeXLace - Dashboard</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "primary-dark": "#0e44b3",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                        "card-light": "#ffffff",
+                        "card-dark": "#151c2b",
+                        "text-main": "#0d121b",
+                        "text-sub": "#4c669a",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-[#f8f9fc] font-display antialiased">
+    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+        <header
+            class="sticky top-0 z-50 w-full border-b border-[#e7ebf3] dark:border-[#2a3447] bg-white dark:bg-card-dark">
+            <div class="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center gap-8">
+                    <div class="flex items-center gap-2 text-primary">
+                        <div class="flex items-center gap-2">
+                         <a href="mainpage.html"><img src="assetes/logo.png" alt="NeXLace Logo" class="h-10 w-auto object-contain" /></a>
+                         <a href="mainpage.html"><h2 class="text-xl font-black tracking-tight text-[#0d121b] dark:text-white">NeXLace</h2></a>
+</div>
+                    </div>
+                    <div class="hidden md:flex items-center gap-6">
+                        <a class="text-sm font-medium text-text-main dark:text-[#e7ebf3] hover:text-primary dark:hover:text-primary transition-colors"
+                            href="developer.html">Hire Talent</a>
+                        <a class="text-sm font-medium text-text-main dark:text-[#e7ebf3] hover:text-primary dark:hover:text-primary transition-colors"
+                            href="findwork.html">Find Work</a>
+                        <a class="text-sm font-medium text-text-main dark:text-[#e7ebf3] hover:text-primary dark:hover:text-primary transition-colors"
+                            href="messege.html">Messages</a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="hidden sm:flex relative">
+                        <span
+                            class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-gray-400 text-[20px]">search</span>
+                        <input
+                            class="h-9 w-64 rounded-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-[#1a2333] pl-10 pr-4 text-sm focus:border-primary focus:ring-primary"
+                            placeholder="Search" type="text" />
+                    </div>
+                    <button class="text-text-sub hover:text-primary dark:text-gray-400 dark:hover:text-white">
+                        <span class="material-symbols-outlined">help</span>
+                    </button>
+                    <button onclick="window.location.href='notification.html'" class="text-text-sub hover:text-primary dark:text-gray-400 dark:hover:text-white">
+                        <span class="material-symbols-outlined">notifications</span>
+                    </button>
+                    <div class="relative">
+                        <button onclick="document.getElementById('profile-dropdown').classList.toggle('hidden')"
+                            class="h-8 w-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm cursor-pointer hover:bg-primary-dark transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-[#151c2b]">
+                            JD
+                        </button>
+                        <div id="profile-dropdown"
+                            class="hidden absolute right-0 mt-3 w-72 origin-top-right rounded-xl border border-[#e7ebf3] bg-white shadow-xl dark:border-[#2a3447] dark:bg-card-dark dark:shadow-black/50 z-50">
+                            <div class="border-b border-[#e7ebf3] px-5 py-4 dark:border-[#2a3447]">
+                                <p class="font-bold text-text-main dark:text-white">Jason Doe</p>
+                                <p class="text-xs text-text-sub mt-0.5">jason@nexlace.com</p>
+                            </div>
+                            <div class="p-2">
+                                <a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-text-main hover:bg-gray-50 dark:text-gray-300 dark:hover:bg-[#1f2937] transition-colors"
+                                    href="profilesetting.html">
+                                    <span class="material-symbols-outlined text-[20px] text-text-sub">settings</span>
+                                    Profile Settings
+                                </a>
+                                <a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-text-main hover:bg-gray-50 dark:text-gray-300 dark:hover:bg-[#1f2937] transition-colors"
+                                    href="#">
+                                    <span class="material-symbols-outlined text-[20px] text-text-sub">credit_card</span>
+                                    Billing &amp; Payments
+                                </a>
+                                <a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-text-main hover:bg-gray-50 dark:text-gray-300 dark:hover:bg-[#1f2937] transition-colors"
+                                    href="#">
+                                    <span class="material-symbols-outlined text-[20px] text-text-sub">help</span>
+                                    Help &amp; Support
+                                </a>
+                            </div>
+                            <div class="border-t border-[#e7ebf3] p-2 dark:border-[#2a3447]">
+                                <a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-red-600 hover:bg-red-50 dark:text-red-400 dark:hover:bg-red-900/20 transition-colors"
+                                    href="code.html">
+                                    <span class="material-symbols-outlined text-[20px]">logout</span>
+                                    Logout
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </header>
+        <main class="flex-grow py-8">
+            <div class="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <h1 class="text-3xl font-bold tracking-tight text-text-main dark:text-white">Good morning, Jason
+                    </h1>
+                    <button onclick="window.location.href='postjob.html'"
+                                class="flex h-10 items-center justify-center rounded-full bg-primary px-6 text-sm font-bold text-white hover:bg-primary-dark transition-colors shadow-sm">
+                                <span class="material-symbols-outlined text-[18px] mr-1">add</span> Post a job
+                            </button>
+                </div>
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-xl font-bold text-text-main dark:text-white">Overview</h2>
+                        <div
+                            class="hidden sm:flex rounded-lg border border-[#e7ebf3] dark:border-[#2a3447] overflow-hidden">
+                            <button
+                                class="px-4 py-1.5 bg-gray-100 dark:bg-[#2a3447] text-text-main dark:text-white hover:bg-gray-200">
+                                <span class="material-symbols-outlined text-[20px]">grid_view</span>
+                            </button>
+                            <button
+                                class="px-4 py-1.5 bg-white dark:bg-card-dark text-text-sub hover:bg-gray-50 dark:hover:bg-[#1f2937]">
+                                <span class="material-symbols-outlined text-[20px]">list</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div
+                        class="rounded-2xl border border-[#e7ebf3] dark:border-[#2a3447] bg-card-light dark:bg-card-dark p-12 text-center min-h-[300px] flex flex-col items-center justify-center">
+                        <div
+                            class="mb-6 h-24 w-24 bg-gray-100 dark:bg-[#2a3447] rounded-full flex items-center justify-center text-gray-400">
+                            <span class="material-symbols-outlined text-[48px]">work_off</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-text-main dark:text-white mb-2">No job posts or contracts in
+                            progress right now</h3>
+                        <p class="text-text-sub mb-8 max-w-md mx-auto">Get started by finding talent or posting your
+                            first project requirement.</p>
+                        <div class="flex gap-4">
+                            <button onclick="window.location.href='developer.html'"
+                                class="flex h-10 items-center justify-center rounded-full border border-primary text-primary bg-white dark:bg-transparent px-6 text-sm font-bold hover:bg-gray-50 dark:hover:bg-[#1a2333] transition-colors">
+                                Find a Talent
+                            </button>
+                            <button onclick="window.location.href='postjob.html'"
+                                class="flex h-10 items-center justify-center rounded-full bg-primary px-6 text-sm font-bold text-white hover:bg-primary-dark transition-colors shadow-sm">
+                                <span class="material-symbols-outlined text-[18px] mr-1">add</span> Post a job
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-xl font-bold text-text-main dark:text-white">Find experts by category</h2>
+                        <a class="text-primary font-bold text-sm hover:underline flex items-center" href="#">Browse all
+                            categories <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span></a>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div
+                            class="relative overflow-hidden rounded-xl bg-[#004546] text-white p-6 flex flex-col justify-between min-h-[220px] group cursor-pointer">
+                            <div class="relative z-10">
+                                <p class="text-xs font-bold uppercase tracking-wider text-[#7ddddd] mb-2">Guided Tour
+                                </p>
+                                <h3 class="text-xl font-bold leading-tight mb-4">Book a consultation with an expert to
+                                    review your project scope.</h3>
+                                <button
+                                    class="mt-4 bg-white text-[#004546] px-4 py-2 rounded-full text-sm font-bold hover:bg-gray-100 transition-colors">Learn
+                                    more</button>
+                            </div>
+                            <span
+                                class="absolute right-[-20px] bottom-[-20px] material-symbols-outlined text-[140px] opacity-10 rotate-12">support_agent</span>
+                            <button class="absolute top-4 right-4 text-white/70 hover:text-white"><span
+                                    class="material-symbols-outlined">close</span></button>
+                        </div>
+                        <div
+                            class="group rounded-xl border border-[#e7ebf3] dark:border-[#2a3447] bg-card-light dark:bg-card-dark p-6 flex flex-col items-center text-center hover:border-primary/50 hover:shadow-lg transition-all cursor-pointer">
+                            <div
+                                class="mb-4 h-16 w-16 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined text-[32px]">terminal</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-text-main dark:text-white mb-2">Development &amp; IT</h3>
+                            <p class="text-sm text-text-sub">Software architecture, web development, and more.</p>
+                        </div>
+                        <div
+                            class="group rounded-xl border border-[#e7ebf3] dark:border-[#2a3447] bg-card-light dark:bg-card-dark p-6 flex flex-col items-center text-center hover:border-primary/50 hover:shadow-lg transition-all cursor-pointer">
+                            <div
+                                class="mb-4 h-16 w-16 rounded-full bg-purple-50 dark:bg-purple-900/20 flex items-center justify-center text-purple-600 dark:text-purple-400 group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined text-[32px]">smart_toy</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-text-main dark:text-white mb-2">AI Services</h3>
+                            <p class="text-sm text-text-sub">AI development, integration, and consulting.</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-xl font-bold text-text-main dark:text-white">Help and resources</h2>
+                        <a class="text-primary font-bold text-sm hover:underline flex items-center" href="#">View all
+                            resources <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span></a>
+                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <div
+                            class="col-span-1 lg:col-span-2 rounded-xl border border-[#e7ebf3] dark:border-[#2a3447] bg-card-light dark:bg-card-dark p-8 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+                            <div class="relative z-10 max-w-xl">
+                                <span class="text-xs font-bold uppercase text-text-sub mb-2 block">Get Started</span>
+                                <h3 class="text-2xl font-bold text-text-main dark:text-white mb-4">Get started and
+                                    connect with talent to get work done</h3>
+                                <button
+                                    class="rounded-full border border-gray-300 dark:border-gray-600 px-6 py-2 text-sm font-bold text-text-main dark:text-white hover:bg-gray-50 dark:hover:bg-[#1f2937]">Learn
+                                    more</button>
+                            </div>
+                            <div class="hidden md:block">
+                                <span
+                                    class="material-symbols-outlined text-[120px] text-primary/20 -rotate-12">rocket_launch</span>
+                            </div>
+                        </div>
+                        <div
+                            class="rounded-xl border border-[#e7ebf3] dark:border-[#2a3447] bg-card-light dark:bg-card-dark p-6 flex justify-between items-center hover:shadow-sm transition-shadow">
+                            <div>
+                                <span class="text-xs font-bold uppercase text-text-sub mb-2 block">Payments</span>
+                                <h3 class="text-lg font-bold text-text-main dark:text-white max-w-[200px]">Everything
+                                    you need to know about payments</h3>
+                            </div>
+                            <span class="material-symbols-outlined text-4xl text-green-500">lock</span>
+                        </div>
+                        <div
+                            class="rounded-xl border border-[#e7ebf3] dark:border-[#2a3447] bg-card-light dark:bg-card-dark p-6 flex justify-between items-center hover:shadow-sm transition-shadow">
+                            <div>
+                                <span class="text-xs font-bold uppercase text-text-sub mb-2 block">Trust &amp;
+                                    Safety</span>
+                                <h3 class="text-lg font-bold text-text-main dark:text-white max-w-[200px]">Keep yourself
+                                    and others safe on NeXLace</h3>
+                            </div>
+                            <span class="material-symbols-outlined text-4xl text-blue-500">security</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="mt-12 bg-[#101622] text-white py-12">
+            <div class="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
+                    <div>
+                        <h4 class="font-bold mb-4">About Us</h4>
+                        <ul class="space-y-2 text-gray-400">
+                            <li><a class="hover:text-white" href="#">Feedback</a></li>
+                            <li><a class="hover:text-white" href="#">Community</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-4">Trust &amp; Safety</h4>
+                        <ul class="space-y-2 text-gray-400">
+                            <li><a class="hover:text-white" href="#">Help &amp; Support</a></li>
+                            <li><a class="hover:text-white" href="#">NeXLace Foundation</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-4">Terms of Service</h4>
+                        <ul class="space-y-2 text-gray-400">
+                            <li><a class="hover:text-white" href="#">Privacy Policy</a></li>
+                            <li><a class="hover:text-white" href="#">Accessibility</a></li>
+                        </ul>
+                    </div>
+                    
+                </div>
+                <div
+                    class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+                    <p>© 2024 NeXLace Global Inc.</p>
+                    <div class="flex gap-4 mt-4 md:mt-0">
+                        <a class="hover:text-white" href="#">Follow Us</a>
+                        <div class="flex gap-3">
+                            <span class="material-symbols-outlined text-[16px]">public</span>
+                            <span class="material-symbols-outlined text-[16px]">alternate_email</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>
+        // Close profile dropdown when clicking outside
+        document.addEventListener('click', function (event) {
+            const dropdown = document.getElementById('profile-dropdown');
+            const button = event.target.closest('button');
+
+            // Check if click was outside the dropdown and outside the trigger button
+            if (dropdown && !dropdown.classList.contains('hidden') &&
+                !dropdown.contains(event.target) &&
+                (!button || !button.contains(event.target) && button.nextElementSibling !== dropdown)) {
+                // If the click is on the button that toggles it, the inline handler handles it.
+                // We only want to close if clicking ELSEWHERE.
+                // Actually, the inline handler toggles. If we click the button while open:
+                // 1. Inline toggles -> closes.
+                // 2. This listener -> sees click on button? No, we need to distinguish.
+                // Simplest is to check if click is NOT on the button AND NOT in the dropdown.
+
+                // Let's rely on checking if the click target is inside the container
+                const container = dropdown.parentElement;
+                if (!container.contains(event.target)) {
+                    dropdown.classList.add('hidden');
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

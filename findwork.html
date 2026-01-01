@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NeXLace - Find Work</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "primary-dark": "#0e44b3",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                        "card-light": "#ffffff",
+                        "card-dark": "#151c2b",
+                        "text-main": "#0d121b",
+                        "text-sub": "#4c669a",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-[#f8f9fc] font-display antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<header
+            class="sticky top-0 z-50 w-full border-b border-[#e7ebf3] dark:border-[#2a3447] bg-white dark:bg-card-dark">
+            <div class="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center gap-8">
+                    <div class="flex items-center gap-2 text-primary">
+                        <div class="flex items-center gap-2">
+                         <a href="mainpage.html"><img src="assetes/logo.png" alt="NeXLace Logo" class="h-10 w-auto object-contain" /></a>
+                         <a href="mainpage.html"><h2 class="text-xl font-black tracking-tight text-[#0d121b] dark:text-white">NeXLace</h2></a>
+</div>
+                    </div>
+                    <div class="hidden md:flex items-center gap-6">
+                        <a class="text-sm font-medium text-text-main dark:text-[#e7ebf3] hover:text-primary dark:hover:text-primary transition-colors"
+                            href="developer.html">Hire Talent</a>
+                        <a class="text-sm font-medium text-text-main dark:text-[#e7ebf3] hover:text-primary dark:hover:text-primary transition-colors"
+                            href="findwork.html">Find Work</a>
+                        <a class="text-sm font-medium text-text-main dark:text-[#e7ebf3] hover:text-primary dark:hover:text-primary transition-colors"
+                            href="messege.html">Messages</a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="hidden sm:flex relative">
+                        <span
+                            class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-gray-400 text-[20px]">search</span>
+                        <input
+                            class="h-9 w-64 rounded-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-[#1a2333] pl-10 pr-4 text-sm focus:border-primary focus:ring-primary"
+                            placeholder="Search" type="text" />
+                    </div>
+                    <button class="text-text-sub hover:text-primary dark:text-gray-400 dark:hover:text-white">
+                        <span class="material-symbols-outlined">help</span>
+                    </button>
+                    <button onclick="window.location.href='notification.html'" class="text-text-sub hover:text-primary dark:text-gray-400 dark:hover:text-white">
+                        <span class="material-symbols-outlined">notifications</span>
+                    </button>
+                    <div class="relative">
+                        <button onclick="document.getElementById('profile-dropdown').classList.toggle('hidden')"
+                            class="h-8 w-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm cursor-pointer hover:bg-primary-dark transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-[#151c2b]">
+                            JD
+                        </button>
+                        <div id="profile-dropdown"
+                            class="hidden absolute right-0 mt-3 w-72 origin-top-right rounded-xl border border-[#e7ebf3] bg-white shadow-xl dark:border-[#2a3447] dark:bg-card-dark dark:shadow-black/50 z-50">
+                            <div class="border-b border-[#e7ebf3] px-5 py-4 dark:border-[#2a3447]">
+                                <p class="font-bold text-text-main dark:text-white">Jason Doe</p>
+                                <p class="text-xs text-text-sub mt-0.5">jason@nexlace.com</p>
+                            </div>
+                            <div class="p-2">
+                                <a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-text-main hover:bg-gray-50 dark:text-gray-300 dark:hover:bg-[#1f2937] transition-colors"
+                                    href="profilesetting.html">
+                                    <span class="material-symbols-outlined text-[20px] text-text-sub">settings</span>
+                                    Profile Settings
+                                </a>
+                                <a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-text-main hover:bg-gray-50 dark:text-gray-300 dark:hover:bg-[#1f2937] transition-colors"
+                                    href="#">
+                                    <span class="material-symbols-outlined text-[20px] text-text-sub">credit_card</span>
+                                    Billing &amp; Payments
+                                </a>
+                                <a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-text-main hover:bg-gray-50 dark:text-gray-300 dark:hover:bg-[#1f2937] transition-colors"
+                                    href="#">
+                                    <span class="material-symbols-outlined text-[20px] text-text-sub">help</span>
+                                    Help &amp; Support
+                                </a>
+                            </div>
+                            <div class="border-t border-[#e7ebf3] p-2 dark:border-[#2a3447]">
+                                <a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-red-600 hover:bg-red-50 dark:text-red-400 dark:hover:bg-red-900/20 transition-colors"
+                                    href="code.html">
+                                    <span class="material-symbols-outlined text-[20px]">logout</span>
+                                    Logout
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </header>
+<main class="flex-grow py-8">
+<div class="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+<div>
+<h1 class="text-3xl font-bold tracking-tight text-text-main dark:text-white">Find Work</h1>
+<p class="text-text-sub mt-1">Explore the latest web development projects.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex h-10 items-center justify-center gap-2 rounded-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-card-dark px-6 text-sm font-bold text-text-main dark:text-white transition-transform hover:bg-gray-50 dark:hover:bg-[#1f2937]">
+<span class="material-symbols-outlined text-[20px]">person</span>
+                Profile
+            </button>
+<button class="flex h-10 items-center justify-center gap-2 rounded-full bg-primary px-6 text-sm font-bold text-white transition-transform hover:bg-primary-dark active:scale-95 shadow-md shadow-blue-500/20">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                Post a Service
+            </button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<div class="lg:col-span-3 space-y-6">
+<div class="rounded-xl border border-[#e7ebf3] dark:border-[#2a3447] bg-card-light dark:bg-card-dark p-6 sticky top-24">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-bold text-text-main dark:text-white">Filter By</h3>
+<button class="text-xs text-primary font-bold hover:underline">Clear all</button>
+</div>
+<div class="space-y-6">
+<div>
+<h4 class="text-sm font-bold text-text-main dark:text-white mb-3">Category</h4>
+<div class="space-y-2">
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="rounded border-gray-300 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm text-text-sub">Web Development</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="rounded border-gray-300 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm text-text-sub">Mobile Apps</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="rounded border-gray-300 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm text-text-sub">UI/UX Design</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="rounded border-gray-300 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm text-text-sub">Scripts &amp; Utilities</span>
+</label>
+</div>
+</div>
+<div class="h-px bg-gray-100 dark:bg-gray-800"></div>
+<div>
+<h4 class="text-sm font-bold text-text-main dark:text-white mb-3">Project Type</h4>
+<div class="space-y-2">
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="rounded border-gray-300 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm text-text-sub">Fixed Price</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="rounded border-gray-300 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm text-text-sub">Hourly</span>
+</label>
+</div>
+</div>
+<div class="h-px bg-gray-100 dark:bg-gray-800"></div>
+<div>
+<h4 class="text-sm font-bold text-text-main dark:text-white mb-3">Experience Level</h4>
+<div class="space-y-2">
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="border-gray-300 text-primary focus:ring-primary h-4 w-4" name="level" type="radio"/>
+<span class="text-sm text-text-sub">Entry Level</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="border-gray-300 text-primary focus:ring-primary h-4 w-4" name="level" type="radio"/>
+<span class="text-sm text-text-sub">Intermediate</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="border-gray-300 text-primary focus:ring-primary h-4 w-4" name="level" type="radio"/>
+<span class="text-sm text-text-sub">Expert</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-9 space-y-6">
+<div class="relative">
+<input class="w-full h-12 rounded-xl border border-[#e7ebf3] dark:border-[#2a3447] bg-white dark:bg-card-dark pl-12 pr-4 text-base focus:border-primary focus:ring-primary shadow-sm" placeholder="Search for jobs..." type="text"/>
+<span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-gray-400">search</span>
+<button class="absolute right-2 top-1/2 -translate-y-1/2 bg-primary hover:bg-primary-dark text-white rounded-lg px-4 py-1.5 text-sm font-bold transition-colors">Search</button>
+</div>
+<div class="flex items-center justify-between pb-2">
+<h2 class="text-xl font-bold text-text-main dark:text-white">Jobs matching your skills</h2>
+<div class="flex items-center gap-2 text-sm text-text-sub">
+<span>Sort by:</span>
+<select class="bg-transparent border-none font-bold text-text-main dark:text-white focus:ring-0 cursor-pointer pr-8 py-0">
+<option>Newest</option>
+<option>Relevance</option>
+<option>Budget: High to Low</option>
+</select>
+</div>
+</div>
+<div class="space-y-4">
+<div class="group rounded-xl border border-[#e7ebf3] dark:border-[#2a3447] bg-card-light dark:bg-card-dark p-6 hover:border-primary/50 hover:shadow-md transition-all cursor-pointer relative">
+<button class="absolute top-6 right-6 text-gray-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<div class="flex items-start justify-between mb-2 pr-10">
+<h3 class="text-lg font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">E-commerce Website Frontend with React &amp; Tailwind</h3>
+</div>
+<div class="flex flex-wrap gap-y-2 gap-x-4 text-xs font-medium text-text-sub mb-4">
+<span class="flex items-center"><span class="material-symbols-outlined text-[16px] mr-1">schedule</span> Posted 2 hours ago</span>
+<span class="flex items-center"><span class="material-symbols-outlined text-[16px] mr-1">payments</span> $2,500 Fixed Price</span>
+<span class="flex items-center"><span class="material-symbols-outlined text-[16px] mr-1">psychology</span> Intermediate</span>
+</div>
+<p class="text-text-sub text-sm line-clamp-2 mb-4">
+                        We are looking for an experienced frontend developer to build the user interface for our new e-commerce platform. The design is ready in Figma. You will need to implement the design using React, Next.js, and Tailwind CSS. Responsive design and performance optimization are critical.
+                    </p>
+<div class="flex flex-wrap gap-2 mb-5">
+<span class="px-3 py-1 bg-gray-100 dark:bg-[#1f2937] text-text-sub text-xs rounded-full">React</span>
+<span class="px-3 py-1 bg-gray-100 dark:bg-[#1f2937] text-text-sub text-xs rounded-full">Tailwind CSS</span>
+<span class="px-3 py-1 bg-gray-100 dark:bg-[#1f2937] text-text-sub text-xs rounded-full">Figma to HTML</span>
+<span class="px-3 py-1 bg-gray-100 dark:bg-[#1f2937] text-text-sub text-xs rounded-full">Next.js</span>
+</div>
+<div class="flex items-center gap-2 pt-4 border-t border-[#e7ebf3] dark:border-[#2a3447]">
+<div class="flex items-center gap-1 text-xs font-bold text-green-600">
+<span class="material-symbols-outlined text-[16px] fill-current">verified</span>
+                             Payment Verified
+                        </div>
+<div class="flex text-amber-400 text-[14px]">
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+</div>
+<span class="text-xs text-text-sub ml-1">$10k+ spent</span>
+<span class="text-xs text-text-sub flex items-center gap-1 ml-auto">
+<span class="material-symbols-outlined text-[16px]">location_on</span> United States
+                        </span>
+</div>
+</div>
+<div class="group rounded-xl border border-[#e7ebf3] dark:border-[#2a3447] bg-card-light dark:bg-card-dark p-6 hover:border-primary/50 hover:shadow-md transition-all cursor-pointer relative">
+<button class="absolute top-6 right-6 text-gray-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<div class="flex items-start justify-between mb-2 pr-10">
+<h3 class="text-lg font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">Full Stack Developer for SaaS Dashboard</h3>
+</div>
+<div class="flex flex-wrap gap-y-2 gap-x-4 text-xs font-medium text-text-sub mb-4">
+<span class="flex items-center"><span class="material-symbols-outlined text-[16px] mr-1">schedule</span> Posted 5 hours ago</span>
+<span class="flex items-center"><span class="material-symbols-outlined text-[16px] mr-1">payments</span> $45 - $70 / hr</span>
+<span class="flex items-center"><span class="material-symbols-outlined text-[16px] mr-1">psychology</span> Expert</span>
+</div>
+<p class="text-text-sub text-sm line-clamp-2 mb-4">
+                        Seeking a full stack developer (MERN stack) to help us complete our SaaS dashboard. We need assistance with API integration, database optimization, and realtime data visualization using D3.js or Recharts.
+                    </p>
+<div class="flex flex-wrap gap-2 mb-5">
+<span class="px-3 py-1 bg-gray-100 dark:bg-[#1f2937] text-text-sub text-xs rounded-full">Node.js</span>
+<span class="px-3 py-1 bg-gray-100 dark:bg-[#1f2937] text-text-sub text-xs rounded-full">MongoDB</span>
+<span class="px-3 py-1 bg-gray-100 dark:bg-[#1f2937] text-text-sub text-xs rounded-full">React</span>
+<span class="px-3 py-1 bg-gray-100 dark:bg-[#1f2937] text-text-sub text-xs rounded-full">API Integration</span>
+</div>
+<div class="flex items-center gap-2 pt-4 border-t border-[#e7ebf3] dark:border-[#2a3447]">
+<div class="flex items-center gap-1 text-xs font-bold text-green-600">
+<span class="material-symbols-outlined text-[16px] fill-current">verified</span>
+                             Payment Verified
+                        </div>
+<div class="flex text-amber-400 text-[14px]">
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current">star_half</span>
+</div>
+<span class="text-xs text-text-sub ml-1">$50k+ spent</span>
+<span class="text-xs text-text-sub flex items-center gap-1 ml-auto">
+<span class="material-symbols-outlined text-[16px]">location_on</span> Canada
+                        </span>
+</div>
+</div>
+<div class="group rounded-xl border border-[#e7ebf3] dark:border-[#2a3447] bg-card-light dark:bg-card-dark p-6 hover:border-primary/50 hover:shadow-md transition-all cursor-pointer relative">
+<button class="absolute top-6 right-6 text-gray-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<div class="flex items-start justify-between mb-2 pr-10">
+<h3 class="text-lg font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">WordPress Plugin Customization</h3>
+</div>
+<div class="flex flex-wrap gap-y-2 gap-x-4 text-xs font-medium text-text-sub mb-4">
+<span class="flex items-center"><span class="material-symbols-outlined text-[16px] mr-1">schedule</span> Posted yesterday</span>
+<span class="flex items-center"><span class="material-symbols-outlined text-[16px] mr-1">payments</span> $300 Fixed Price</span>
+<span class="flex items-center"><span class="material-symbols-outlined text-[16px] mr-1">psychology</span> Entry Level</span>
+</div>
+<p class="text-text-sub text-sm line-clamp-2 mb-4">
+                        I need a small tweak to an existing WooCommerce plugin. It needs to calculate shipping based on a custom formula involving volume weight. PHP knowledge required.
+                    </p>
+<div class="flex flex-wrap gap-2 mb-5">
+<span class="px-3 py-1 bg-gray-100 dark:bg-[#1f2937] text-text-sub text-xs rounded-full">WordPress</span>
+<span class="px-3 py-1 bg-gray-100 dark:bg-[#1f2937] text-text-sub text-xs rounded-full">PHP</span>
+<span class="px-3 py-1 bg-gray-100 dark:bg-[#1f2937] text-text-sub text-xs rounded-full">WooCommerce</span>
+</div>
+<div class="flex items-center gap-2 pt-4 border-t border-[#e7ebf3] dark:border-[#2a3447]">
+<div class="flex items-center gap-1 text-xs font-bold text-gray-400">
+<span class="material-symbols-outlined text-[16px]">hourglass_empty</span>
+                             Payment Unverified
+                        </div>
+<div class="flex text-gray-300 text-[14px]">
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+</div>
+<span class="text-xs text-text-sub ml-1">$0 spent</span>
+<span class="text-xs text-text-sub flex items-center gap-1 ml-auto">
+<span class="material-symbols-outlined text-[16px]">location_on</span> Germany
+                        </span>
+</div>
+</div>
+<div class="group rounded-xl border border-[#e7ebf3] dark:border-[#2a3447] bg-card-light dark:bg-card-dark p-6 hover:border-primary/50 hover:shadow-md transition-all cursor-pointer relative">
+<button class="absolute top-6 right-6 text-gray-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<div class="flex items-start justify-between mb-2 pr-10">
+<h3 class="text-lg font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">Migration from Angular to React</h3>
+</div>
+<div class="flex flex-wrap gap-y-2 gap-x-4 text-xs font-medium text-text-sub mb-4">
+<span class="flex items-center"><span class="material-symbols-outlined text-[16px] mr-1">schedule</span> Posted 2 days ago</span>
+<span class="flex items-center"><span class="material-symbols-outlined text-[16px] mr-1">payments</span> $60 - $90 / hr</span>
+<span class="flex items-center"><span class="material-symbols-outlined text-[16px] mr-1">psychology</span> Expert</span>
+</div>
+<p class="text-text-sub text-sm line-clamp-2 mb-4">
+                        We are a fintech startup looking to migrate our legacy Angular codebase to a modern React architecture. This is a 6-month contract with potential for extension. Deep understanding of state management is required.
+                    </p>
+<div class="flex flex-wrap gap-2 mb-5">
+<span class="px-3 py-1 bg-gray-100 dark:bg-[#1f2937] text-text-sub text-xs rounded-full">Angular</span>
+<span class="px-3 py-1 bg-gray-100 dark:bg-[#1f2937] text-text-sub text-xs rounded-full">React</span>
+<span class="px-3 py-1 bg-gray-100 dark:bg-[#1f2937] text-text-sub text-xs rounded-full">Redux</span>
+<span class="px-3 py-1 bg-gray-100 dark:bg-[#1f2937] text-text-sub text-xs rounded-full">TypeScript</span>
+</div>
+<div class="flex items-center gap-2 pt-4 border-t border-[#e7ebf3] dark:border-[#2a3447]">
+<div class="flex items-center gap-1 text-xs font-bold text-green-600">
+<span class="material-symbols-outlined text-[16px] fill-current">verified</span>
+                             Payment Verified
+                        </div>
+<div class="flex text-amber-400 text-[14px]">
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+</div>
+<span class="text-xs text-text-sub ml-1">$120k+ spent</span>
+<span class="text-xs text-text-sub flex items-center gap-1 ml-auto">
+<span class="material-symbols-outlined text-[16px]">location_on</span> United Kingdom
+                        </span>
+</div>
+</div>
+<div class="flex justify-center pt-6">
+<button class="px-6 py-2 rounded-full border border-gray-300 dark:border-gray-600 text-sm font-bold text-text-main dark:text-white hover:bg-gray-50 dark:hover:bg-[#1f2937]">Load more jobs</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

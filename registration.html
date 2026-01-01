@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>NeXLace Registration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        .error { border-color: #ef4444 !important; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#0d121b] dark:text-white min-h-screen flex flex-col overflow-x-hidden transition-colors duration-200">
+    <header class="w-full border-b border-[#e7ebf3] dark:border-gray-800 bg-white dark:bg-[#151c2b] px-6 py-4 md:px-10 sticky top-0 z-50">
+        <div class="mx-auto flex max-w-[1280px] items-center justify-between">
+            <div class="flex items-center gap-3 cursor-pointer" onclick="window.location.href='befour log in home page.html'">
+                <div class="flex items-center gap-2">
+    <img src="assetes/logo.png" alt="NeXLace Logo" class="h-10 w-auto object-contain" />
+    <h2 class="text-xl font-black tracking-tight text-[#0d121b] dark:text-white">NeXLace</h2>
+</div>
+
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="hidden text-sm font-medium text-[#4c669a] dark:text-gray-400 sm:block">Already a member?</span>
+                <a class="group flex h-9 items-center justify-center rounded-lg border border-[#cfd7e7] dark:border-gray-700 bg-transparent px-4 text-sm font-bold text-[#0d121b] dark:text-white transition-colors hover:bg-gray-50 dark:hover:bg-gray-800" href="login.html">
+                    <span class="truncate">Log In</span>
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <main class="flex-1 flex flex-col items-center justify-center py-10 px-4 sm:px-6">
+        <div class="w-full max-w-[560px] flex flex-col gap-8">
+            <div class="flex flex-col gap-2 text-center">
+                <h1 class="text-3xl font-black leading-tight tracking-tight text-[#0d121b] dark:text-white sm:text-4xl">Join NeXLace</h1>
+                <p class="text-base font-normal leading-normal text-[#4c669a] dark:text-gray-400">
+                    Connect with top talent or find your next big project.
+                </p>
+            </div>
+            
+            <form id="registerForm" class="flex flex-col gap-6 rounded-xl bg-white dark:bg-[#151c2b] p-6 shadow-sm border border-[#e7ebf3] dark:border-gray-800 sm:p-8">
+                <div class="flex flex-col gap-4">
+                    <label class="flex flex-col gap-1.5">
+                        <span class="text-sm font-medium text-[#0d121b] dark:text-gray-200">Full Name</span>
+                        <input id="fullName" class="h-12 w-full rounded-lg border border-[#cfd7e7] dark:border-gray-700 bg-[#f8f9fc] dark:bg-gray-800/50 px-4 text-base text-[#0d121b] dark:text-white placeholder-[#4c669a] focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors" placeholder="e.g. Jane Doe" type="text" required/>
+                    </label>
+                    
+                    <label class="flex flex-col gap-1.5">
+                        <span class="text-sm font-medium text-[#0d121b] dark:text-gray-200">Email Address</span>
+                        <input id="email" class="h-12 w-full rounded-lg border border-[#cfd7e7] dark:border-gray-700 bg-[#f8f9fc] dark:bg-gray-800/50 px-4 text-base text-[#0d121b] dark:text-white placeholder-[#4c669a] focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors" placeholder="name@work-email.com" type="email" required/>
+                    </label>
+                    
+                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                        <label class="flex flex-col gap-1.5">
+                            <span class="text-sm font-medium text-[#0d121b] dark:text-gray-200">Password</span>
+                            <div class="relative">
+                                <input id="password" class="h-12 w-full rounded-lg border border-[#cfd7e7] dark:border-gray-700 bg-[#f8f9fc] dark:bg-gray-800/50 px-4 pr-10 text-base text-[#0d121b] dark:text-white placeholder-[#4c669a] focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors" placeholder="Min 8 chars" type="password" required/>
+                                <button type="button" class="toggle-password absolute right-3 top-1/2 -translate-y-1/2 text-[#4c669a] hover:text-primary dark:text-gray-500 dark:hover:text-white">
+                                    <span class="material-symbols-outlined text-[20px]">visibility_off</span>
+                                </button>
+                            </div>
+                        </label>
+                        
+                        <label class="flex flex-col gap-1.5">
+                            <span class="text-sm font-medium text-[#0d121b] dark:text-gray-200">Confirm Password</span>
+                            <input id="confirmPassword" class="h-12 w-full rounded-lg border border-[#cfd7e7] dark:border-gray-700 bg-[#f8f9fc] dark:bg-gray-800/50 px-4 text-base text-[#0d121b] dark:text-white placeholder-[#4c669a] focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors" placeholder="Retype password" type="password" required/>
+                        </label>
+                    </div>
+                </div>
+                
+                <label class="flex items-start gap-3">
+                    <input id="terms" class="mt-1 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary dark:border-gray-600 dark:bg-gray-800" type="checkbox" required/>
+                    <p class="text-sm text-[#4c669a] dark:text-gray-400">
+                        I agree to the <a class="font-medium text-primary hover:underline" href="#">Terms of Service</a> and <a class="font-medium text-primary hover:underline" href="#">Privacy Policy</a>.
+                    </p>
+                </label>
+                
+                <button type="submit" class="flex h-12 w-full items-center justify-center rounded-lg bg-primary px-6 text-sm font-bold text-white shadow-md transition-all hover:bg-blue-700 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-[#151c2b]">
+                    Create Account
+                </button>
+                
+                <div class="relative flex items-center py-2">
+                    <div class="flex-grow border-t border-[#e7ebf3] dark:border-gray-700"></div>
+                    <span class="mx-4 flex-shrink-0 text-xs font-medium text-[#4c669a] dark:text-gray-500 uppercase">Or sign up with</span>
+                    <div class="flex-grow border-t border-[#e7ebf3] dark:border-gray-700"></div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <button type="button" class="flex h-10 w-full items-center justify-center gap-2 rounded-lg border border-[#cfd7e7] dark:border-gray-700 bg-white dark:bg-gray-800 px-4 text-sm font-medium text-[#0d121b] dark:text-white transition-colors hover:bg-gray-50 dark:hover:bg-gray-700">
+                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M23.766 12.2764C23.766 11.4607 23.6999 10.6406 23.5588 9.83807H12.24V14.4591H18.7217C18.4528 15.9494 17.5885 17.2678 16.323 18.1056V21.1039H20.19C22.4608 19.0139 23.766 15.9274 23.766 12.2764Z" fill="#4285F4"></path>
+                            <path d="M12.2401 24.0008C15.4766 24.0008 18.2059 22.9382 20.1904 21.1039L16.3233 18.1056C15.2497 18.8375 13.8627 19.252 12.2445 19.252C9.11388 19.252 6.45946 17.1399 5.50705 14.3003H1.5166V17.3912C3.55371 21.4434 7.7029 24.0008 12.2401 24.0008Z" fill="#34A853"></path>
+                            <path d="M5.50253 14.3003C5.00236 12.8099 5.00236 11.1961 5.50253 9.70575V6.61481H1.51649C-0.18551 10.0056 -0.18551 14.0004 1.51649 17.3912L5.50253 14.3003Z" fill="#FBBC05"></path>
+                            <path d="M12.2401 4.74966C13.9509 4.7232 15.6044 5.36697 16.8434 6.54867L20.2695 3.12262C18.1001 1.0855 15.2208 -0.034466 12.2401 0.000808666C7.7029 0.000808666 3.55371 2.55822 1.5166 6.61481L5.50264 9.70575C6.45064 6.86173 9.10947 4.74966 12.2401 4.74966Z" fill="#EA4335"></path>
+                        </svg>
+                        Google
+                    </button>
+                    <button type="button" class="flex h-10 w-full items-center justify-center gap-2 rounded-lg border border-[#cfd7e7] dark:border-gray-700 bg-white dark:bg-gray-800 px-4 text-sm font-medium text-[#0d121b] dark:text-white transition-colors hover:bg-gray-50 dark:hover:bg-gray-700">
+                        <svg aria-hidden="true" class="h-5 w-5 text-[#0d121b] dark:text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path>
+                        </svg>
+                        GitHub
+                    </button>
+                </div>
+            </form>
+            
+            <div class="text-center sm:hidden">
+                <p class="text-sm text-[#4c669a] dark:text-gray-400">
+                    Already have an account? 
+                    <a class="font-bold text-primary hover:underline" href="log in page.html">Log In</a>
+                </p>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="w-full border-t border-[#e7ebf3] dark:border-gray-800 bg-white dark:bg-[#151c2b] py-6 text-center">
+        <p class="text-xs text-[#4c669a] dark:text-gray-500">
+            © 2024 NeXLace Inc. All rights reserved.
+        </p>
+    </footer>
+
+    <script>
+        // Password visibility toggle
+        document.querySelector('.toggle-password').addEventListener('click', function() {
+            const input = document.getElementById('password');
+            const icon = this.querySelector('span');
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.textContent = 'visibility';
+            } else {
+                input.type = 'password';
+                icon.textContent = 'visibility_off';
+            }
+        });
+
+        // Form validation and submission
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const terms = document.getElementById('terms').checked;
+            
+            // Validation
+            if (!fullName || !email || !password || !confirmPassword) {
+                alert('Please fill in all fields.');
+                return;
+            }
+            
+            if (password.length < 8) {
+                alert('Password must be at least 8 characters.');
+                return;
+            }
+            
+            if (password !== confirmPassword) {
+                alert('Passwords do not match.');
+                return;
+            }
+            
+            if (!terms) {
+                alert('You must agree to the Terms of Service and Privacy Policy.');
+                return;
+            }
+            
+            alert('Registration successful! Redirecting to dashboard...');
+            window.location.href = 'mainpage.html';
+        });
+    </script>
+</body>
+</html>

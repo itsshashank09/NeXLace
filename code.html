@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NeXLace - World-Class Web Developers</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#0d121b] dark:text-[#f8f9fc] font-display antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 w-full border-b border-[#e7ebf3] dark:border-[#2a3447] bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm">
+<div class="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-4 sm:px-6 lg:px-8">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 text-primary">
+<div class="flex items-center gap-2">
+    <img src="assetes/logo.png" alt="NeXLace Logo" class="h-10 w-auto object-contain" />
+    <h2 class="text-xl font-black tracking-tight text-[#0d121b] dark:text-white">NeXLace</h2>
+</div>
+
+</div>
+</div>
+<div class="hidden md:flex flex-1 items-center justify-end gap-8">
+<nav class="flex items-center gap-6">
+<a class="text-sm font-medium text-[#0d121b] dark:text-[#e7ebf3] hover:text-primary dark:hover:text-primary transition-colors" href="login.html">Hire Talent</a>
+<a class="text-sm font-medium text-[#0d121b] dark:text-[#e7ebf3] hover:text-primary dark:hover:text-primary transition-colors" href="login.html">Find Work</a>
+<a class="text-sm font-medium text-[#0d121b] dark:text-[#e7ebf3] hover:text-primary dark:hover:text-primary transition-colors" href="#">Why NeXLace</a>
+<a class="text-sm font-medium text-[#0d121b] dark:text-[#e7ebf3] hover:text-primary dark:hover:text-primary transition-colors" href="login.html">Log In</a>
+</nav>
+<button onclick="window.location.href='registration.html'" class="flex h-10 min-w-[100px] cursor-pointer items-center justify-center rounded-lg bg-primary px-4 text-sm font-bold text-white transition-transform hover:scale-105 active:scale-95">
+                    Sign Up
+                </button>
+</div>
+<div class="flex md:hidden">
+<button class="text-[#0d121b] dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<!-- HeroSection -->
+<section class="relative overflow-hidden py-12 sm:py-20 lg:py-24">
+<div class="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
+<div class="@container">
+<div class="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
+<div class="flex flex-col gap-6 order-2 lg:order-1">
+<div class="flex flex-col gap-4 text-left">
+<div class="inline-flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+                                    New Talent Added Daily
+                                </div>
+<h1 class="text-4xl font-black leading-tight tracking-tight text-[#0d121b] dark:text-white sm:text-5xl lg:text-6xl">
+                                    Build Faster with <span class="text-primary">World-Class</span> Web Developers
+                                </h1>
+<p class="text-lg text-[#4c669a] dark:text-[#94a3b8] sm:text-xl leading-relaxed max-w-lg">
+                                    NeXLace connects you with pre-vetted freelance talent ready to bring your digital vision to life. No hassle, just results.
+                                </p>
+</div>
+<div class="flex flex-wrap gap-4 mt-2">
+<button onclick="window.location.href='registration.html'" class="flex h-12 min-w-[140px] cursor-pointer items-center justify-center rounded-lg bg-primary px-6 text-base font-bold text-white shadow-lg shadow-primary/25 transition-all hover:bg-blue-600 hover:shadow-xl active:scale-95">
+                                    Find Talent
+                                </button>
+<button onclick="window.location.href='registration.html'" class="flex h-12 min-w-[140px] cursor-pointer items-center justify-center rounded-lg border-2 border-[#e7ebf3] dark:border-[#2a3447] bg-transparent hover:bg-background-light dark:hover:bg-[#1a2333] px-6 text-base font-bold text-[#0d121b] dark:text-white transition-all active:scale-95">
+                                    Post a Project
+                                </button>
+</div>
+<div class="flex items-center gap-4 text-sm text-[#4c669a] dark:text-[#94a3b8] mt-2">
+<div class="flex -space-x-2">
+<div class="h-8 w-8 rounded-full border-2 border-white dark:border-background-dark bg-cover bg-center" data-alt="Portrait of a female developer" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD8LGHMjpgNLmCy2SSFtiYDxE76XPpP5_3Hsv2TmGJ7-eJLtLa-odBTFXpkjdZr-KczukNkAl_ZWmoy-iqj2B0LBk3Eraq_w6u7nijqaQ4X17OqdFXvXjMhpsOcCGXR6XJxfJmk5uiQsL9hnrpV7w36BVasT1IjOGZcNGNjGQSiUf3EmocUPjme0wJJ0hwj8G5s03tqJjIaYJW38lWy77NT8d74lqzk5V2wzyfamNbF0ggnCsCjFtJyaavne-UksGh0jfDsDpFtkP8");'></div>
+<div class="h-8 w-8 rounded-full border-2 border-white dark:border-background-dark bg-cover bg-center" data-alt="Portrait of a male designer" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBvF5QHrKY6JwlZD5TVPeY8WPwoRrtq2QTwb5t_0BL9Cl3tR5dZYxjP6WvBLca1BSVAvMyfSoRA_5Fdmk2W5lPrM8ccQBh177eresyMKO0HouAn_2dcCFLWOx9cPvwDZqSHo2k3q5mxtidWRxV_PLK_F6Z_jrusBSrZQJnX7u3dEFcO7AHK3QOnif7mOpHu0Tg_KaGsh6G-8BxECnvxk7WkUzHWsmxW1d7Wwn1QrSQrNTLnluAHiH7XtkAAuv0AKJyjSFJrWXykYk8");'></div>
+<div class="h-8 w-8 rounded-full border-2 border-white dark:border-background-dark bg-cover bg-center" data-alt="Portrait of a male developer" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBcRRbU4XOuTwyRRaQ_jCNXwmZYE_dH87UVSy--0i54AI0w1cFrFaRLV5ol4809PLKk3i5VDUdITwWIFtgk_kMzjBVvHXnmpahMimGEpSuqbXaPayixjAvzIJwTdYnS2Cqqq5NX1qrqygN6e7oMnejFMwrjh-XImrSzvinuBMemsRBbnArutL2J3axMfVwOmjHdm9AAr2z-P1iap1mxPOzl2xDzX3ByyTUXLMutmndfcoXgbihe_6flobk1EATMRhHiiVukQ8UH5Xk");'></div>
+</div>
+<span>Trusted by 10,000+ developers</span>
+</div>
+</div>
+<div class="order-1 lg:order-2 w-full">
+<div class="relative aspect-square w-full max-w-[600px] lg:h-auto mx-auto rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-slate-800 dark:to-slate-900">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Team of developers collaborating on laptops in a modern office" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDdSYuZUp19vCL3_0KaFxDFA8OATIPoMMqt4WRwKloCzcZlZ3FrhGrKGrFghl8bRgSzxEcLJ-sx9UbOL1fXFxX4erbHphL28yEfAOfg52dYsW2NrL1lMl2G90G7_nudJ7KYyXfKQkrHkoKK6rl24ZiFyQcCLwPOfHSyxBHVn_O2o-cwDkwm5-g7MnkoJF04XQhX9ARS4MTIDpi3E0mI-gP5qySWg14OuV4Lf81KLmLcPbYDWIpwZJ5eGu67_Lig8Z3c6fwiJ1sbiRc");'></div>
+<div class="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SectionHeader: Trusted By -->
+<section class="border-y border-[#e7ebf3] dark:border-[#2a3447] bg-white dark:bg-[#151c2b] py-8">
+<div class="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
+<p class="mb-6 text-center text-xs font-bold uppercase tracking-widest text-[#4c669a] dark:text-[#64748b]">Trusted by Industry Leaders</p>
+<div class="flex flex-wrap items-center justify-center gap-8 opacity-60 grayscale transition-all hover:grayscale-0 sm:gap-12 md:gap-16">
+<!-- Logos (Using Text for demo, ideally SVG logos) -->
+<span class="text-xl font-black text-[#0d121b] dark:text-white flex items-center gap-1"><span class="material-symbols-outlined">diamond</span> Acme Corp</span>
+<span class="text-xl font-black text-[#0d121b] dark:text-white flex items-center gap-1"><span class="material-symbols-outlined">rocket_launch</span> StarShip</span>
+<span class="text-xl font-black text-[#0d121b] dark:text-white flex items-center gap-1"><span class="material-symbols-outlined">bolt</span> EnergyInc</span>
+<span class="text-xl font-black text-[#0d121b] dark:text-white flex items-center gap-1"><span class="material-symbols-outlined">all_inclusive</span> Infinity</span>
+<span class="text-xl font-black text-[#0d121b] dark:text-white flex items-center gap-1"><span class="material-symbols-outlined">globe</span> GlobalTech</span>
+</div>
+</div>
+</section>
+<!-- FeatureSection -->
+<section class="py-16 sm:py-24">
+<div class="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
+<div class="mb-12 flex flex-col gap-4 text-center sm:text-left">
+<h2 class="text-3xl font-black leading-tight text-[#0d121b] dark:text-white sm:text-4xl lg:text-5xl">
+                        Why Choose NeXLace?
+                    </h2>
+<p class="max-w-2xl text-lg text-[#4c669a] dark:text-[#94a3b8]">
+                        We handle the vetting, compliance, and payments so you can focus purely on building your product.
+                    </p>
+</div>
+<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+<!-- Feature 1 -->
+<div class="group flex flex-col rounded-xl border border-[#e7ebf3] dark:border-[#2a3447] bg-white dark:bg-[#151c2b] p-8 shadow-sm transition-all hover:shadow-md hover:border-primary/50">
+<div class="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[32px]">verified_user</span>
+</div>
+<h3 class="mb-3 text-xl font-bold text-[#0d121b] dark:text-white">Top 1% Talent</h3>
+<p class="text-[#4c669a] dark:text-[#94a3b8] leading-relaxed">
+                            Rigorous algorithmic code tests and personality vetting ensure you only hire the absolute best developers in the industry.
+                        </p>
+</div>
+<!-- Feature 2 -->
+<div class="group flex flex-col rounded-xl border border-[#e7ebf3] dark:border-[#2a3447] bg-white dark:bg-[#151c2b] p-8 shadow-sm transition-all hover:shadow-md hover:border-primary/50">
+<div class="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[32px]">lock</span>
+</div>
+<h3 class="mb-3 text-xl font-bold text-[#0d121b] dark:text-white">Zero Risk Security</h3>
+<p class="text-[#4c669a] dark:text-[#94a3b8] leading-relaxed">
+                            Payment is held in secure escrow and released to the freelancer only when you 100% approve the completed milestones.
+                        </p>
+</div>
+<!-- Feature 3 -->
+<div class="group flex flex-col rounded-xl border border-[#e7ebf3] dark:border-[#2a3447] bg-white dark:bg-[#151c2b] p-8 shadow-sm transition-all hover:shadow-md hover:border-primary/50">
+<div class="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[32px]">flash_on</span>
+</div>
+<h3 class="mb-3 text-xl font-bold text-[#0d121b] dark:text-white">Speed to Hire</h3>
+<p class="text-[#4c669a] dark:text-[#94a3b8] leading-relaxed">
+                            Don't waste months. Post a job today and receive qualified, interested proposals within hours, not weeks.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Talent Showcase Carousel (Visual Mockup) -->
+<section class="bg-white dark:bg-[#151c2b] py-16 sm:py-24 border-y border-[#e7ebf3] dark:border-[#2a3447]">
+<div class="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+<div class="flex flex-col gap-2">
+<h2 class="text-3xl font-black text-[#0d121b] dark:text-white">Meet our Talent</h2>
+<p class="text-[#4c669a] dark:text-[#94a3b8]">Discover developers ready to join your team today.</p>
+</div>
+<a class="text-primary font-bold flex items-center hover:underline" href="#">View all talent <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span></a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Talent Card 1 -->
+<div class="flex flex-col rounded-xl border border-[#e7ebf3] dark:border-[#2a3447] bg-background-light dark:bg-background-dark p-4 hover:shadow-lg transition-shadow">
+<div class="flex items-center gap-4 mb-4">
+<div class="h-14 w-14 rounded-full bg-cover bg-center" data-alt="Profile picture of Sarah J" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDJ8TbwLUDIoAjSwlAGg7knuJ2zFcac_3gQINXk6e5Z38u1sxsXNdni1hMroPijJhDgCOqGACzIyWBmRzAr5y93SW36KNgC9ONqLGSLb2f4O3V07GH0owstSnf9MNI5vmIKc_dPO-L82DpInGxMu60c18V_fJZcMPTGel7kbX9_jgZGckPszyPyiD2sM24tWbvR0wMaYZ-iy2TWgEub-6pXHsZsH9xI6d_PEC6pvemA8Obv7nW06qEEV8RhEY6ZJQM4T96MG-AlCU8");'></div>
+<div>
+<h4 class="font-bold text-[#0d121b] dark:text-white">Sarah J.</h4>
+<p class="text-sm text-[#4c669a] dark:text-[#94a3b8]">Senior React Dev</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="rounded-full bg-[#e7ebf3] dark:bg-[#2a3447] px-2 py-1 text-xs font-medium text-[#0d121b] dark:text-white">React</span>
+<span class="rounded-full bg-[#e7ebf3] dark:bg-[#2a3447] px-2 py-1 text-xs font-medium text-[#0d121b] dark:text-white">Node.js</span>
+<span class="rounded-full bg-[#e7ebf3] dark:bg-[#2a3447] px-2 py-1 text-xs font-medium text-[#0d121b] dark:text-white">AWS</span>
+</div>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-[#e7ebf3] dark:border-[#2a3447]">
+<span class="font-bold text-[#0d121b] dark:text-white">$85/hr</span>
+<span class="flex items-center text-xs font-medium text-green-600"><span class="material-symbols-outlined text-[16px] mr-1">check_circle</span> Verified</span>
+</div>
+</div>
+<!-- Talent Card 2 -->
+<div class="flex flex-col rounded-xl border border-[#e7ebf3] dark:border-[#2a3447] bg-background-light dark:bg-background-dark p-4 hover:shadow-lg transition-shadow">
+<div class="flex items-center gap-4 mb-4">
+<div class="h-14 w-14 rounded-full bg-cover bg-center" data-alt="Profile picture of David M" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBCpBkXJj1rdSILC0K_9LbnrmMIajKSY7V-qMVWy1LwxyurAem1ENk0mXHsKntp2PZGEuk8XlzPbpZlAkB_T_3WV2Hyq1odtiyV9HwYMj4bIuQIDkzKSD-sB9XsGM3iFk0Os4DpOGVJy76Uhu40FlDgVj1UlgHuiRISUIKIxjztp4pGDZAX3x_xA7rUptWuLzKAuF3K0NutGbcAEUGydtsNMI-xC7eKjUWqdWoFObW2EMEl3Bq4ervuh19aZyNFPTkRx3gJDDCBMSg");'></div>
+<div>
+<h4 class="font-bold text-[#0d121b] dark:text-white">David M.</h4>
+<p class="text-sm text-[#4c669a] dark:text-[#94a3b8]">Full Stack Engineer</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="rounded-full bg-[#e7ebf3] dark:bg-[#2a3447] px-2 py-1 text-xs font-medium text-[#0d121b] dark:text-white">Python</span>
+<span class="rounded-full bg-[#e7ebf3] dark:bg-[#2a3447] px-2 py-1 text-xs font-medium text-[#0d121b] dark:text-white">Django</span>
+<span class="rounded-full bg-[#e7ebf3] dark:bg-[#2a3447] px-2 py-1 text-xs font-medium text-[#0d121b] dark:text-white">Vue</span>
+</div>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-[#e7ebf3] dark:border-[#2a3447]">
+<span class="font-bold text-[#0d121b] dark:text-white">$95/hr</span>
+<span class="flex items-center text-xs font-medium text-green-600"><span class="material-symbols-outlined text-[16px] mr-1">check_circle</span> Verified</span>
+</div>
+</div>
+<!-- Talent Card 3 -->
+<div class="flex flex-col rounded-xl border border-[#e7ebf3] dark:border-[#2a3447] bg-background-light dark:bg-background-dark p-4 hover:shadow-lg transition-shadow">
+<div class="flex items-center gap-4 mb-4">
+<div class="h-14 w-14 rounded-full bg-cover bg-center" data-alt="Profile picture of Elena R" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDlWX6vdRz5bnNlNmuJAMZ45at-zMCclSFhoTHqqA3b6GcM8m4ABCqaPlrxjZCzqS6CJBsB5i7fBkT4TDRVBEiSHthZOZe2GCdmJr4euOVNiNtJBqJiyBqIlJpP8UsKWWw1fnviOH6xYgK9kOLfEGJXn_fxxkGpPgUOk1tad0D_KHjdcSVk4R2PlbvPg5c9vtjLZ2F3pFrZuKWWLBNZ3BF-C0qFMpGmuVd11PGu0eIGkN_mOv_EKHxi_QoAuNR_oYVgL7mdvtFG8g4");'></div>
+<div>
+<h4 class="font-bold text-[#0d121b] dark:text-white">Elena R.</h4>
+<p class="text-sm text-[#4c669a] dark:text-[#94a3b8]">UI/UX Developer</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="rounded-full bg-[#e7ebf3] dark:bg-[#2a3447] px-2 py-1 text-xs font-medium text-[#0d121b] dark:text-white">Figma</span>
+<span class="rounded-full bg-[#e7ebf3] dark:bg-[#2a3447] px-2 py-1 text-xs font-medium text-[#0d121b] dark:text-white">Tailwind</span>
+<span class="rounded-full bg-[#e7ebf3] dark:bg-[#2a3447] px-2 py-1 text-xs font-medium text-[#0d121b] dark:text-white">HTML/CSS</span>
+</div>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-[#e7ebf3] dark:border-[#2a3447]">
+<span class="font-bold text-[#0d121b] dark:text-white">$75/hr</span>
+<span class="flex items-center text-xs font-medium text-green-600"><span class="material-symbols-outlined text-[16px] mr-1">check_circle</span> Verified</span>
+</div>
+</div>
+<!-- Talent Card 4 -->
+<div class="flex flex-col rounded-xl border border-[#e7ebf3] dark:border-[#2a3447] bg-background-light dark:bg-background-dark p-4 hover:shadow-lg transition-shadow">
+<div class="flex items-center gap-4 mb-4">
+<div class="h-14 w-14 rounded-full bg-cover bg-center" data-alt="Profile picture of James K" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBCMkMBkUW4scbIRqJtp5rZk6Q4tZzXuTRYO00U-BpIxzCnCO1zc0AdQG_ujaLvuEzmyIqtcBr_DTiS5Vf1Y6-h2x2zhEVC7fNvMTukUP_5IXPNbl5Ez6ZkVVKtgDve3ias4piyJmPUdgQBr4BxOcAUhyPrXZjw78bhvDCBdh6bLa10jjxh6a6RhxtsYPthOYsEWX_CN2kaZ1InD7M7__btg3y3qU3293k_6skWk6zgkRuZM82Oa7TN7mRQ61X1sabMWikPVShJXHA");'></div>
+<div>
+<h4 class="font-bold text-[#0d121b] dark:text-white">James K.</h4>
+<p class="text-sm text-[#4c669a] dark:text-[#94a3b8]">Backend Architect</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="rounded-full bg-[#e7ebf3] dark:bg-[#2a3447] px-2 py-1 text-xs font-medium text-[#0d121b] dark:text-white">Go</span>
+<span class="rounded-full bg-[#e7ebf3] dark:bg-[#2a3447] px-2 py-1 text-xs font-medium text-[#0d121b] dark:text-white">Kubernetes</span>
+<span class="rounded-full bg-[#e7ebf3] dark:bg-[#2a3447] px-2 py-1 text-xs font-medium text-[#0d121b] dark:text-white">SQL</span>
+</div>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-[#e7ebf3] dark:border-[#2a3447]">
+<span class="font-bold text-[#0d121b] dark:text-white">$110/hr</span>
+<span class="flex items-center text-xs font-medium text-green-600"><span class="material-symbols-outlined text-[16px] mr-1">check_circle</span> Verified</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Images/Portfolio Grid -->
+<section class="py-16 sm:py-24">
+<div class="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
+<div class="mb-10 text-center">
+<h2 class="text-3xl font-black text-[#0d121b] dark:text-white">Made with NeXLace</h2>
+<p class="mt-2 text-[#4c669a] dark:text-[#94a3b8]">See what our community is building.</p>
+</div>
+<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 md:grid-rows-2 h-[600px]">
+<div class="relative overflow-hidden rounded-xl md:col-span-2 md:row-span-2 group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Dashboard analytics interface showing graphs and data on a monitor" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCp7BB_XK4VSVYyyiKEUSrh4ZC9l91Dw-liRXxCIl34g5fRfbL1LmVYKLfgn4mCiM0je50nW95wpyCtEtn9ejaA4tf3LXJTTeGoIBqSnzyJ87l6n2Hx4KKT0cL0eGG-DULHbk6doFO2AIG32LgTwT_q-5caeI2bFLHPR3kYU9dg7A6SAA1rJBAQIOr-xE0ghxACQtRbahLhv-prq9p3tDkiWTgmE_UEzsx741hrFfBcUSMm38ZQE1ShRc-SATwhzEwdCB9UNnXom3A");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<h3 class="text-xl font-bold">FinTech Analytics Dashboard</h3>
+<p class="text-sm opacity-80">Built by NeXLace Devs</p>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-xl group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Person holding a smartphone displaying a modern mobile application" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAy7yZxd7cRAGej5jssrOpPyuolreSGObOaUwho0BNwroquwkuuuiANooRp4lC5iKP7V_R509RRsA1Vdg041_FcNQmZW4VY2hjDMuzSaVCzx1hDFo6froLWGKqotzPf17IWLCYTMSgd1GjzWbNeuABk-VTpjDL3odEkdu9pBu1WvZdZVKk4wMHoXA8QM3W357xx-a4PUEoWHAYyWgItvROuzmNcrCv8EW-WW7wVi2ilRCdmRFaf4sgm22Wmz61aUMgi7x2VcbZUd30");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+<div class="absolute bottom-4 left-4 text-white">
+<h3 class="text-lg font-bold">Mobile E-commerce</h3>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-xl group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Complex data visualization chart on a laptop screen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDAYgxOH5ab1MGA6FlWv54iprVYRWOI8Li8E7QKfhTSV7EB-P7orno-rnasyD6sSrgO0r3Tp7PYlNA-E2nyUjhaQocg4rzDieNzVIyEIcDJ_wkONMow5wdOZGWeFPjUHZwlnUO4KmHQ5Cmy08A5LGBqeIttobXKvIBnbb7vsK_fHkb3WgE8efuXeNw4-ocmrRnhsas28pbZvMwzSq_lA4XBPUxalvF41jS01RJRvuWl1ElOrOcEeZh6w0U8-AQaMmoNnc0ZEDr_OT0");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+<div class="absolute bottom-4 left-4 text-white">
+<h3 class="text-lg font-bold">HealthTech Platform</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="bg-primary/5 dark:bg-primary/10 py-16 sm:py-24">
+<div class="mx-auto max-w-[960px] px-4 sm:px-6 lg:px-8 text-center">
+<h2 class="text-3xl font-black text-[#0d121b] dark:text-white sm:text-4xl">Ready to get started?</h2>
+<p class="mt-4 text-lg text-[#4c669a] dark:text-[#94a3b8] mb-8">Join thousands of businesses and developers building the future together.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button onclick="window.location.href='registration.html'" class="flex h-12 min-w-[200px] cursor-pointer items-center justify-center rounded-lg bg-primary px-6 text-base font-bold text-white shadow-lg shadow-primary/25 hover:bg-blue-600 transition-all">
+                        Hire a Pro
+                     </button>
+<button onclick="window.location.href='registration.html'" class="flex h-12 min-w-[200px] cursor-pointer items-center justify-center rounded-lg border-2 border-primary text-primary px-6 text-base font-bold hover:bg-primary hover:text-white transition-all">
+                        Earn as a Developer
+                     </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="border-t border-[#e7ebf3] dark:border-[#2a3447] bg-background-light dark:bg-background-dark pt-16 pb-8">
+<div class="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5 mb-12">
+<div class="col-span-2 lg:col-span-2 pr-8">
+<div class="flex items-center gap-2 text-primary mb-4">
+<div class="flex items-center gap-2">
+    <img src="assetes/logo.png" alt="NeXLace Logo" class="h-10 w-auto object-contain" />
+    <h2 class="text-xl font-black tracking-tight text-[#0d121b] dark:text-white">NeXLace</h2>
+</div>
+</div>
+<p class="text-sm text-[#4c669a] dark:text-[#94a3b8] mb-6 max-w-sm">
+                        NeXLace is the world's leading community for freelance software developers. We connect the best talent with the best companies.
+                    </p>
+<div class="flex gap-4">
+<a class="text-[#4c669a] dark:text-[#94a3b8] hover:text-primary" href="#"><span class="material-symbols-outlined">thumb_up</span></a> <!-- Mock social icon -->
+<a class="text-[#4c669a] dark:text-[#94a3b8] hover:text-primary" href="#"><span class="material-symbols-outlined">share</span></a> <!-- Mock social icon -->
+<a class="text-[#4c669a] dark:text-[#94a3b8] hover:text-primary" href="#"><span class="material-symbols-outlined">mail</span></a> <!-- Mock social icon -->
+</div>
+</div>
+<div>
+<h3 class="text-sm font-bold text-[#0d121b] dark:text-white mb-4">For Clients</h3>
+<ul class="flex flex-col gap-3">
+<li><a class="text-sm text-[#4c669a] dark:text-[#94a3b8] hover:text-primary" href="#">Find Talent</a></li>
+<li><a class="text-sm text-[#4c669a] dark:text-[#94a3b8] hover:text-primary" href="#">Post a Job</a></li>
+<li><a class="text-sm text-[#4c669a] dark:text-[#94a3b8] hover:text-primary" href="#">Enterprise</a></li>
+<li><a class="text-sm text-[#4c669a] dark:text-[#94a3b8] hover:text-primary" href="#">Case Studies</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-sm font-bold text-[#0d121b] dark:text-white mb-4">For Talent</h3>
+<ul class="flex flex-col gap-3">
+<li><a class="text-sm text-[#4c669a] dark:text-[#94a3b8] hover:text-primary" href="#">Find Work</a></li>
+<li><a class="text-sm text-[#4c669a] dark:text-[#94a3b8] hover:text-primary" href="#">Create Profile</a></li>
+<li><a class="text-sm text-[#4c669a] dark:text-[#94a3b8] hover:text-primary" href="#">Community</a></li>
+<li><a class="text-sm text-[#4c669a] dark:text-[#94a3b8] hover:text-primary" href="#">Developer Blog</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-sm font-bold text-[#0d121b] dark:text-white mb-4">Company</h3>
+<ul class="flex flex-col gap-3">
+<li><a class="text-sm text-[#4c669a] dark:text-[#94a3b8] hover:text-primary" href="#">About Us</a></li>
+<li><a class="text-sm text-[#4c669a] dark:text-[#94a3b8] hover:text-primary" href="#">Careers</a></li>
+<li><a class="text-sm text-[#4c669a] dark:text-[#94a3b8] hover:text-primary" href="#">Support</a></li>
+<li><a class="text-sm text-[#4c669a] dark:text-[#94a3b8] hover:text-primary" href="#">Contact</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-[#e7ebf3] dark:border-[#2a3447] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-sm text-[#4c669a] dark:text-[#94a3b8]">© 2024 NeXLace Inc. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-sm text-[#4c669a] dark:text-[#94a3b8] hover:text-primary" href="#">Privacy Policy</a>
+<a class="text-sm text-[#4c669a] dark:text-[#94a3b8] hover:text-primary" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</body></html>
