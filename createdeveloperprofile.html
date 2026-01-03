@@ -1,13 +1,19 @@
 <!DOCTYPE html>
-<html><head><meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>NeXLace - Create Developer Profile</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>NeXLace - Create Developer Profile</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -25,22 +31,39 @@
                     fontFamily: {
                         "display": ["Inter", "sans-serif"]
                     },
-                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
                 },
             },
         }
     </script>
-</head><body class="bg-background-light dark:bg-background-dark text-text-main dark:text-[#f8f9fc] font-display antialiased">
-<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
-<header
+    <script>
+            (function () {
+                const theme = localStorage.getItem('theme') || 'system';
+                const element = document.documentElement;
+                if (theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    element.classList.add('dark');
+                } else {
+                    element.classList.remove('dark');
+                }
+            })();
+    </script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-[#f8f9fc] font-display antialiased">
+    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+        <header
             class="sticky top-0 z-50 w-full border-b border-[#e7ebf3] dark:border-[#2a3447] bg-white dark:bg-card-dark">
             <div class="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-4 sm:px-6 lg:px-8">
                 <div class="flex items-center gap-8">
                     <div class="flex items-center gap-2 text-primary">
                         <div class="flex items-center gap-2">
-                         <a href="mainpage.html"><img src="assetes/logo.png" alt="NeXLace Logo" class="h-10 w-auto object-contain" /></a>
-                         <a href="mainpage.html"><h2 class="text-xl font-black tracking-tight text-[#0d121b] dark:text-white">NeXLace</h2></a>
-</div>
+                            <a href="mainpage.html"><img src="assetes/logo.png" alt="NeXLace Logo"
+                                    class="h-10 w-auto object-contain" /></a>
+                            <a href="mainpage.html">
+                                <h2 class="text-xl font-black tracking-tight text-[#0d121b] dark:text-white">NeXLace
+                                </h2>
+                            </a>
+                        </div>
                     </div>
                     <div class="hidden md:flex items-center gap-6">
                         <a class="text-sm font-medium text-text-main dark:text-[#e7ebf3] hover:text-primary dark:hover:text-primary transition-colors"
@@ -62,7 +85,8 @@
                     <button class="text-text-sub hover:text-primary dark:text-gray-400 dark:hover:text-white">
                         <span class="material-symbols-outlined">help</span>
                     </button>
-                    <button onclick="window.location.href='notification.html'" class="text-text-sub hover:text-primary dark:text-gray-400 dark:hover:text-white">
+                    <button onclick="window.location.href='notification.html'"
+                        class="text-text-sub hover:text-primary dark:text-gray-400 dark:hover:text-white">
                         <span class="material-symbols-outlined">notifications</span>
                     </button>
                     <div class="relative">
@@ -104,220 +128,307 @@
                     </div>
                 </div>
         </header>
-<main class="flex-grow py-8">
-<div class="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
-<div class="mb-8">
-<a class="inline-flex items-center gap-2 text-sm text-text-sub hover:text-primary mb-4 transition-colors" href="profilesetting.html">
-<span class="material-symbols-outlined text-[18px]">arrow_back</span>
-                    Back to Settings
-                </a>
-<h1 class="text-3xl font-bold tracking-tight text-text-main dark:text-white">Create Developer Profile</h1>
-<p class="text-text-sub mt-2">Set up your professional presence to start bidding on projects.</p>
-</div>
-<div class="flex flex-col lg:flex-row gap-8">
-<aside class="w-full lg:w-64 flex-shrink-0 hidden lg:block">
-<nav class="sticky top-24">
-<div class="relative pl-4 border-l-2 border-gray-200 dark:border-gray-700 space-y-6">
-<a class="block group relative" href="#basic-info">
-<span class="absolute -left-[21px] top-1 h-3 w-3 rounded-full bg-primary ring-4 ring-white dark:ring-card-dark"></span>
-<span class="text-sm font-bold text-primary">1. Basic Info</span>
-</a>
-<a class="block group relative" href="#skills-bio">
-<span class="absolute -left-[21px] top-1 h-3 w-3 rounded-full bg-gray-300 dark:bg-gray-600 ring-4 ring-white dark:ring-card-dark group-hover:bg-primary/50 transition-colors"></span>
-<span class="text-sm font-medium text-text-sub group-hover:text-text-main dark:group-hover:text-white transition-colors">2. Skills &amp; Bio</span>
-</a>
-<a class="block group relative" href="#portfolio">
-<span class="absolute -left-[21px] top-1 h-3 w-3 rounded-full bg-gray-300 dark:bg-gray-600 ring-4 ring-white dark:ring-card-dark group-hover:bg-primary/50 transition-colors"></span>
-<span class="text-sm font-medium text-text-sub group-hover:text-text-main dark:group-hover:text-white transition-colors">3. Portfolio</span>
-</a>
-<a class="block group relative" href="#experience">
-<span class="absolute -left-[21px] top-1 h-3 w-3 rounded-full bg-gray-300 dark:bg-gray-600 ring-4 ring-white dark:ring-card-dark group-hover:bg-primary/50 transition-colors"></span>
-<span class="text-sm font-medium text-text-sub group-hover:text-text-main dark:group-hover:text-white transition-colors">4. Experience</span>
-</a>
-<a class="block group relative" href="#education">
-<span class="absolute -left-[21px] top-1 h-3 w-3 rounded-full bg-gray-300 dark:bg-gray-600 ring-4 ring-white dark:ring-card-dark group-hover:bg-primary/50 transition-colors"></span>
-<span class="text-sm font-medium text-text-sub group-hover:text-text-main dark:group-hover:text-white transition-colors">5. Education</span>
-</a>
-</div>
-<div class="mt-8 rounded-xl bg-primary/5 p-4 border border-primary/10">
-<div class="flex items-start gap-3">
-<span class="material-symbols-outlined text-primary text-[24px]">lightbulb</span>
-<p class="text-xs text-text-sub leading-relaxed">
-<strong class="text-text-main dark:text-white block mb-1">Pro Tip</strong>
-                                Complete profiles are 70% more likely to get hired. Add a detailed bio and at least 2 portfolio items.
-                            </p>
-</div>
-</div>
-</nav>
-</aside>
-<div class="flex-1 space-y-6">
-<div class="rounded-xl border border-[#e7ebf3] dark:border-[#2a3447] bg-white dark:bg-card-dark shadow-sm scroll-mt-24" id="basic-info">
-<div class="border-b border-[#e7ebf3] px-6 py-4 dark:border-[#2a3447] flex justify-between items-center">
-<h3 class="text-lg font-bold text-text-main dark:text-white">Basic Information</h3>
-<span class="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded">Step 1 of 5</span>
-</div>
-<div class="p-6">
-<div class="mb-8 flex flex-col sm:flex-row items-center gap-6">
-<div class="relative group cursor-pointer">
-<div class="h-28 w-28 rounded-full bg-gray-100 dark:bg-[#1a2333] flex items-center justify-center border-2 border-dashed border-gray-300 dark:border-gray-600 hover:border-primary dark:hover:border-primary transition-colors overflow-hidden">
-<span class="material-symbols-outlined text-gray-400 text-[40px] group-hover:text-primary transition-colors">add_a_photo</span>
-<img alt="Profile Preview" class="hidden h-full w-full object-cover" src=""/>
-</div>
-</div>
-<div class="text-center sm:text-left">
-<h4 class="font-bold text-text-main dark:text-white">Profile Photo</h4>
-<p class="text-sm text-text-sub mb-3">Professional headshot recommended.</p>
-<button class="text-sm font-medium text-primary hover:text-primary-dark transition-colors">Upload Image</button>
-</div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<div class="md:col-span-2">
-<label class="mb-1.5 block text-sm font-medium text-text-main dark:text-gray-300" for="headline">Professional Title <span class="text-red-500">*</span></label>
-<input class="block w-full rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-[#1a2333] shadow-sm focus:border-primary focus:ring-primary sm:text-sm placeholder-gray-400" id="headline" placeholder="e.g. Senior Full Stack Developer" type="text"/>
-</div>
-<div>
-<label class="mb-1.5 block text-sm font-medium text-text-main dark:text-gray-300" for="rate">Hourly Rate ($USD) <span class="text-red-500">*</span></label>
-<div class="relative">
-<span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">$</span>
-<input class="block w-full rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-[#1a2333] pl-7 shadow-sm focus:border-primary focus:ring-primary sm:text-sm" id="rate" placeholder="0.00" type="number"/>
-<span class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-xs">/hr</span>
-</div>
-</div>
-<div>
-<label class="mb-1.5 block text-sm font-medium text-text-main dark:text-gray-300" for="availability">Availability</label>
-<select class="block w-full rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-[#1a2333] shadow-sm focus:border-primary focus:ring-primary sm:text-sm">
-<option>More than 30 hrs/week</option>
-<option>Less than 30 hrs/week</option>
-<option>As needed - Open to offers</option>
-</select>
-</div>
-</div>
-</div>
-</div>
-<div class="rounded-xl border border-[#e7ebf3] dark:border-[#2a3447] bg-white dark:bg-card-dark shadow-sm scroll-mt-24" id="skills-bio">
-<div class="border-b border-[#e7ebf3] px-6 py-4 dark:border-[#2a3447] flex justify-between items-center">
-<h3 class="text-lg font-bold text-text-main dark:text-white">Skills &amp; Bio</h3>
-</div>
-<div class="p-6 space-y-6">
-<div>
-<label class="mb-1.5 block text-sm font-medium text-text-main dark:text-gray-300" for="bio">Professional Overview <span class="text-red-500">*</span></label>
-<textarea class="block w-full rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-[#1a2333] shadow-sm focus:border-primary focus:ring-primary sm:text-sm" id="bio" placeholder="Highlight your top achievements, experience, and why clients should hire you..." rows="6"></textarea>
-<div class="flex justify-between mt-1.5">
-<span class="text-xs text-text-sub">Minimum 100 characters</span>
-<span class="text-xs text-text-sub">0/5000</span>
-</div>
-</div>
-<div>
-<label class="mb-1.5 block text-sm font-medium text-text-main dark:text-gray-300" for="skills">Skills <span class="text-red-500">*</span></label>
-<div class="relative">
-<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-gray-400 text-[20px]">search</span>
-<input class="block w-full rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-[#1a2333] pl-10 shadow-sm focus:border-primary focus:ring-primary sm:text-sm" id="skills" placeholder="Search skills (e.g. React, Python, UI Design)" type="text"/>
-</div>
-<div class="mt-3 flex flex-wrap gap-2">
-<span class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary ring-1 ring-inset ring-primary/20">
+        <main class="flex-grow py-8">
+            <div class="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
+                <div class="mb-8">
+                    <a class="inline-flex items-center gap-2 text-sm text-text-sub hover:text-primary mb-4 transition-colors"
+                        href="profilesetting.html">
+                        <span class="material-symbols-outlined text-[18px]">arrow_back</span>
+                        Back to Settings
+                    </a>
+                    <h1 class="text-3xl font-bold tracking-tight text-text-main dark:text-white">Create Developer
+                        Profile</h1>
+                    <p class="text-text-sub mt-2">Set up your professional presence to start bidding on projects.</p>
+                </div>
+                <div class="flex flex-col lg:flex-row gap-8">
+                    <aside class="w-full lg:w-64 flex-shrink-0 hidden lg:block">
+                        <nav class="sticky top-24">
+                            <div class="relative pl-4 border-l-2 border-gray-200 dark:border-gray-700 space-y-6">
+                                <a class="block group relative" href="#basic-info">
+                                    <span
+                                        class="absolute -left-[21px] top-1 h-3 w-3 rounded-full bg-primary ring-4 ring-white dark:ring-card-dark"></span>
+                                    <span class="text-sm font-bold text-primary">1. Basic Info</span>
+                                </a>
+                                <a class="block group relative" href="#skills-bio">
+                                    <span
+                                        class="absolute -left-[21px] top-1 h-3 w-3 rounded-full bg-gray-300 dark:bg-gray-600 ring-4 ring-white dark:ring-card-dark group-hover:bg-primary/50 transition-colors"></span>
+                                    <span
+                                        class="text-sm font-medium text-text-sub group-hover:text-text-main dark:group-hover:text-white transition-colors">2.
+                                        Skills &amp; Bio</span>
+                                </a>
+                                <a class="block group relative" href="#portfolio">
+                                    <span
+                                        class="absolute -left-[21px] top-1 h-3 w-3 rounded-full bg-gray-300 dark:bg-gray-600 ring-4 ring-white dark:ring-card-dark group-hover:bg-primary/50 transition-colors"></span>
+                                    <span
+                                        class="text-sm font-medium text-text-sub group-hover:text-text-main dark:group-hover:text-white transition-colors">3.
+                                        Portfolio</span>
+                                </a>
+                                <a class="block group relative" href="#experience">
+                                    <span
+                                        class="absolute -left-[21px] top-1 h-3 w-3 rounded-full bg-gray-300 dark:bg-gray-600 ring-4 ring-white dark:ring-card-dark group-hover:bg-primary/50 transition-colors"></span>
+                                    <span
+                                        class="text-sm font-medium text-text-sub group-hover:text-text-main dark:group-hover:text-white transition-colors">4.
+                                        Experience</span>
+                                </a>
+                                <a class="block group relative" href="#education">
+                                    <span
+                                        class="absolute -left-[21px] top-1 h-3 w-3 rounded-full bg-gray-300 dark:bg-gray-600 ring-4 ring-white dark:ring-card-dark group-hover:bg-primary/50 transition-colors"></span>
+                                    <span
+                                        class="text-sm font-medium text-text-sub group-hover:text-text-main dark:group-hover:text-white transition-colors">5.
+                                        Education</span>
+                                </a>
+                            </div>
+                            <div class="mt-8 rounded-xl bg-primary/5 p-4 border border-primary/10">
+                                <div class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-primary text-[24px]">lightbulb</span>
+                                    <p class="text-xs text-text-sub leading-relaxed">
+                                        <strong class="text-text-main dark:text-white block mb-1">Pro Tip</strong>
+                                        Complete profiles are 70% more likely to get hired. Add a detailed bio and at
+                                        least 2 portfolio items.
+                                    </p>
+                                </div>
+                            </div>
+                        </nav>
+                    </aside>
+                    <div class="flex-1 space-y-6">
+                        <div class="rounded-xl border border-[#e7ebf3] dark:border-[#2a3447] bg-white dark:bg-card-dark shadow-sm scroll-mt-24"
+                            id="basic-info">
+                            <div
+                                class="border-b border-[#e7ebf3] px-6 py-4 dark:border-[#2a3447] flex justify-between items-center">
+                                <h3 class="text-lg font-bold text-text-main dark:text-white">Basic Information</h3>
+                                <span class="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded">Step 1 of
+                                    5</span>
+                            </div>
+                            <div class="p-6">
+                                <div class="mb-8 flex flex-col sm:flex-row items-center gap-6">
+                                    <div class="relative group cursor-pointer">
+                                        <div
+                                            class="h-28 w-28 rounded-full bg-gray-100 dark:bg-[#1a2333] flex items-center justify-center border-2 border-dashed border-gray-300 dark:border-gray-600 hover:border-primary dark:hover:border-primary transition-colors overflow-hidden">
+                                            <span
+                                                class="material-symbols-outlined text-gray-400 text-[40px] group-hover:text-primary transition-colors">add_a_photo</span>
+                                            <img alt="Profile Preview" class="hidden h-full w-full object-cover"
+                                                src="" />
+                                        </div>
+                                    </div>
+                                    <div class="text-center sm:text-left">
+                                        <h4 class="font-bold text-text-main dark:text-white">Profile Photo</h4>
+                                        <p class="text-sm text-text-sub mb-3">Professional headshot recommended.</p>
+                                        <button
+                                            class="text-sm font-medium text-primary hover:text-primary-dark transition-colors">Upload
+                                            Image</button>
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="md:col-span-2">
+                                        <label
+                                            class="mb-1.5 block text-sm font-medium text-text-main dark:text-gray-300"
+                                            for="headline">Professional Title <span
+                                                class="text-red-500">*</span></label>
+                                        <input
+                                            class="block w-full rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-[#1a2333] shadow-sm focus:border-primary focus:ring-primary sm:text-sm placeholder-gray-400"
+                                            id="headline" placeholder="e.g. Senior Full Stack Developer" type="text" />
+                                    </div>
+                                    <div>
+                                        <label
+                                            class="mb-1.5 block text-sm font-medium text-text-main dark:text-gray-300"
+                                            for="rate">Hourly Rate ($USD) <span class="text-red-500">*</span></label>
+                                        <div class="relative">
+                                            <span
+                                                class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">$</span>
+                                            <input
+                                                class="block w-full rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-[#1a2333] pl-7 shadow-sm focus:border-primary focus:ring-primary sm:text-sm"
+                                                id="rate" placeholder="0.00" type="number" />
+                                            <span
+                                                class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-xs">/hr</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label
+                                            class="mb-1.5 block text-sm font-medium text-text-main dark:text-gray-300"
+                                            for="availability">Availability</label>
+                                        <select
+                                            class="block w-full rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-[#1a2333] shadow-sm focus:border-primary focus:ring-primary sm:text-sm">
+                                            <option>More than 30 hrs/week</option>
+                                            <option>Less than 30 hrs/week</option>
+                                            <option>As needed - Open to offers</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rounded-xl border border-[#e7ebf3] dark:border-[#2a3447] bg-white dark:bg-card-dark shadow-sm scroll-mt-24"
+                            id="skills-bio">
+                            <div
+                                class="border-b border-[#e7ebf3] px-6 py-4 dark:border-[#2a3447] flex justify-between items-center">
+                                <h3 class="text-lg font-bold text-text-main dark:text-white">Skills &amp; Bio</h3>
+                            </div>
+                            <div class="p-6 space-y-6">
+                                <div>
+                                    <label class="mb-1.5 block text-sm font-medium text-text-main dark:text-gray-300"
+                                        for="bio">Professional Overview <span class="text-red-500">*</span></label>
+                                    <textarea
+                                        class="block w-full rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-[#1a2333] shadow-sm focus:border-primary focus:ring-primary sm:text-sm"
+                                        id="bio"
+                                        placeholder="Highlight your top achievements, experience, and why clients should hire you..."
+                                        rows="6"></textarea>
+                                    <div class="flex justify-between mt-1.5">
+                                        <span class="text-xs text-text-sub">Minimum 100 characters</span>
+                                        <span class="text-xs text-text-sub">0/5000</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="mb-1.5 block text-sm font-medium text-text-main dark:text-gray-300"
+                                        for="skills">Skills <span class="text-red-500">*</span></label>
+                                    <div class="relative">
+                                        <span
+                                            class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-gray-400 text-[20px]">search</span>
+                                        <input
+                                            class="block w-full rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-[#1a2333] pl-10 shadow-sm focus:border-primary focus:ring-primary sm:text-sm"
+                                            id="skills" placeholder="Search skills (e.g. React, Python, UI Design)"
+                                            type="text" />
+                                    </div>
+                                    <div class="mt-3 flex flex-wrap gap-2">
+                                        <span
+                                            class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary ring-1 ring-inset ring-primary/20">
                                             JavaScript
-                                            <button class="ml-1 hover:text-primary-dark"><span class="material-symbols-outlined text-[14px]">close</span></button>
-</span>
-<span class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary ring-1 ring-inset ring-primary/20">
+                                            <button class="ml-1 hover:text-primary-dark"><span
+                                                    class="material-symbols-outlined text-[14px]">close</span></button>
+                                        </span>
+                                        <span
+                                            class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary ring-1 ring-inset ring-primary/20">
                                             React.js
-                                            <button class="ml-1 hover:text-primary-dark"><span class="material-symbols-outlined text-[14px]">close</span></button>
-</span>
-<span class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary ring-1 ring-inset ring-primary/20">
+                                            <button class="ml-1 hover:text-primary-dark"><span
+                                                    class="material-symbols-outlined text-[14px]">close</span></button>
+                                        </span>
+                                        <span
+                                            class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary ring-1 ring-inset ring-primary/20">
                                             Tailwind CSS
-                                            <button class="ml-1 hover:text-primary-dark"><span class="material-symbols-outlined text-[14px]">close</span></button>
-</span>
-</div>
-<p class="mt-2 text-xs text-text-sub">Select up to 15 skills.</p>
-</div>
-</div>
-</div>
-<div class="rounded-xl border border-[#e7ebf3] dark:border-[#2a3447] bg-white dark:bg-card-dark shadow-sm scroll-mt-24" id="portfolio">
-<div class="border-b border-[#e7ebf3] px-6 py-4 dark:border-[#2a3447] flex justify-between items-center">
-<h3 class="text-lg font-bold text-text-main dark:text-white">Portfolio</h3>
-<button class="text-sm font-bold text-primary hover:text-primary-dark flex items-center gap-1">
-<span class="material-symbols-outlined text-[18px]">add</span> Add Project
+                                            <button class="ml-1 hover:text-primary-dark"><span
+                                                    class="material-symbols-outlined text-[14px]">close</span></button>
+                                        </span>
+                                    </div>
+                                    <p class="mt-2 text-xs text-text-sub">Select up to 15 skills.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rounded-xl border border-[#e7ebf3] dark:border-[#2a3447] bg-white dark:bg-card-dark shadow-sm scroll-mt-24"
+                            id="portfolio">
+                            <div
+                                class="border-b border-[#e7ebf3] px-6 py-4 dark:border-[#2a3447] flex justify-between items-center">
+                                <h3 class="text-lg font-bold text-text-main dark:text-white">Portfolio</h3>
+                                <button
+                                    class="text-sm font-bold text-primary hover:text-primary-dark flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-[18px]">add</span> Add Project
+                                </button>
+                            </div>
+                            <div class="p-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <button
+                                        class="flex h-48 w-full flex-col items-center justify-center rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-[#1a2333]/50 hover:border-primary hover:bg-primary/5 dark:hover:border-primary transition-all group">
+                                        <div
+                                            class="rounded-full bg-white dark:bg-[#2a3447] p-3 shadow-sm group-hover:scale-110 transition-transform">
+                                            <span
+                                                class="material-symbols-outlined text-primary text-[24px]">cloud_upload</span>
+                                        </div>
+                                        <span
+                                            class="mt-3 text-sm font-bold text-text-sub group-hover:text-primary transition-colors">Upload
+                                            a Project</span>
+                                    </button>
+                                    <div
+                                        class="relative group h-48 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden bg-gray-100 dark:bg-[#1a2333]">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-4">
+                                            <h4 class="text-white font-bold">E-commerce Dashboard</h4>
+                                            <p class="text-gray-300 text-xs mt-1">Web Development • React</p>
+                                        </div>
+                                        <div
+                                            class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity flex gap-2">
+                                            <button
+                                                class="bg-white dark:bg-[#2a3447] p-1.5 rounded-full text-text-sub hover:text-primary shadow-sm"><span
+                                                    class="material-symbols-outlined text-[16px]">edit</span></button>
+                                            <button
+                                                class="bg-white dark:bg-[#2a3447] p-1.5 rounded-full text-red-500 hover:text-red-700 shadow-sm"><span
+                                                    class="material-symbols-outlined text-[16px]">delete</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rounded-xl border border-[#e7ebf3] dark:border-[#2a3447] bg-white dark:bg-card-dark shadow-sm scroll-mt-24"
+                            id="experience">
+                            <div
+                                class="border-b border-[#e7ebf3] px-6 py-4 dark:border-[#2a3447] flex justify-between items-center">
+                                <h3 class="text-lg font-bold text-text-main dark:text-white">Experience &amp; Education
+                                </h3>
+                            </div>
+                            <div class="p-6 space-y-8">
+                                <div>
+                                    <div class="flex items-center justify-between mb-4">
+                                        <h4 class="font-bold text-text-main dark:text-white flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-text-sub">work</span>
+                                            Work History
+                                        </h4>
+                                        <button
+                                            class="rounded-full h-8 w-8 flex items-center justify-center border border-gray-300 dark:border-gray-600 text-primary hover:bg-primary hover:text-white transition-all">
+                                            <span class="material-symbols-outlined text-[18px]">add</span>
+                                        </button>
+                                    </div>
+                                    <div
+                                        class="rounded-lg border border-dashed border-gray-300 dark:border-gray-700 p-6 text-center bg-gray-50 dark:bg-[#1a2333]/50">
+                                        <p class="text-sm text-text-sub">No work history added yet.</p>
+                                        <button class="mt-2 text-sm font-medium text-primary hover:underline">Add your
+                                            past roles</button>
+                                    </div>
+                                </div>
+                                <div class="pt-6 border-t border-gray-100 dark:border-gray-800" id="education">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <h4 class="font-bold text-text-main dark:text-white flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-text-sub">school</span>
+                                            Education
+                                        </h4>
+                                        <button
+                                            class="rounded-full h-8 w-8 flex items-center justify-center border border-gray-300 dark:border-gray-600 text-primary hover:bg-primary hover:text-white transition-all">
+                                            <span class="material-symbols-outlined text-[18px]">add</span>
+                                        </button>
+                                    </div>
+                                    <div class="space-y-4">
+                                        <div
+                                            class="flex justify-between items-start rounded-lg border border-gray-200 dark:border-gray-700 p-4 bg-white dark:bg-[#1a2333]">
+                                            <div>
+                                                <h5 class="font-bold text-text-main dark:text-white">Bachelor of Science
+                                                    in Computer Science</h5>
+                                                <p class="text-sm text-text-sub">University of Technology</p>
+                                                <p class="text-xs text-gray-400 mt-1">2015 - 2019</p>
+                                            </div>
+                                            <button class="text-gray-400 hover:text-primary transition-colors"><span
+                                                    class="material-symbols-outlined text-[20px]">edit</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="sticky bottom-0 z-30 -mx-4 sm:-mx-6 lg:-mx-8 border-t border-[#e7ebf3] bg-white/90 dark:bg-card-dark/95 backdrop-blur px-4 py-4 sm:px-6 lg:px-8 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] dark:border-[#2a3447] flex justify-between items-center mt-8">
+                            <button
+                                class="rounded-lg px-6 py-2.5 text-sm font-bold text-text-sub hover:bg-gray-100 dark:hover:bg-[#1f2937] transition-colors">
+                                Save as Draft
                             </button>
-</div>
-<div class="p-6">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-<button class="flex h-48 w-full flex-col items-center justify-center rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-[#1a2333]/50 hover:border-primary hover:bg-primary/5 dark:hover:border-primary transition-all group">
-<div class="rounded-full bg-white dark:bg-[#2a3447] p-3 shadow-sm group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-primary text-[24px]">cloud_upload</span>
-</div>
-<span class="mt-3 text-sm font-bold text-text-sub group-hover:text-primary transition-colors">Upload a Project</span>
-</button>
-<div class="relative group h-48 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden bg-gray-100 dark:bg-[#1a2333]">
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-4">
-<h4 class="text-white font-bold">E-commerce Dashboard</h4>
-<p class="text-gray-300 text-xs mt-1">Web Development • React</p>
-</div>
-<div class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity flex gap-2">
-<button class="bg-white dark:bg-[#2a3447] p-1.5 rounded-full text-text-sub hover:text-primary shadow-sm"><span class="material-symbols-outlined text-[16px]">edit</span></button>
-<button class="bg-white dark:bg-[#2a3447] p-1.5 rounded-full text-red-500 hover:text-red-700 shadow-sm"><span class="material-symbols-outlined text-[16px]">delete</span></button>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="rounded-xl border border-[#e7ebf3] dark:border-[#2a3447] bg-white dark:bg-card-dark shadow-sm scroll-mt-24" id="experience">
-<div class="border-b border-[#e7ebf3] px-6 py-4 dark:border-[#2a3447] flex justify-between items-center">
-<h3 class="text-lg font-bold text-text-main dark:text-white">Experience &amp; Education</h3>
-</div>
-<div class="p-6 space-y-8">
-<div>
-<div class="flex items-center justify-between mb-4">
-<h4 class="font-bold text-text-main dark:text-white flex items-center gap-2">
-<span class="material-symbols-outlined text-text-sub">work</span>
-                                        Work History
-                                    </h4>
-<button class="rounded-full h-8 w-8 flex items-center justify-center border border-gray-300 dark:border-gray-600 text-primary hover:bg-primary hover:text-white transition-all">
-<span class="material-symbols-outlined text-[18px]">add</span>
-</button>
-</div>
-<div class="rounded-lg border border-dashed border-gray-300 dark:border-gray-700 p-6 text-center bg-gray-50 dark:bg-[#1a2333]/50">
-<p class="text-sm text-text-sub">No work history added yet.</p>
-<button class="mt-2 text-sm font-medium text-primary hover:underline">Add your past roles</button>
-</div>
-</div>
-<div class="pt-6 border-t border-gray-100 dark:border-gray-800" id="education">
-<div class="flex items-center justify-between mb-4">
-<h4 class="font-bold text-text-main dark:text-white flex items-center gap-2">
-<span class="material-symbols-outlined text-text-sub">school</span>
-                                        Education
-                                    </h4>
-<button class="rounded-full h-8 w-8 flex items-center justify-center border border-gray-300 dark:border-gray-600 text-primary hover:bg-primary hover:text-white transition-all">
-<span class="material-symbols-outlined text-[18px]">add</span>
-</button>
-</div>
-<div class="space-y-4">
-<div class="flex justify-between items-start rounded-lg border border-gray-200 dark:border-gray-700 p-4 bg-white dark:bg-[#1a2333]">
-<div>
-<h5 class="font-bold text-text-main dark:text-white">Bachelor of Science in Computer Science</h5>
-<p class="text-sm text-text-sub">University of Technology</p>
-<p class="text-xs text-gray-400 mt-1">2015 - 2019</p>
-</div>
-<button class="text-gray-400 hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]">edit</span></button>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sticky bottom-0 z-30 -mx-4 sm:-mx-6 lg:-mx-8 border-t border-[#e7ebf3] bg-white/90 dark:bg-card-dark/95 backdrop-blur px-4 py-4 sm:px-6 lg:px-8 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] dark:border-[#2a3447] flex justify-between items-center mt-8">
-<button class="rounded-lg px-6 py-2.5 text-sm font-bold text-text-sub hover:bg-gray-100 dark:hover:bg-[#1f2937] transition-colors">
-                            Save as Draft
-                        </button>
-<div class="flex gap-4">
-<button class="hidden sm:inline-block rounded-lg px-6 py-2.5 text-sm font-bold text-primary border border-primary/20 hover:bg-primary/5 transition-colors">
-                                Preview
-                            </button>
-<button class="rounded-lg bg-primary px-8 py-2.5 text-sm font-bold text-white shadow-lg hover:bg-primary-dark hover:shadow-primary/30 transition-all active:scale-95">
-                                Publish Profile
-                            </button>
-</div>
-</div>
-</div>
-</div>
-</div>
-</main>
-</div>
-</body></html>
+                            <div class="flex gap-4">
+                                <button
+                                    class="hidden sm:inline-block rounded-lg px-6 py-2.5 text-sm font-bold text-primary border border-primary/20 hover:bg-primary/5 transition-colors">
+                                    Preview
+                                </button>
+                                <button
+                                    class="rounded-lg bg-primary px-8 py-2.5 text-sm font-bold text-white shadow-lg hover:bg-primary-dark hover:shadow-primary/30 transition-all active:scale-95">
+                                    Publish Profile
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
