@@ -1,15 +1,22 @@
 <!DOCTYPE html>
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>NeXLace - Hire Talent</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>NeXLace - Hire Talent</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -19,6 +26,8 @@
                         "primary-dark": "#0e44b3",
                         "background-light": "#f6f6f8",
                         "background-dark": "#101622",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#151c2b",
                         "card-light": "#ffffff",
                         "card-dark": "#151c2b",
                         "text-main": "#0d121b",
@@ -27,23 +36,39 @@
                     fontFamily: {
                         "display": ["Inter", "sans-serif"]
                     },
-                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
                 },
             },
         }
     </script>
+    <script>
+            (function () {
+                const theme = localStorage.getItem('theme') || 'system';
+                const element = document.documentElement;
+                if (theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    element.classList.add('dark');
+                } else {
+                    element.classList.remove('dark');
+                }
+            })();
+    </script>
 </head>
+
 <body class="bg-background-light dark:bg-background-dark text-text-main dark:text-[#f8f9fc] font-display antialiased">
-<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
-<header
+    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+        <header
             class="sticky top-0 z-50 w-full border-b border-[#e7ebf3] dark:border-[#2a3447] bg-white dark:bg-card-dark">
             <div class="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-4 sm:px-6 lg:px-8">
                 <div class="flex items-center gap-8">
                     <div class="flex items-center gap-2 text-primary">
                         <div class="flex items-center gap-2">
-                         <a href="mainpage.html"><img src="assetes/logo.png" alt="NeXLace Logo" class="h-10 w-auto object-contain" /></a>
-                         <a href="mainpage.html"><h2 class="text-xl font-black tracking-tight text-[#0d121b] dark:text-white">NeXLace</h2></a>
-</div>
+                            <a href="mainpage.html"><img src="assetes/logo.png" alt="NeXLace Logo"
+                                    class="h-10 w-auto object-contain" /></a>
+                            <a href="mainpage.html">
+                                <h2 class="text-xl font-black tracking-tight text-[#0d121b] dark:text-white">NeXLace
+                                </h2>
+                            </a>
+                        </div>
                     </div>
                     <div class="hidden md:flex items-center gap-6">
                         <a class="text-sm font-medium text-text-main dark:text-[#e7ebf3] hover:text-primary dark:hover:text-primary transition-colors"
@@ -65,7 +90,8 @@
                     <button class="text-text-sub hover:text-primary dark:text-gray-400 dark:hover:text-white">
                         <span class="material-symbols-outlined">help</span>
                     </button>
-                    <button onclick="window.location.href='notification.html'" class="text-text-sub hover:text-primary dark:text-gray-400 dark:hover:text-white">
+                    <button onclick="window.location.href='notification.html'"
+                        class="text-text-sub hover:text-primary dark:text-gray-400 dark:hover:text-white">
                         <span class="material-symbols-outlined">notifications</span>
                     </button>
                     <div class="relative">
@@ -107,632 +133,1018 @@
                     </div>
                 </div>
         </header>
-<div class="layout-container flex h-full grow flex-col max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8">
-<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 border-b border-slate-200 dark:border-slate-800 pb-6">
-<div class="flex flex-col gap-2">
-<h1 class="text-slate-900 dark:text-white text-3xl md:text-4xl font-black leading-tight tracking-[-0.033em]">Top Developers for your Projects</h1>
-<p class="text-slate-500 dark:text-slate-400 text-lg font-normal">Browse our curated list of vetted experts ready to start.</p>
-</div>
-<div class="flex gap-3">
-<button class="flex items-center gap-2 px-4 py-2 bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-<span class="material-symbols-outlined text-[20px]">history</span>
-                    Recent Hires
-                 </button>
-<button class="flex items-center gap-2 px-4 py-2 bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-<span class="material-symbols-outlined text-[20px]">bookmark</span>
-                    Saved Talent
-                 </button>
-</div>
-</div>
-<div class="flex flex-col lg:flex-row gap-8 items-start">
-<aside class="w-full lg:w-80 shrink-0 space-y-8 lg:sticky lg:top-24">
-<div class="space-y-3">
-<label class="text-sm font-semibold text-slate-900 dark:text-white">Search Talent</label>
-<div class="flex w-full items-center rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 overflow-hidden focus-within:ring-2 focus-within:ring-primary/50 transition-all shadow-sm">
-<div class="text-slate-400 pl-3 pt-1">
-<span class="material-symbols-outlined">search</span>
-</div>
-<input class="w-full bg-transparent border-none py-3 px-3 text-slate-900 dark:text-white placeholder:text-slate-400 focus:ring-0 text-sm" placeholder="Search by keyword, skill, or name"/>
-</div>
-</div>
-<div class="space-y-4 p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
-<div class="flex justify-between items-center">
-<p class="text-slate-900 dark:text-white text-sm font-semibold">Hourly Rate</p>
-<span class="text-xs text-slate-500 font-medium">USD</span>
-</div>
-<div class="pt-6 pb-2 px-2">
-<div class="relative h-1 w-full rounded-full bg-slate-200 dark:bg-slate-700">
-<div class="absolute left-[15%] right-[25%] top-0 bottom-0 rounded-full bg-primary"></div>
-<div class="absolute left-[15%] top-1/2 -translate-y-1/2 -translate-x-1/2 group cursor-pointer">
-<div class="size-4 rounded-full bg-primary shadow ring-4 ring-white dark:ring-slate-800 group-hover:scale-110 transition-transform"></div>
-<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">$35</div>
-</div>
-<div class="absolute right-[25%] top-1/2 -translate-y-1/2 translate-x-1/2 group cursor-pointer">
-<div class="size-4 rounded-full bg-primary shadow ring-4 ring-white dark:ring-slate-800 group-hover:scale-110 transition-transform"></div>
-<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">$120</div>
-</div>
-</div>
-</div>
-<div class="flex justify-between text-sm text-slate-500 dark:text-slate-400 mt-2">
-<span>$10</span>
-<span>$200+</span>
-</div>
-</div>
-<div class="space-y-3">
-<div class="flex items-center justify-between">
-<label class="text-sm font-semibold text-slate-900 dark:text-white">Tech Stack</label>
-<button class="text-xs text-primary font-medium hover:underline">Clear</button>
-</div>
-<div class="space-y-2">
-<label class="flex items-center gap-3 cursor-pointer group">
-<input checked="" class="size-4 rounded border-slate-300 text-primary focus:ring-primary dark:bg-slate-800 dark:border-slate-600" type="checkbox"/>
-<span class="text-sm text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">React / Next.js</span>
-<span class="ml-auto text-xs text-slate-400">124</span>
-</label>
-<label class="flex items-center gap-3 cursor-pointer group">
-<input class="size-4 rounded border-slate-300 text-primary focus:ring-primary dark:bg-slate-800 dark:border-slate-600" type="checkbox"/>
-<span class="text-sm text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">Node.js</span>
-<span class="ml-auto text-xs text-slate-400">86</span>
-</label>
-<label class="flex items-center gap-3 cursor-pointer group">
-<input class="size-4 rounded border-slate-300 text-primary focus:ring-primary dark:bg-slate-800 dark:border-slate-600" type="checkbox"/>
-<span class="text-sm text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">Python / Django</span>
-<span class="ml-auto text-xs text-slate-400">52</span>
-</label>
-<label class="flex items-center gap-3 cursor-pointer group">
-<input class="size-4 rounded border-slate-300 text-primary focus:ring-primary dark:bg-slate-800 dark:border-slate-600" type="checkbox"/>
-<span class="text-sm text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">Vue.js</span>
-<span class="ml-auto text-xs text-slate-400">34</span>
-</label>
-</div>
-</div>
-<div class="space-y-3">
-<label class="text-sm font-semibold text-slate-900 dark:text-white">Availability</label>
-<div class="space-y-2">
-<label class="flex items-center gap-3 cursor-pointer group">
-<input checked="" class="size-4 border-slate-300 text-primary focus:ring-primary dark:bg-slate-800 dark:border-slate-600" name="availability" type="radio"/>
-<span class="text-sm text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">Any Availability</span>
-</label>
-<label class="flex items-center gap-3 cursor-pointer group">
-<input class="size-4 border-slate-300 text-primary focus:ring-primary dark:bg-slate-800 dark:border-slate-600" name="availability" type="radio"/>
-<span class="text-sm text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">Full-time Only</span>
-</label>
-<label class="flex items-center gap-3 cursor-pointer group">
-<input class="size-4 border-slate-300 text-primary focus:ring-primary dark:bg-slate-800 dark:border-slate-600" name="availability" type="radio"/>
-<span class="text-sm text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">Part-time (&lt; 20hrs)</span>
-</label>
-</div>
-</div>
-<div class="space-y-3">
-<label class="text-sm font-semibold text-slate-900 dark:text-white">Experience Level</label>
-<div class="flex flex-wrap gap-2">
-<button class="px-3 py-1.5 rounded-lg border border-primary bg-primary/10 text-primary text-sm font-medium">Senior</button>
-<button class="px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-medium hover:border-slate-300 dark:hover:border-slate-600 transition-colors">Mid-Level</button>
-<button class="px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-medium hover:border-slate-300 dark:hover:border-slate-600 transition-colors">Junior</button>
-</div>
-</div>
-</aside>
-<main class="flex-1 min-w-0">
-<div class="flex flex-wrap items-center justify-between gap-4 mb-6">
-<p class="text-slate-600 dark:text-slate-400 font-medium">Showing <span class="text-slate-900 dark:text-white font-bold">428</span> results</p>
-<div class="flex items-center gap-2">
-<span class="text-sm text-slate-500 dark:text-slate-400">Sort by:</span>
-<div class="relative group">
-<button class="flex items-center gap-2 text-sm font-semibold text-slate-900 dark:text-white hover:text-primary transition-colors">
-                                Best Match
-                                <span class="material-symbols-outlined text-[20px]">expand_more</span>
-</button>
-<div class="hidden group-hover:block absolute right-0 top-full mt-1 w-40 bg-white dark:bg-slate-800 rounded-lg shadow-xl border border-slate-100 dark:border-slate-700 p-1 z-10">
-<a class="block px-3 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 rounded" href="#">Best Match</a>
-<a class="block px-3 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 rounded" href="#">Highest Rated</a>
-<a class="block px-3 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 rounded" href="#">Lowest Price</a>
-</div>
-</div>
-</div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-<div class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark p-5 shadow-sm hover:shadow-lg hover:border-primary/50 transition-all duration-300">
-<div class="mb-4 flex items-start justify-between gap-3">
-<div class="flex gap-3">
-<div class="relative">
-<div class="size-14 rounded-full bg-cover bg-center border border-slate-100 dark:border-slate-700" data-alt="Portrait of Sarah Jenkins, professional developer" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB2lvBzefQv_95d-gOgj0tLQha2rVln6POHLISlHC94zb_rMZTurhdhg6CNGU_blgp0YT8Ws6v0Ps2fw8-wIT4GcokPyGRjdn1xNW6X1dHk3YuYI8vVtcuFLArvY3SNjmjJFDKObijCUGJ3SVRxFdCa5prRl5CwRibim9WFq-iENK9A58bU2_peifGox7sFwWWYpOo26EhiL2ZZe3smSHQw05PCFv4yH_7YHxJOmHNt6OViz6F2euvSTrfvQvYcW77XUKCjmNG59Vk");'></div>
-<div class="absolute bottom-0 right-0 size-3.5 rounded-full bg-green-500 border-2 border-white dark:border-slate-800" title="Online"></div>
-</div>
-<div>
-<div class="flex items-center gap-1">
-<h3 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Sarah J.</h3>
-<span class="material-symbols-outlined text-primary text-[18px] filled" style="font-variation-settings: 'FILL' 1;">verified</span>
-</div>
-<p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-1">Full Stack React Expert</p>
-<div class="flex items-center gap-1 mt-0.5">
-<span class="material-symbols-outlined text-yellow-500 text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="text-xs font-bold text-slate-900 dark:text-white">5.0</span>
-<span class="text-xs text-slate-400">(42 reviews)</span>
-</div>
-</div>
-</div>
-<div class="text-right">
-<div class="font-bold text-lg text-slate-900 dark:text-white">$65<span class="text-sm font-normal text-slate-500">/hr</span></div>
-</div>
-</div>
-<div class="mb-4 grid grid-cols-2 gap-px bg-slate-100 dark:bg-slate-700/50 rounded-lg overflow-hidden border border-slate-100 dark:border-slate-700/50">
-<div class="bg-white dark:bg-surface-dark p-2 text-center">
-<span class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Success</span>
-<span class="block font-bold text-slate-900 dark:text-white text-sm">98%</span>
-</div>
-<div class="bg-white dark:bg-surface-dark p-2 text-center">
-<span class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Earned</span>
-<span class="block font-bold text-slate-900 dark:text-white text-sm">$200k+</span>
-</div>
-</div>
-<p class="text-sm text-slate-600 dark:text-slate-300 mb-4 line-clamp-2">
-                            Passionate developer with 7+ years of experience building scalable web applications. I specialize in the MERN stack and cloud architecture.
-                        </p>
-<div class="mb-6 flex flex-wrap gap-2">
-<span class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">React</span>
-<span class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">Node.js</span>
-<span class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">TypeScript</span>
-<span class="rounded-md bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-400 dark:bg-slate-800/50 dark:text-slate-500">+3</span>
-</div>
-<div class="mt-auto flex gap-3">
-<button class="flex-1 rounded-lg bg-primary py-2.5 text-sm font-semibold text-white shadow-md hover:bg-blue-700 hover:shadow-lg transition-all active:scale-95">Invite to Job</button>
-<button class="flex items-center justify-center rounded-lg border border-slate-200 px-3 text-slate-400 hover:bg-slate-50 hover:text-red-500 hover:border-red-200 dark:border-slate-700 dark:hover:bg-slate-800 dark:hover:text-red-500 transition-all" title="Save to shortlist">
-<span class="material-symbols-outlined text-[22px]">favorite</span>
-</button>
-</div>
-</div>
-<div class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark p-5 shadow-sm hover:shadow-lg hover:border-primary/50 transition-all duration-300">
-<div class="mb-4 flex items-start justify-between gap-3">
-<div class="flex gap-3">
-<div class="relative">
-<div class="size-14 rounded-full bg-cover bg-center border border-slate-100 dark:border-slate-700" data-alt="Portrait of David Chen, backend developer" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB56OzZreeJb7FYzEHqYRDi_lPNKKqZJqotfJ7wEI7ucYd4UNxwdaAtGxx793pY6WMM7cUsftRkufNmAfx3hKADs0NzUK1dN0rulqux4bzmkDrIIJYx_Ue6P2vBB3RI97Y0vSsrLTCSvN3m8-q_juTzWoRAENK6Qja_e-bqL-eRN1bGhuf_OLo_CWNi0S1YLThZuodacoAA4t-djjU7KaJIUdUSNJekw_ybwSVNPZFnUVNB7J3Lq8OlEPG0VAwZ-BUU2nX4PAFO2q8");'></div>
-</div>
-<div>
-<div class="flex items-center gap-1">
-<h3 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">David C.</h3>
-<span class="material-symbols-outlined text-primary text-[18px] filled" style="font-variation-settings: 'FILL' 1;">verified</span>
-</div>
-<p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-1">Backend Python Architect</p>
-<div class="flex items-center gap-1 mt-0.5">
-<span class="material-symbols-outlined text-yellow-500 text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="text-xs font-bold text-slate-900 dark:text-white">4.9</span>
-<span class="text-xs text-slate-400">(18 reviews)</span>
-</div>
-</div>
-</div>
-<div class="text-right">
-<div class="font-bold text-lg text-slate-900 dark:text-white">$85<span class="text-sm font-normal text-slate-500">/hr</span></div>
-</div>
-</div>
-<div class="mb-4 grid grid-cols-2 gap-px bg-slate-100 dark:bg-slate-700/50 rounded-lg overflow-hidden border border-slate-100 dark:border-slate-700/50">
-<div class="bg-white dark:bg-surface-dark p-2 text-center">
-<span class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Success</span>
-<span class="block font-bold text-slate-900 dark:text-white text-sm">100%</span>
-</div>
-<div class="bg-white dark:bg-surface-dark p-2 text-center">
-<span class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Earned</span>
-<span class="block font-bold text-slate-900 dark:text-white text-sm">$80k+</span>
-</div>
-</div>
-<p class="text-sm text-slate-600 dark:text-slate-300 mb-4 line-clamp-2">
-                            Expert in data processing, API development, and machine learning integration. I deliver robust Python backends.
-                        </p>
-<div class="mb-6 flex flex-wrap gap-2">
-<span class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">Python</span>
-<span class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">Django</span>
-<span class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">AWS</span>
-<span class="rounded-md bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-400 dark:bg-slate-800/50 dark:text-slate-500">+5</span>
-</div>
-<div class="mt-auto flex gap-3">
-<button class="flex-1 rounded-lg bg-primary py-2.5 text-sm font-semibold text-white shadow-md hover:bg-blue-700 hover:shadow-lg transition-all active:scale-95">Invite to Job</button>
-<button class="flex items-center justify-center rounded-lg border border-slate-200 px-3 text-slate-400 hover:bg-slate-50 hover:text-red-500 hover:border-red-200 dark:border-slate-700 dark:hover:bg-slate-800 dark:hover:text-red-500 transition-all" title="Save to shortlist">
-<span class="material-symbols-outlined text-[22px]">favorite</span>
-</button>
-</div>
-</div>
-<div class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark p-5 shadow-sm hover:shadow-lg hover:border-primary/50 transition-all duration-300">
-<div class="mb-4 flex items-start justify-between gap-3">
-<div class="flex gap-3">
-<div class="relative">
-<div class="size-14 rounded-full bg-cover bg-center border border-slate-100 dark:border-slate-700" data-alt="Portrait of Elena Rodriguez, UI UX designer" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDdSGx1D2tOPoruIDoCPfKiw0d7uE6abXD0U0vt23Y2iEc7UHOODuoAetLogDVlz-7QftwshRkq8TFMiJlV3iLdOvvV5bGwfm6eJ6KtSFbkJPlRysWy42dFxQtdxDILrjiPqAQNzQb2oosU8rbyqhGS_ON-gmTL50DDHxksefBydn5AWCsNtcUMYAed2mLOXTkxJEl8FZ3B4CPSez0oJUmua3yhiYLwH-GDKdUAbwYTzKBBWIm2FRAi13d5ZU6gHjCpPJWp3TMe08w");'></div>
-<div class="absolute bottom-0 right-0 size-3.5 rounded-full bg-green-500 border-2 border-white dark:border-slate-800" title="Online"></div>
-</div>
-<div>
-<div class="flex items-center gap-1">
-<h3 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Elena R.</h3>
-</div>
-<p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-1">UI/UX &amp; Frontend</p>
-<div class="flex items-center gap-1 mt-0.5">
-<span class="material-symbols-outlined text-yellow-500 text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="text-xs font-bold text-slate-900 dark:text-white">4.7</span>
-<span class="text-xs text-slate-400">(24 reviews)</span>
-</div>
-</div>
-</div>
-<div class="text-right">
-<div class="font-bold text-lg text-slate-900 dark:text-white">$50<span class="text-sm font-normal text-slate-500">/hr</span></div>
-</div>
-</div>
-<div class="mb-4 grid grid-cols-2 gap-px bg-slate-100 dark:bg-slate-700/50 rounded-lg overflow-hidden border border-slate-100 dark:border-slate-700/50">
-<div class="bg-white dark:bg-surface-dark p-2 text-center">
-<span class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Success</span>
-<span class="block font-bold text-slate-900 dark:text-white text-sm">95%</span>
-</div>
-<div class="bg-white dark:bg-surface-dark p-2 text-center">
-<span class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Earned</span>
-<span class="block font-bold text-slate-900 dark:text-white text-sm">$45k+</span>
-</div>
-</div>
-<p class="text-sm text-slate-600 dark:text-slate-300 mb-4 line-clamp-2">
-                           I bridge the gap between design and code. Creating beautiful, responsive, and accessible interfaces is my passion.
-                       </p>
-<div class="mb-6 flex flex-wrap gap-2">
-<span class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">Figma</span>
-<span class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">Tailwind</span>
-<span class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">Vue.js</span>
-</div>
-<div class="mt-auto flex gap-3">
-<button class="flex-1 rounded-lg bg-primary py-2.5 text-sm font-semibold text-white shadow-md hover:bg-blue-700 hover:shadow-lg transition-all active:scale-95">Invite to Job</button>
-<button class="flex items-center justify-center rounded-lg border border-slate-200 px-3 text-slate-400 hover:bg-slate-50 hover:text-red-500 hover:border-red-200 dark:border-slate-700 dark:hover:bg-slate-800 dark:hover:text-red-500 transition-all" title="Save to shortlist">
-<span class="material-symbols-outlined text-[22px]">favorite</span>
-</button>
-</div>
-</div>
-<div class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark p-5 shadow-sm hover:shadow-lg hover:border-primary/50 transition-all duration-300">
-<div class="mb-4 flex items-start justify-between gap-3">
-<div class="flex gap-3">
-<div class="relative">
-<div class="size-14 rounded-full bg-cover bg-center border border-slate-100 dark:border-slate-700" data-alt="Portrait of Marcus Johnson, mobile developer" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAod0QmSvCHY2RDT3s-s_IdB1b-J4H5QZ2h2U42HQSpoX9ixg-VoiQveTqrETAb2258Ev0ZXrPFiGy5gKaDzuSXsjsrQYTkc-vhZuWVuIptY93UDW7Vlxbe6_YvoTiKfO1x2ul_l9eSkfL2I8t42ZJAnFm3Wp0BWxXIJxXoZfEkPJwENVo5L1dDP-tPC8yFbkalYt9hnLsn42vpLYwk7UIBM9zEUQ9H01-FhxKc-UCfnfSgHGMnyeNTgYbLEwUpZ7IIdDwa0rndsh8");'></div>
-</div>
-<div>
-<div class="flex items-center gap-1">
-<h3 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Marcus J.</h3>
-<span class="material-symbols-outlined text-primary text-[18px] filled" style="font-variation-settings: 'FILL' 1;">verified</span>
-</div>
-<p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-1">Mobile App Specialist</p>
-<div class="flex items-center gap-1 mt-0.5">
-<span class="material-symbols-outlined text-yellow-500 text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="text-xs font-bold text-slate-900 dark:text-white">4.8</span>
-<span class="text-xs text-slate-400">(67 reviews)</span>
-</div>
-</div>
-</div>
-<div class="text-right">
-<div class="font-bold text-lg text-slate-900 dark:text-white">$75<span class="text-sm font-normal text-slate-500">/hr</span></div>
-</div>
-</div>
-<div class="mb-4 grid grid-cols-2 gap-px bg-slate-100 dark:bg-slate-700/50 rounded-lg overflow-hidden border border-slate-100 dark:border-slate-700/50">
-<div class="bg-white dark:bg-surface-dark p-2 text-center">
-<span class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Success</span>
-<span class="block font-bold text-slate-900 dark:text-white text-sm">96%</span>
-</div>
-<div class="bg-white dark:bg-surface-dark p-2 text-center">
-<span class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Earned</span>
-<span class="block font-bold text-slate-900 dark:text-white text-sm">$110k+</span>
-</div>
-</div>
-<p class="text-sm text-slate-600 dark:text-slate-300 mb-4 line-clamp-2">
-                           Experienced in React Native and Swift. I help startups launch their MVPs on both iOS and Android stores efficiently.
-                       </p>
-<div class="mb-6 flex flex-wrap gap-2">
-<span class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">React Native</span>
-<span class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">Swift</span>
-<span class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">Kotlin</span>
-</div>
-<div class="mt-auto flex gap-3">
-<button class="flex-1 rounded-lg bg-primary py-2.5 text-sm font-semibold text-white shadow-md hover:bg-blue-700 hover:shadow-lg transition-all active:scale-95">Invite to Job</button>
-<button class="flex items-center justify-center rounded-lg border border-slate-200 px-3 text-slate-400 hover:bg-slate-50 hover:text-red-500 hover:border-red-200 dark:border-slate-700 dark:hover:bg-slate-800 dark:hover:text-red-500 transition-all" title="Save to shortlist">
-<span class="material-symbols-outlined text-[22px]">favorite</span>
-</button>
-</div>
-</div>
-<div class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark p-5 shadow-sm hover:shadow-lg hover:border-primary/50 transition-all duration-300">
-<div class="mb-4 flex items-start justify-between gap-3">
-<div class="flex gap-3">
-<div class="relative">
-<div class="size-14 rounded-full bg-cover bg-center border border-slate-100 dark:border-slate-700" data-alt="Portrait of Aisha Patel, data scientist" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBa0nuf6VVkK_Rd1T1QbTzwjei0pUK2qpoz0KpCvvf2445berB6Nvnt_9L-ttsxv3XtBaFx0N9qPcWYY79ztneRpaoxhMaQFlPOdGUfvPn6qkI-TSHtFaqAaNUwfsKTR4Da_6V9SM7HFzMF-HfZ4N8c4-Zxi-E0II7FE6ThPdv09RVte0JAyYvjzIp2WzwvbcMAR4jH6DVn9LQxtkAV5aX_rgJ51anQ17TMAWJF9SkadBL93cLuCiUsxBt7ucEBtKfHrsRrNccXhKc");'></div>
-<div class="absolute bottom-0 right-0 size-3.5 rounded-full bg-green-500 border-2 border-white dark:border-slate-800" title="Online"></div>
-</div>
-<div>
-<div class="flex items-center gap-1">
-<h3 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Aisha P.</h3>
-<span class="material-symbols-outlined text-primary text-[18px] filled" style="font-variation-settings: 'FILL' 1;">verified</span>
-</div>
-<p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-1">Data Scientist &amp; AI</p>
-<div class="flex items-center gap-1 mt-0.5">
-<span class="material-symbols-outlined text-yellow-500 text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="text-xs font-bold text-slate-900 dark:text-white">5.0</span>
-<span class="text-xs text-slate-400">(15 reviews)</span>
-</div>
-</div>
-</div>
-<div class="text-right">
-<div class="font-bold text-lg text-slate-900 dark:text-white">$120<span class="text-sm font-normal text-slate-500">/hr</span></div>
-</div>
-</div>
-<div class="mb-4 grid grid-cols-2 gap-px bg-slate-100 dark:bg-slate-700/50 rounded-lg overflow-hidden border border-slate-100 dark:border-slate-700/50">
-<div class="bg-white dark:bg-surface-dark p-2 text-center">
-<span class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Success</span>
-<span class="block font-bold text-slate-900 dark:text-white text-sm">100%</span>
-</div>
-<div class="bg-white dark:bg-surface-dark p-2 text-center">
-<span class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Earned</span>
-<span class="block font-bold text-slate-900 dark:text-white text-sm">$95k+</span>
-</div>
-</div>
-<p class="text-sm text-slate-600 dark:text-slate-300 mb-4 line-clamp-2">
-                           Specializing in NLP and computer vision. I can help you integrate OpenAI APIs or build custom models for your business needs.
-                       </p>
-<div class="mb-6 flex flex-wrap gap-2">
-<span class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">PyTorch</span>
-<span class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">TensorFlow</span>
-<span class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">OpenAI</span>
-</div>
-<div class="mt-auto flex gap-3">
-<button class="flex-1 rounded-lg bg-primary py-2.5 text-sm font-semibold text-white shadow-md hover:bg-blue-700 hover:shadow-lg transition-all active:scale-95">Invite to Job</button>
-<button class="flex items-center justify-center rounded-lg border border-slate-200 px-3 text-slate-400 hover:bg-slate-50 hover:text-red-500 hover:border-red-200 dark:border-slate-700 dark:hover:bg-slate-800 dark:hover:text-red-500 transition-all" title="Save to shortlist">
-<span class="material-symbols-outlined text-[22px]">favorite</span>
-</button>
-</div>
-</div>
+        <div class="layout-container flex h-full grow flex-col max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8">
+            <div
+                class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 border-b border-slate-200 dark:border-slate-800 pb-6">
+                <div class="flex flex-col gap-2">
+                    <h1
+                        class="text-slate-900 dark:text-white text-3xl md:text-4xl font-black leading-tight tracking-[-0.033em]">
+                        Top Developers for your Projects</h1>
+                    <p class="text-slate-500 dark:text-slate-400 text-lg font-normal">Browse our curated list of vetted
+                        experts ready to start.</p>
+                </div>
+                <div class="flex gap-3">
+                    <button
+                        class="flex items-center gap-2 px-4 py-2 bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                        <span class="material-symbols-outlined text-[20px]">history</span>
+                        Recent Hires
+                    </button>
+                    <button
+                        class="flex items-center gap-2 px-4 py-2 bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                        <span class="material-symbols-outlined text-[20px]">bookmark</span>
+                        Saved Talent
+                    </button>
+                </div>
+            </div>
+            <div class="flex flex-col lg:flex-row gap-8 items-start">
+                <aside class="w-full lg:w-80 shrink-0 space-y-8 lg:sticky lg:top-24">
+                    <div class="space-y-3">
+                        <label class="text-sm font-semibold text-slate-900 dark:text-white">Search Talent</label>
+                        <div
+                            class="flex w-full items-center rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 overflow-hidden focus-within:ring-2 focus-within:ring-primary/50 transition-all shadow-sm">
+                            <div class="text-slate-400 pl-3 pt-1">
+                                <span class="material-symbols-outlined">search</span>
+                            </div>
+                            <input
+                                class="w-full bg-transparent border-none py-3 px-3 text-slate-900 dark:text-white placeholder:text-slate-400 focus:ring-0 text-sm"
+                                placeholder="Search by keyword, skill, or name" />
+                        </div>
+                    </div>
+                    <div
+                        class="space-y-4 p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                        <div class="flex justify-between items-center">
+                            <p class="text-slate-900 dark:text-white text-sm font-semibold">Hourly Rate</p>
+                            <span class="text-xs text-slate-500 font-medium">USD</span>
+                        </div>
+                        <div class="pt-6 pb-2 px-2">
+                            <div class="relative h-1 w-full rounded-full bg-slate-200 dark:bg-slate-700">
+                                <div class="absolute left-[15%] right-[25%] top-0 bottom-0 rounded-full bg-primary">
+                                </div>
+                                <div
+                                    class="absolute left-[15%] top-1/2 -translate-y-1/2 -translate-x-1/2 group cursor-pointer">
+                                    <div
+                                        class="size-4 rounded-full bg-primary shadow ring-4 ring-white dark:ring-slate-800 group-hover:scale-110 transition-transform">
+                                    </div>
+                                    <div
+                                        class="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                                        $35</div>
+                                </div>
+                                <div
+                                    class="absolute right-[25%] top-1/2 -translate-y-1/2 translate-x-1/2 group cursor-pointer">
+                                    <div
+                                        class="size-4 rounded-full bg-primary shadow ring-4 ring-white dark:ring-slate-800 group-hover:scale-110 transition-transform">
+                                    </div>
+                                    <div
+                                        class="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                                        $120</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between text-sm text-slate-500 dark:text-slate-400 mt-2">
+                            <span>$10</span>
+                            <span>$200+</span>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <label class="text-sm font-semibold text-slate-900 dark:text-white">Tech Stack</label>
+                            <button class="text-xs text-primary font-medium hover:underline">Clear</button>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input checked=""
+                                    class="size-4 rounded border-slate-300 text-primary focus:ring-primary dark:bg-slate-800 dark:border-slate-600"
+                                    type="checkbox" />
+                                <span
+                                    class="text-sm text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">React
+                                    / Next.js</span>
+                                <span class="ml-auto text-xs text-slate-400">124</span>
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input
+                                    class="size-4 rounded border-slate-300 text-primary focus:ring-primary dark:bg-slate-800 dark:border-slate-600"
+                                    type="checkbox" />
+                                <span
+                                    class="text-sm text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">Node.js</span>
+                                <span class="ml-auto text-xs text-slate-400">86</span>
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input
+                                    class="size-4 rounded border-slate-300 text-primary focus:ring-primary dark:bg-slate-800 dark:border-slate-600"
+                                    type="checkbox" />
+                                <span
+                                    class="text-sm text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">Python
+                                    / Django</span>
+                                <span class="ml-auto text-xs text-slate-400">52</span>
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input
+                                    class="size-4 rounded border-slate-300 text-primary focus:ring-primary dark:bg-slate-800 dark:border-slate-600"
+                                    type="checkbox" />
+                                <span
+                                    class="text-sm text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">Vue.js</span>
+                                <span class="ml-auto text-xs text-slate-400">34</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <label class="text-sm font-semibold text-slate-900 dark:text-white">Availability</label>
+                        <div class="space-y-2">
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input checked=""
+                                    class="size-4 border-slate-300 text-primary focus:ring-primary dark:bg-slate-800 dark:border-slate-600"
+                                    name="availability" type="radio" />
+                                <span
+                                    class="text-sm text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">Any
+                                    Availability</span>
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input
+                                    class="size-4 border-slate-300 text-primary focus:ring-primary dark:bg-slate-800 dark:border-slate-600"
+                                    name="availability" type="radio" />
+                                <span
+                                    class="text-sm text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">Full-time
+                                    Only</span>
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input
+                                    class="size-4 border-slate-300 text-primary focus:ring-primary dark:bg-slate-800 dark:border-slate-600"
+                                    name="availability" type="radio" />
+                                <span
+                                    class="text-sm text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">Part-time
+                                    (&lt; 20hrs)</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <label class="text-sm font-semibold text-slate-900 dark:text-white">Experience Level</label>
+                        <div class="flex flex-wrap gap-2">
+                            <button
+                                class="px-3 py-1.5 rounded-lg border border-primary bg-primary/10 text-primary text-sm font-medium">Senior</button>
+                            <button
+                                class="px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-medium hover:border-slate-300 dark:hover:border-slate-600 transition-colors">Mid-Level</button>
+                            <button
+                                class="px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-medium hover:border-slate-300 dark:hover:border-slate-600 transition-colors">Junior</button>
+                        </div>
+                    </div>
+                </aside>
+                <main class="flex-1 min-w-0">
+                    <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+                        <p class="text-slate-600 dark:text-slate-400 font-medium">Showing <span
+                                class="text-slate-900 dark:text-white font-bold">428</span> results</p>
+                        <div class="flex items-center gap-2">
+                            <span class="text-sm text-slate-500 dark:text-slate-400">Sort by:</span>
+                            <div class="relative group">
+                                <button
+                                    class="flex items-center gap-2 text-sm font-semibold text-slate-900 dark:text-white hover:text-primary transition-colors">
+                                    Best Match
+                                    <span class="material-symbols-outlined text-[20px]">expand_more</span>
+                                </button>
+                                <div
+                                    class="hidden group-hover:block absolute right-0 top-full mt-1 w-40 bg-white dark:bg-slate-800 rounded-lg shadow-xl border border-slate-100 dark:border-slate-700 p-1 z-10">
+                                    <a class="block px-3 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 rounded"
+                                        href="#">Best Match</a>
+                                    <a class="block px-3 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 rounded"
+                                        href="#">Highest Rated</a>
+                                    <a class="block px-3 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 rounded"
+                                        href="#">Lowest Price</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                        <div
+                            class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark p-5 shadow-sm hover:shadow-lg hover:border-primary/50 transition-all duration-300">
+                            <div class="mb-4 flex items-start justify-between gap-3">
+                                <div class="flex gap-3">
+                                    <div class="relative">
+                                        <div class="size-14 rounded-full bg-cover bg-center border border-slate-100 dark:border-slate-700"
+                                            data-alt="Portrait of Sarah Jenkins, professional developer"
+                                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB2lvBzefQv_95d-gOgj0tLQha2rVln6POHLISlHC94zb_rMZTurhdhg6CNGU_blgp0YT8Ws6v0Ps2fw8-wIT4GcokPyGRjdn1xNW6X1dHk3YuYI8vVtcuFLArvY3SNjmjJFDKObijCUGJ3SVRxFdCa5prRl5CwRibim9WFq-iENK9A58bU2_peifGox7sFwWWYpOo26EhiL2ZZe3smSHQw05PCFv4yH_7YHxJOmHNt6OViz6F2euvSTrfvQvYcW77XUKCjmNG59Vk");'>
+                                        </div>
+                                        <div class="absolute bottom-0 right-0 size-3.5 rounded-full bg-green-500 border-2 border-white dark:border-slate-800"
+                                            title="Online"></div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center gap-1">
+                                            <h3
+                                                class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+                                                Sarah J.</h3>
+                                            <span class="material-symbols-outlined text-primary text-[18px] filled"
+                                                style="font-variation-settings: 'FILL' 1;">verified</span>
+                                        </div>
+                                        <p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-1">Full Stack
+                                            React Expert</p>
+                                        <div class="flex items-center gap-1 mt-0.5">
+                                            <span class="material-symbols-outlined text-yellow-500 text-[16px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="text-xs font-bold text-slate-900 dark:text-white">5.0</span>
+                                            <span class="text-xs text-slate-400">(42 reviews)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="font-bold text-lg text-slate-900 dark:text-white">$65<span
+                                            class="text-sm font-normal text-slate-500">/hr</span></div>
+                                </div>
+                            </div>
+                            <div
+                                class="mb-4 grid grid-cols-2 gap-px bg-slate-100 dark:bg-slate-700/50 rounded-lg overflow-hidden border border-slate-100 dark:border-slate-700/50">
+                                <div class="bg-white dark:bg-surface-dark p-2 text-center">
+                                    <span
+                                        class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Success</span>
+                                    <span class="block font-bold text-slate-900 dark:text-white text-sm">98%</span>
+                                </div>
+                                <div class="bg-white dark:bg-surface-dark p-2 text-center">
+                                    <span
+                                        class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Earned</span>
+                                    <span class="block font-bold text-slate-900 dark:text-white text-sm">$200k+</span>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 mb-4 line-clamp-2">
+                                Passionate developer with 7+ years of experience building scalable web applications. I
+                                specialize in the MERN stack and cloud architecture.
+                            </p>
+                            <div class="mb-6 flex flex-wrap gap-2">
+                                <span
+                                    class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">React</span>
+                                <span
+                                    class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">Node.js</span>
+                                <span
+                                    class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">TypeScript</span>
+                                <span
+                                    class="rounded-md bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-400 dark:bg-slate-800/50 dark:text-slate-500">+3</span>
+                            </div>
+                            <div class="mt-auto flex gap-3">
+                                <button
+                                    class="flex-1 rounded-lg bg-primary py-2.5 text-sm font-semibold text-white shadow-md hover:bg-blue-700 hover:shadow-lg transition-all active:scale-95">Invite
+                                    to Job</button>
+                                <button
+                                    class="flex items-center justify-center rounded-lg border border-slate-200 px-3 text-slate-400 hover:bg-slate-50 hover:text-red-500 hover:border-red-200 dark:border-slate-700 dark:hover:bg-slate-800 dark:hover:text-red-500 transition-all"
+                                    title="Save to shortlist">
+                                    <span class="material-symbols-outlined text-[22px]">favorite</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div
+                            class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark p-5 shadow-sm hover:shadow-lg hover:border-primary/50 transition-all duration-300">
+                            <div class="mb-4 flex items-start justify-between gap-3">
+                                <div class="flex gap-3">
+                                    <div class="relative">
+                                        <div class="size-14 rounded-full bg-cover bg-center border border-slate-100 dark:border-slate-700"
+                                            data-alt="Portrait of David Chen, backend developer"
+                                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB56OzZreeJb7FYzEHqYRDi_lPNKKqZJqotfJ7wEI7ucYd4UNxwdaAtGxx793pY6WMM7cUsftRkufNmAfx3hKADs0NzUK1dN0rulqux4bzmkDrIIJYx_Ue6P2vBB3RI97Y0vSsrLTCSvN3m8-q_juTzWoRAENK6Qja_e-bqL-eRN1bGhuf_OLo_CWNi0S1YLThZuodacoAA4t-djjU7KaJIUdUSNJekw_ybwSVNPZFnUVNB7J3Lq8OlEPG0VAwZ-BUU2nX4PAFO2q8");'>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center gap-1">
+                                            <h3
+                                                class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+                                                David C.</h3>
+                                            <span class="material-symbols-outlined text-primary text-[18px] filled"
+                                                style="font-variation-settings: 'FILL' 1;">verified</span>
+                                        </div>
+                                        <p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-1">Backend
+                                            Python Architect</p>
+                                        <div class="flex items-center gap-1 mt-0.5">
+                                            <span class="material-symbols-outlined text-yellow-500 text-[16px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="text-xs font-bold text-slate-900 dark:text-white">4.9</span>
+                                            <span class="text-xs text-slate-400">(18 reviews)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="font-bold text-lg text-slate-900 dark:text-white">$85<span
+                                            class="text-sm font-normal text-slate-500">/hr</span></div>
+                                </div>
+                            </div>
+                            <div
+                                class="mb-4 grid grid-cols-2 gap-px bg-slate-100 dark:bg-slate-700/50 rounded-lg overflow-hidden border border-slate-100 dark:border-slate-700/50">
+                                <div class="bg-white dark:bg-surface-dark p-2 text-center">
+                                    <span
+                                        class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Success</span>
+                                    <span class="block font-bold text-slate-900 dark:text-white text-sm">100%</span>
+                                </div>
+                                <div class="bg-white dark:bg-surface-dark p-2 text-center">
+                                    <span
+                                        class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Earned</span>
+                                    <span class="block font-bold text-slate-900 dark:text-white text-sm">$80k+</span>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 mb-4 line-clamp-2">
+                                Expert in data processing, API development, and machine learning integration. I deliver
+                                robust Python backends.
+                            </p>
+                            <div class="mb-6 flex flex-wrap gap-2">
+                                <span
+                                    class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">Python</span>
+                                <span
+                                    class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">Django</span>
+                                <span
+                                    class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">AWS</span>
+                                <span
+                                    class="rounded-md bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-400 dark:bg-slate-800/50 dark:text-slate-500">+5</span>
+                            </div>
+                            <div class="mt-auto flex gap-3">
+                                <button
+                                    class="flex-1 rounded-lg bg-primary py-2.5 text-sm font-semibold text-white shadow-md hover:bg-blue-700 hover:shadow-lg transition-all active:scale-95">Invite
+                                    to Job</button>
+                                <button
+                                    class="flex items-center justify-center rounded-lg border border-slate-200 px-3 text-slate-400 hover:bg-slate-50 hover:text-red-500 hover:border-red-200 dark:border-slate-700 dark:hover:bg-slate-800 dark:hover:text-red-500 transition-all"
+                                    title="Save to shortlist">
+                                    <span class="material-symbols-outlined text-[22px]">favorite</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div
+                            class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark p-5 shadow-sm hover:shadow-lg hover:border-primary/50 transition-all duration-300">
+                            <div class="mb-4 flex items-start justify-between gap-3">
+                                <div class="flex gap-3">
+                                    <div class="relative">
+                                        <div class="size-14 rounded-full bg-cover bg-center border border-slate-100 dark:border-slate-700"
+                                            data-alt="Portrait of Elena Rodriguez, UI UX designer"
+                                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDdSGx1D2tOPoruIDoCPfKiw0d7uE6abXD0U0vt23Y2iEc7UHOODuoAetLogDVlz-7QftwshRkq8TFMiJlV3iLdOvvV5bGwfm6eJ6KtSFbkJPlRysWy42dFxQtdxDILrjiPqAQNzQb2oosU8rbyqhGS_ON-gmTL50DDHxksefBydn5AWCsNtcUMYAed2mLOXTkxJEl8FZ3B4CPSez0oJUmua3yhiYLwH-GDKdUAbwYTzKBBWIm2FRAi13d5ZU6gHjCpPJWp3TMe08w");'>
+                                        </div>
+                                        <div class="absolute bottom-0 right-0 size-3.5 rounded-full bg-green-500 border-2 border-white dark:border-slate-800"
+                                            title="Online"></div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center gap-1">
+                                            <h3
+                                                class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+                                                Elena R.</h3>
+                                        </div>
+                                        <p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-1">UI/UX &amp;
+                                            Frontend</p>
+                                        <div class="flex items-center gap-1 mt-0.5">
+                                            <span class="material-symbols-outlined text-yellow-500 text-[16px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="text-xs font-bold text-slate-900 dark:text-white">4.7</span>
+                                            <span class="text-xs text-slate-400">(24 reviews)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="font-bold text-lg text-slate-900 dark:text-white">$50<span
+                                            class="text-sm font-normal text-slate-500">/hr</span></div>
+                                </div>
+                            </div>
+                            <div
+                                class="mb-4 grid grid-cols-2 gap-px bg-slate-100 dark:bg-slate-700/50 rounded-lg overflow-hidden border border-slate-100 dark:border-slate-700/50">
+                                <div class="bg-white dark:bg-surface-dark p-2 text-center">
+                                    <span
+                                        class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Success</span>
+                                    <span class="block font-bold text-slate-900 dark:text-white text-sm">95%</span>
+                                </div>
+                                <div class="bg-white dark:bg-surface-dark p-2 text-center">
+                                    <span
+                                        class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Earned</span>
+                                    <span class="block font-bold text-slate-900 dark:text-white text-sm">$45k+</span>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 mb-4 line-clamp-2">
+                                I bridge the gap between design and code. Creating beautiful, responsive, and accessible
+                                interfaces is my passion.
+                            </p>
+                            <div class="mb-6 flex flex-wrap gap-2">
+                                <span
+                                    class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">Figma</span>
+                                <span
+                                    class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">Tailwind</span>
+                                <span
+                                    class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">Vue.js</span>
+                            </div>
+                            <div class="mt-auto flex gap-3">
+                                <button
+                                    class="flex-1 rounded-lg bg-primary py-2.5 text-sm font-semibold text-white shadow-md hover:bg-blue-700 hover:shadow-lg transition-all active:scale-95">Invite
+                                    to Job</button>
+                                <button
+                                    class="flex items-center justify-center rounded-lg border border-slate-200 px-3 text-slate-400 hover:bg-slate-50 hover:text-red-500 hover:border-red-200 dark:border-slate-700 dark:hover:bg-slate-800 dark:hover:text-red-500 transition-all"
+                                    title="Save to shortlist">
+                                    <span class="material-symbols-outlined text-[22px]">favorite</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div
+                            class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark p-5 shadow-sm hover:shadow-lg hover:border-primary/50 transition-all duration-300">
+                            <div class="mb-4 flex items-start justify-between gap-3">
+                                <div class="flex gap-3">
+                                    <div class="relative">
+                                        <div class="size-14 rounded-full bg-cover bg-center border border-slate-100 dark:border-slate-700"
+                                            data-alt="Portrait of Marcus Johnson, mobile developer"
+                                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAod0QmSvCHY2RDT3s-s_IdB1b-J4H5QZ2h2U42HQSpoX9ixg-VoiQveTqrETAb2258Ev0ZXrPFiGy5gKaDzuSXsjsrQYTkc-vhZuWVuIptY93UDW7Vlxbe6_YvoTiKfO1x2ul_l9eSkfL2I8t42ZJAnFm3Wp0BWxXIJxXoZfEkPJwENVo5L1dDP-tPC8yFbkalYt9hnLsn42vpLYwk7UIBM9zEUQ9H01-FhxKc-UCfnfSgHGMnyeNTgYbLEwUpZ7IIdDwa0rndsh8");'>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center gap-1">
+                                            <h3
+                                                class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+                                                Marcus J.</h3>
+                                            <span class="material-symbols-outlined text-primary text-[18px] filled"
+                                                style="font-variation-settings: 'FILL' 1;">verified</span>
+                                        </div>
+                                        <p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-1">Mobile App
+                                            Specialist</p>
+                                        <div class="flex items-center gap-1 mt-0.5">
+                                            <span class="material-symbols-outlined text-yellow-500 text-[16px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="text-xs font-bold text-slate-900 dark:text-white">4.8</span>
+                                            <span class="text-xs text-slate-400">(67 reviews)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="font-bold text-lg text-slate-900 dark:text-white">$75<span
+                                            class="text-sm font-normal text-slate-500">/hr</span></div>
+                                </div>
+                            </div>
+                            <div
+                                class="mb-4 grid grid-cols-2 gap-px bg-slate-100 dark:bg-slate-700/50 rounded-lg overflow-hidden border border-slate-100 dark:border-slate-700/50">
+                                <div class="bg-white dark:bg-surface-dark p-2 text-center">
+                                    <span
+                                        class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Success</span>
+                                    <span class="block font-bold text-slate-900 dark:text-white text-sm">96%</span>
+                                </div>
+                                <div class="bg-white dark:bg-surface-dark p-2 text-center">
+                                    <span
+                                        class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Earned</span>
+                                    <span class="block font-bold text-slate-900 dark:text-white text-sm">$110k+</span>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 mb-4 line-clamp-2">
+                                Experienced in React Native and Swift. I help startups launch their MVPs on both iOS and
+                                Android stores efficiently.
+                            </p>
+                            <div class="mb-6 flex flex-wrap gap-2">
+                                <span
+                                    class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">React
+                                    Native</span>
+                                <span
+                                    class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">Swift</span>
+                                <span
+                                    class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">Kotlin</span>
+                            </div>
+                            <div class="mt-auto flex gap-3">
+                                <button
+                                    class="flex-1 rounded-lg bg-primary py-2.5 text-sm font-semibold text-white shadow-md hover:bg-blue-700 hover:shadow-lg transition-all active:scale-95">Invite
+                                    to Job</button>
+                                <button
+                                    class="flex items-center justify-center rounded-lg border border-slate-200 px-3 text-slate-400 hover:bg-slate-50 hover:text-red-500 hover:border-red-200 dark:border-slate-700 dark:hover:bg-slate-800 dark:hover:text-red-500 transition-all"
+                                    title="Save to shortlist">
+                                    <span class="material-symbols-outlined text-[22px]">favorite</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div
+                            class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark p-5 shadow-sm hover:shadow-lg hover:border-primary/50 transition-all duration-300">
+                            <div class="mb-4 flex items-start justify-between gap-3">
+                                <div class="flex gap-3">
+                                    <div class="relative">
+                                        <div class="size-14 rounded-full bg-cover bg-center border border-slate-100 dark:border-slate-700"
+                                            data-alt="Portrait of Aisha Patel, data scientist"
+                                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBa0nuf6VVkK_Rd1T1QbTzwjei0pUK2qpoz0KpCvvf2445berB6Nvnt_9L-ttsxv3XtBaFx0N9qPcWYY79ztneRpaoxhMaQFlPOdGUfvPn6qkI-TSHtFaqAaNUwfsKTR4Da_6V9SM7HFzMF-HfZ4N8c4-Zxi-E0II7FE6ThPdv09RVte0JAyYvjzIp2WzwvbcMAR4jH6DVn9LQxtkAV5aX_rgJ51anQ17TMAWJF9SkadBL93cLuCiUsxBt7ucEBtKfHrsRrNccXhKc");'>
+                                        </div>
+                                        <div class="absolute bottom-0 right-0 size-3.5 rounded-full bg-green-500 border-2 border-white dark:border-slate-800"
+                                            title="Online"></div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center gap-1">
+                                            <h3
+                                                class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+                                                Aisha P.</h3>
+                                            <span class="material-symbols-outlined text-primary text-[18px] filled"
+                                                style="font-variation-settings: 'FILL' 1;">verified</span>
+                                        </div>
+                                        <p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-1">Data
+                                            Scientist &amp; AI</p>
+                                        <div class="flex items-center gap-1 mt-0.5">
+                                            <span class="material-symbols-outlined text-yellow-500 text-[16px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="text-xs font-bold text-slate-900 dark:text-white">5.0</span>
+                                            <span class="text-xs text-slate-400">(15 reviews)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="font-bold text-lg text-slate-900 dark:text-white">$120<span
+                                            class="text-sm font-normal text-slate-500">/hr</span></div>
+                                </div>
+                            </div>
+                            <div
+                                class="mb-4 grid grid-cols-2 gap-px bg-slate-100 dark:bg-slate-700/50 rounded-lg overflow-hidden border border-slate-100 dark:border-slate-700/50">
+                                <div class="bg-white dark:bg-surface-dark p-2 text-center">
+                                    <span
+                                        class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Success</span>
+                                    <span class="block font-bold text-slate-900 dark:text-white text-sm">100%</span>
+                                </div>
+                                <div class="bg-white dark:bg-surface-dark p-2 text-center">
+                                    <span
+                                        class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Earned</span>
+                                    <span class="block font-bold text-slate-900 dark:text-white text-sm">$95k+</span>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 mb-4 line-clamp-2">
+                                Specializing in NLP and computer vision. I can help you integrate OpenAI APIs or build
+                                custom models for your business needs.
+                            </p>
+                            <div class="mb-6 flex flex-wrap gap-2">
+                                <span
+                                    class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">PyTorch</span>
+                                <span
+                                    class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">TensorFlow</span>
+                                <span
+                                    class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">OpenAI</span>
+                            </div>
+                            <div class="mt-auto flex gap-3">
+                                <button
+                                    class="flex-1 rounded-lg bg-primary py-2.5 text-sm font-semibold text-white shadow-md hover:bg-blue-700 hover:shadow-lg transition-all active:scale-95">Invite
+                                    to Job</button>
+                                <button
+                                    class="flex items-center justify-center rounded-lg border border-slate-200 px-3 text-slate-400 hover:bg-slate-50 hover:text-red-500 hover:border-red-200 dark:border-slate-700 dark:hover:bg-slate-800 dark:hover:text-red-500 transition-all"
+                                    title="Save to shortlist">
+                                    <span class="material-symbols-outlined text-[22px]">favorite</span>
+                                </button>
+                            </div>
+                        </div>
 
-<!-- New Developer 1 -->
-<div class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark p-5 shadow-sm hover:shadow-lg hover:border-primary/50 transition-all duration-300">
-<div class="mb-4 flex items-start justify-between gap-3">
-<div class="flex gap-3">
-<div class="relative">
-<div class="size-14 rounded-full bg-cover bg-center border border-slate-100 dark:border-slate-700" data-alt="Portrait of Michael Wong, DevOps Engineer" style='background-image: url("https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80");'></div>
-<div class="absolute bottom-0 right-0 size-3.5 rounded-full bg-green-500 border-2 border-white dark:border-slate-800" title="Online"></div>
-</div>
-<div>
-<div class="flex items-center gap-1">
-<h3 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Michael W.</h3>
-<span class="material-symbols-outlined text-primary text-[18px] filled" style="font-variation-settings: 'FILL' 1;">verified</span>
-</div>
-<p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-1">DevOps & Cloud Engineer</p>
-<div class="flex items-center gap-1 mt-0.5">
-<span class="material-symbols-outlined text-yellow-500 text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="text-xs font-bold text-slate-900 dark:text-white">4.9</span>
-<span class="text-xs text-slate-400">(56 reviews)</span>
-</div>
-</div>
-</div>
-<div class="text-right">
-<div class="font-bold text-lg text-slate-900 dark:text-white">$95<span class="text-sm font-normal text-slate-500">/hr</span></div>
-</div>
-</div>
-<div class="mb-4 grid grid-cols-2 gap-px bg-slate-100 dark:bg-slate-700/50 rounded-lg overflow-hidden border border-slate-100 dark:border-slate-700/50">
-<div class="bg-white dark:bg-surface-dark p-2 text-center">
-<span class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Success</span>
-<span class="block font-bold text-slate-900 dark:text-white text-sm">99%</span>
-</div>
-<div class="bg-white dark:bg-surface-dark p-2 text-center">
-<span class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Earned</span>
-<span class="block font-bold text-slate-900 dark:text-white text-sm">$150k+</span>
-</div>
-</div>
-<p class="text-sm text-slate-600 dark:text-slate-300 mb-4 line-clamp-2">
-                           Expert in cloud infrastructure, CI/CD pipelines, and containerization. I help companies scale their applications efficiently.
-                       </p>
-<div class="mb-6 flex flex-wrap gap-2">
-<span class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">AWS</span>
-<span class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">Docker</span>
-<span class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">Kubernetes</span>
-<span class="rounded-md bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-400 dark:bg-slate-800/50 dark:text-slate-500">+4</span>
-</div>
-<div class="mt-auto flex gap-3">
-<button class="flex-1 rounded-lg bg-primary py-2.5 text-sm font-semibold text-white shadow-md hover:bg-blue-700 hover:shadow-lg transition-all active:scale-95">Invite to Job</button>
-<button class="flex items-center justify-center rounded-lg border border-slate-200 px-3 text-slate-400 hover:bg-slate-50 hover:text-red-500 hover:border-red-200 dark:border-slate-700 dark:hover:bg-slate-800 dark:hover:text-red-500 transition-all" title="Save to shortlist">
-<span class="material-symbols-outlined text-[22px]">favorite</span>
-</button>
-</div>
-</div>
+                        <!-- New Developer 1 -->
+                        <div
+                            class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark p-5 shadow-sm hover:shadow-lg hover:border-primary/50 transition-all duration-300">
+                            <div class="mb-4 flex items-start justify-between gap-3">
+                                <div class="flex gap-3">
+                                    <div class="relative">
+                                        <div class="size-14 rounded-full bg-cover bg-center border border-slate-100 dark:border-slate-700"
+                                            data-alt="Portrait of Michael Wong, DevOps Engineer"
+                                            style='background-image: url("https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80");'>
+                                        </div>
+                                        <div class="absolute bottom-0 right-0 size-3.5 rounded-full bg-green-500 border-2 border-white dark:border-slate-800"
+                                            title="Online"></div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center gap-1">
+                                            <h3
+                                                class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+                                                Michael W.</h3>
+                                            <span class="material-symbols-outlined text-primary text-[18px] filled"
+                                                style="font-variation-settings: 'FILL' 1;">verified</span>
+                                        </div>
+                                        <p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-1">DevOps &
+                                            Cloud Engineer</p>
+                                        <div class="flex items-center gap-1 mt-0.5">
+                                            <span class="material-symbols-outlined text-yellow-500 text-[16px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="text-xs font-bold text-slate-900 dark:text-white">4.9</span>
+                                            <span class="text-xs text-slate-400">(56 reviews)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="font-bold text-lg text-slate-900 dark:text-white">$95<span
+                                            class="text-sm font-normal text-slate-500">/hr</span></div>
+                                </div>
+                            </div>
+                            <div
+                                class="mb-4 grid grid-cols-2 gap-px bg-slate-100 dark:bg-slate-700/50 rounded-lg overflow-hidden border border-slate-100 dark:border-slate-700/50">
+                                <div class="bg-white dark:bg-surface-dark p-2 text-center">
+                                    <span
+                                        class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Success</span>
+                                    <span class="block font-bold text-slate-900 dark:text-white text-sm">99%</span>
+                                </div>
+                                <div class="bg-white dark:bg-surface-dark p-2 text-center">
+                                    <span
+                                        class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Earned</span>
+                                    <span class="block font-bold text-slate-900 dark:text-white text-sm">$150k+</span>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 mb-4 line-clamp-2">
+                                Expert in cloud infrastructure, CI/CD pipelines, and containerization. I help companies
+                                scale their applications efficiently.
+                            </p>
+                            <div class="mb-6 flex flex-wrap gap-2">
+                                <span
+                                    class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">AWS</span>
+                                <span
+                                    class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">Docker</span>
+                                <span
+                                    class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">Kubernetes</span>
+                                <span
+                                    class="rounded-md bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-400 dark:bg-slate-800/50 dark:text-slate-500">+4</span>
+                            </div>
+                            <div class="mt-auto flex gap-3">
+                                <button
+                                    class="flex-1 rounded-lg bg-primary py-2.5 text-sm font-semibold text-white shadow-md hover:bg-blue-700 hover:shadow-lg transition-all active:scale-95">Invite
+                                    to Job</button>
+                                <button
+                                    class="flex items-center justify-center rounded-lg border border-slate-200 px-3 text-slate-400 hover:bg-slate-50 hover:text-red-500 hover:border-red-200 dark:border-slate-700 dark:hover:bg-slate-800 dark:hover:text-red-500 transition-all"
+                                    title="Save to shortlist">
+                                    <span class="material-symbols-outlined text-[22px]">favorite</span>
+                                </button>
+                            </div>
+                        </div>
 
-<!-- New Developer 2 -->
-<div class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark p-5 shadow-sm hover:shadow-lg hover:border-primary/50 transition-all duration-300">
-<div class="mb-4 flex items-start justify-between gap-3">
-<div class="flex gap-3">
-<div class="relative">
-<div class="size-14 rounded-full bg-cover bg-center border border-slate-100 dark:border-slate-700" data-alt="Portrait of Sophia Kim, UX Researcher" style='background-image: url("https://images.unsplash.com/photo-1494790108755-2616b786d4d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80");'></div>
-</div>
-<div>
-<div class="flex items-center gap-1">
-<h3 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Sophia K.</h3>
-</div>
-<p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-1">UX Researcher & Strategist</p>
-<div class="flex items-center gap-1 mt-0.5">
-<span class="material-symbols-outlined text-yellow-500 text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="text-xs font-bold text-slate-900 dark:text-white">4.8</span>
-<span class="text-xs text-slate-400">(31 reviews)</span>
-</div>
-</div>
-</div>
-<div class="text-right">
-<div class="font-bold text-lg text-slate-900 dark:text-white">$70<span class="text-sm font-normal text-slate-500">/hr</span></div>
-</div>
-</div>
-<div class="mb-4 grid grid-cols-2 gap-px bg-slate-100 dark:bg-slate-700/50 rounded-lg overflow-hidden border border-slate-100 dark:border-slate-700/50">
-<div class="bg-white dark:bg-surface-dark p-2 text-center">
-<span class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Success</span>
-<span class="block font-bold text-slate-900 dark:text-white text-sm">97%</span>
-</div>
-<div class="bg-white dark:bg-surface-dark p-2 text-center">
-<span class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Earned</span>
-<span class="block font-bold text-slate-900 dark:text-white text-sm">$65k+</span>
-</div>
-</div>
-<p class="text-sm text-slate-600 dark:text-slate-300 mb-4 line-clamp-2">
-                           I conduct user research and create data-driven design strategies to improve product usability and user satisfaction.
-                       </p>
-<div class="mb-6 flex flex-wrap gap-2">
-<span class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">User Research</span>
-<span class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">Wireframing</span>
-<span class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">Usability Testing</span>
-</div>
-<div class="mt-auto flex gap-3">
-<button class="flex-1 rounded-lg bg-primary py-2.5 text-sm font-semibold text-white shadow-md hover:bg-blue-700 hover:shadow-lg transition-all active:scale-95">Invite to Job</button>
-<button class="flex items-center justify-center rounded-lg border border-slate-200 px-3 text-slate-400 hover:bg-slate-50 hover:text-red-500 hover:border-red-200 dark:border-slate-700 dark:hover:bg-slate-800 dark:hover:text-red-500 transition-all" title="Save to shortlist">
-<span class="material-symbols-outlined text-[22px]">favorite</span>
-</button>
-</div>
-</div>
+                        <!-- New Developer 2 -->
+                        <div
+                            class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark p-5 shadow-sm hover:shadow-lg hover:border-primary/50 transition-all duration-300">
+                            <div class="mb-4 flex items-start justify-between gap-3">
+                                <div class="flex gap-3">
+                                    <div class="relative">
+                                        <div class="size-14 rounded-full bg-cover bg-center border border-slate-100 dark:border-slate-700"
+                                            data-alt="Portrait of Sophia Kim, UX Researcher"
+                                            style='background-image: url("https://images.unsplash.com/photo-1494790108755-2616b786d4d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80");'>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center gap-1">
+                                            <h3
+                                                class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+                                                Sophia K.</h3>
+                                        </div>
+                                        <p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-1">UX Researcher
+                                            & Strategist</p>
+                                        <div class="flex items-center gap-1 mt-0.5">
+                                            <span class="material-symbols-outlined text-yellow-500 text-[16px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="text-xs font-bold text-slate-900 dark:text-white">4.8</span>
+                                            <span class="text-xs text-slate-400">(31 reviews)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="font-bold text-lg text-slate-900 dark:text-white">$70<span
+                                            class="text-sm font-normal text-slate-500">/hr</span></div>
+                                </div>
+                            </div>
+                            <div
+                                class="mb-4 grid grid-cols-2 gap-px bg-slate-100 dark:bg-slate-700/50 rounded-lg overflow-hidden border border-slate-100 dark:border-slate-700/50">
+                                <div class="bg-white dark:bg-surface-dark p-2 text-center">
+                                    <span
+                                        class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Success</span>
+                                    <span class="block font-bold text-slate-900 dark:text-white text-sm">97%</span>
+                                </div>
+                                <div class="bg-white dark:bg-surface-dark p-2 text-center">
+                                    <span
+                                        class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Earned</span>
+                                    <span class="block font-bold text-slate-900 dark:text-white text-sm">$65k+</span>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 mb-4 line-clamp-2">
+                                I conduct user research and create data-driven design strategies to improve product
+                                usability and user satisfaction.
+                            </p>
+                            <div class="mb-6 flex flex-wrap gap-2">
+                                <span
+                                    class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">User
+                                    Research</span>
+                                <span
+                                    class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">Wireframing</span>
+                                <span
+                                    class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">Usability
+                                    Testing</span>
+                            </div>
+                            <div class="mt-auto flex gap-3">
+                                <button
+                                    class="flex-1 rounded-lg bg-primary py-2.5 text-sm font-semibold text-white shadow-md hover:bg-blue-700 hover:shadow-lg transition-all active:scale-95">Invite
+                                    to Job</button>
+                                <button
+                                    class="flex items-center justify-center rounded-lg border border-slate-200 px-3 text-slate-400 hover:bg-slate-50 hover:text-red-500 hover:border-red-200 dark:border-slate-700 dark:hover:bg-slate-800 dark:hover:text-red-500 transition-all"
+                                    title="Save to shortlist">
+                                    <span class="material-symbols-outlined text-[22px]">favorite</span>
+                                </button>
+                            </div>
+                        </div>
 
-<!-- New Developer 3 -->
-<div class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark p-5 shadow-sm hover:shadow-lg hover:border-primary/50 transition-all duration-300">
-<div class="mb-4 flex items-start justify-between gap-3">
-<div class="flex gap-3">
-<div class="relative">
-<div class="size-14 rounded-full bg-cover bg-center border border-slate-100 dark:border-slate-700" data-alt="Portrait of Robert Garcia, Blockchain Developer" style='background-image: url("https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80");'></div>
-<div class="absolute bottom-0 right-0 size-3.5 rounded-full bg-green-500 border-2 border-white dark:border-slate-800" title="Online"></div>
-</div>
-<div>
-<div class="flex items-center gap-1">
-<h3 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Robert G.</h3>
-<span class="material-symbols-outlined text-primary text-[18px] filled" style="font-variation-settings: 'FILL' 1;">verified</span>
-</div>
-<p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-1">Blockchain Developer</p>
-<div class="flex items-center gap-1 mt-0.5">
-<span class="material-symbols-outlined text-yellow-500 text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="text-xs font-bold text-slate-900 dark:text-white">5.0</span>
-<span class="text-xs text-slate-400">(22 reviews)</span>
-</div>
-</div>
-</div>
-<div class="text-right">
-<div class="font-bold text-lg text-slate-900 dark:text-white">$150<span class="text-sm font-normal text-slate-500">/hr</span></div>
-</div>
-</div>
-<div class="mb-4 grid grid-cols-2 gap-px bg-slate-100 dark:bg-slate-700/50 rounded-lg overflow-hidden border border-slate-100 dark:border-slate-700/50">
-<div class="bg-white dark:bg-surface-dark p-2 text-center">
-<span class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Success</span>
-<span class="block font-bold text-slate-900 dark:text-white text-sm">100%</span>
-</div>
-<div class="bg-white dark:bg-surface-dark p-2 text-center">
-<span class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Earned</span>
-<span class="block font-bold text-slate-900 dark:text-white text-sm">$180k+</span>
-</div>
-</div>
-<p class="text-sm text-slate-600 dark:text-slate-300 mb-4 line-clamp-2">
-                           Specialized in smart contracts, DeFi protocols, and NFT marketplaces. I build secure and scalable blockchain solutions.
-                       </p>
-<div class="mb-6 flex flex-wrap gap-2">
-<span class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">Solidity</span>
-<span class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">Ethereum</span>
-<span class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">Web3.js</span>
-<span class="rounded-md bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-400 dark:bg-slate-800/50 dark:text-slate-500">+2</span>
-</div>
-<div class="mt-auto flex gap-3">
-<button class="flex-1 rounded-lg bg-primary py-2.5 text-sm font-semibold text-white shadow-md hover:bg-blue-700 hover:shadow-lg transition-all active:scale-95">Invite to Job</button>
-<button class="flex items-center justify-center rounded-lg border border-slate-200 px-3 text-slate-400 hover:bg-slate-50 hover:text-red-500 hover:border-red-200 dark:border-slate-700 dark:hover:bg-slate-800 dark:hover:text-red-500 transition-all" title="Save to shortlist">
-<span class="material-symbols-outlined text-[22px]">favorite</span>
-</button>
-</div>
-</div>
+                        <!-- New Developer 3 -->
+                        <div
+                            class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark p-5 shadow-sm hover:shadow-lg hover:border-primary/50 transition-all duration-300">
+                            <div class="mb-4 flex items-start justify-between gap-3">
+                                <div class="flex gap-3">
+                                    <div class="relative">
+                                        <div class="size-14 rounded-full bg-cover bg-center border border-slate-100 dark:border-slate-700"
+                                            data-alt="Portrait of Robert Garcia, Blockchain Developer"
+                                            style='background-image: url("https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80");'>
+                                        </div>
+                                        <div class="absolute bottom-0 right-0 size-3.5 rounded-full bg-green-500 border-2 border-white dark:border-slate-800"
+                                            title="Online"></div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center gap-1">
+                                            <h3
+                                                class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+                                                Robert G.</h3>
+                                            <span class="material-symbols-outlined text-primary text-[18px] filled"
+                                                style="font-variation-settings: 'FILL' 1;">verified</span>
+                                        </div>
+                                        <p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-1">Blockchain
+                                            Developer</p>
+                                        <div class="flex items-center gap-1 mt-0.5">
+                                            <span class="material-symbols-outlined text-yellow-500 text-[16px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="text-xs font-bold text-slate-900 dark:text-white">5.0</span>
+                                            <span class="text-xs text-slate-400">(22 reviews)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="font-bold text-lg text-slate-900 dark:text-white">$150<span
+                                            class="text-sm font-normal text-slate-500">/hr</span></div>
+                                </div>
+                            </div>
+                            <div
+                                class="mb-4 grid grid-cols-2 gap-px bg-slate-100 dark:bg-slate-700/50 rounded-lg overflow-hidden border border-slate-100 dark:border-slate-700/50">
+                                <div class="bg-white dark:bg-surface-dark p-2 text-center">
+                                    <span
+                                        class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Success</span>
+                                    <span class="block font-bold text-slate-900 dark:text-white text-sm">100%</span>
+                                </div>
+                                <div class="bg-white dark:bg-surface-dark p-2 text-center">
+                                    <span
+                                        class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Earned</span>
+                                    <span class="block font-bold text-slate-900 dark:text-white text-sm">$180k+</span>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 mb-4 line-clamp-2">
+                                Specialized in smart contracts, DeFi protocols, and NFT marketplaces. I build secure and
+                                scalable blockchain solutions.
+                            </p>
+                            <div class="mb-6 flex flex-wrap gap-2">
+                                <span
+                                    class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">Solidity</span>
+                                <span
+                                    class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">Ethereum</span>
+                                <span
+                                    class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">Web3.js</span>
+                                <span
+                                    class="rounded-md bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-400 dark:bg-slate-800/50 dark:text-slate-500">+2</span>
+                            </div>
+                            <div class="mt-auto flex gap-3">
+                                <button
+                                    class="flex-1 rounded-lg bg-primary py-2.5 text-sm font-semibold text-white shadow-md hover:bg-blue-700 hover:shadow-lg transition-all active:scale-95">Invite
+                                    to Job</button>
+                                <button
+                                    class="flex items-center justify-center rounded-lg border border-slate-200 px-3 text-slate-400 hover:bg-slate-50 hover:text-red-500 hover:border-red-200 dark:border-slate-700 dark:hover:bg-slate-800 dark:hover:text-red-500 transition-all"
+                                    title="Save to shortlist">
+                                    <span class="material-symbols-outlined text-[22px]">favorite</span>
+                                </button>
+                            </div>
+                        </div>
 
-<!-- New Developer 4 -->
-<div class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark p-5 shadow-sm hover:shadow-lg hover:border-primary/50 transition-all duration-300">
-<div class="mb-4 flex items-start justify-between gap-3">
-<div class="flex gap-3">
-<div class="relative">
-<div class="size-14 rounded-full bg-cover bg-center border border-slate-100 dark:border-slate-700" data-alt="Portrait of Lisa Anderson, QA Engineer" style='background-image: url("https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80");'></div>
-</div>
-<div>
-<div class="flex items-center gap-1">
-<h3 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Lisa A.</h3>
-<span class="material-symbols-outlined text-primary text-[18px] filled" style="font-variation-settings: 'FILL' 1;">verified</span>
-</div>
-<p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-1">QA & Automation Engineer</p>
-<div class="flex items-center gap-1 mt-0.5">
-<span class="material-symbols-outlined text-yellow-500 text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="text-xs font-bold text-slate-900 dark:text-white">4.7</span>
-<span class="text-xs text-slate-400">(45 reviews)</span>
-</div>
-</div>
-</div>
-<div class="text-right">
-<div class="font-bold text-lg text-slate-900 dark:text-white">$55<span class="text-sm font-normal text-slate-500">/hr</span></div>
-</div>
-</div>
-<div class="mb-4 grid grid-cols-2 gap-px bg-slate-100 dark:bg-slate-700/50 rounded-lg overflow-hidden border border-slate-100 dark:border-slate-700/50">
-<div class="bg-white dark:bg-surface-dark p-2 text-center">
-<span class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Success</span>
-<span class="block font-bold text-slate-900 dark:text-white text-sm">98%</span>
-</div>
-<div class="bg-white dark:bg-surface-dark p-2 text-center">
-<span class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Earned</span>
-<span class="block font-bold text-slate-900 dark:text-white text-sm">$75k+</span>
-</div>
-</div>
-<p class="text-sm text-slate-600 dark:text-slate-300 mb-4 line-clamp-2">
-                           I ensure software quality through comprehensive testing strategies, automation frameworks, and CI/CD integration.
-                       </p>
-<div class="mb-6 flex flex-wrap gap-2">
-<span class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">Selenium</span>
-<span class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">Cypress</span>
-<span class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">Jest</span>
-</div>
-<div class="mt-auto flex gap-3">
-<button class="flex-1 rounded-lg bg-primary py-2.5 text-sm font-semibold text-white shadow-md hover:bg-blue-700 hover:shadow-lg transition-all active:scale-95">Invite to Job</button>
-<button class="flex items-center justify-center rounded-lg border border-slate-200 px-3 text-slate-400 hover:bg-slate-50 hover:text-red-500 hover:border-red-200 dark:border-slate-700 dark:hover:bg-slate-800 dark:hover:text-red-500 transition-all" title="Save to shortlist">
-<span class="material-symbols-outlined text-[22px]">favorite</span>
-</button>
-</div>
-</div>
+                        <!-- New Developer 4 -->
+                        <div
+                            class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark p-5 shadow-sm hover:shadow-lg hover:border-primary/50 transition-all duration-300">
+                            <div class="mb-4 flex items-start justify-between gap-3">
+                                <div class="flex gap-3">
+                                    <div class="relative">
+                                        <div class="size-14 rounded-full bg-cover bg-center border border-slate-100 dark:border-slate-700"
+                                            data-alt="Portrait of Lisa Anderson, QA Engineer"
+                                            style='background-image: url("https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80");'>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center gap-1">
+                                            <h3
+                                                class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+                                                Lisa A.</h3>
+                                            <span class="material-symbols-outlined text-primary text-[18px] filled"
+                                                style="font-variation-settings: 'FILL' 1;">verified</span>
+                                        </div>
+                                        <p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-1">QA &
+                                            Automation Engineer</p>
+                                        <div class="flex items-center gap-1 mt-0.5">
+                                            <span class="material-symbols-outlined text-yellow-500 text-[16px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="text-xs font-bold text-slate-900 dark:text-white">4.7</span>
+                                            <span class="text-xs text-slate-400">(45 reviews)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="font-bold text-lg text-slate-900 dark:text-white">$55<span
+                                            class="text-sm font-normal text-slate-500">/hr</span></div>
+                                </div>
+                            </div>
+                            <div
+                                class="mb-4 grid grid-cols-2 gap-px bg-slate-100 dark:bg-slate-700/50 rounded-lg overflow-hidden border border-slate-100 dark:border-slate-700/50">
+                                <div class="bg-white dark:bg-surface-dark p-2 text-center">
+                                    <span
+                                        class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Success</span>
+                                    <span class="block font-bold text-slate-900 dark:text-white text-sm">98%</span>
+                                </div>
+                                <div class="bg-white dark:bg-surface-dark p-2 text-center">
+                                    <span
+                                        class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Earned</span>
+                                    <span class="block font-bold text-slate-900 dark:text-white text-sm">$75k+</span>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 mb-4 line-clamp-2">
+                                I ensure software quality through comprehensive testing strategies, automation
+                                frameworks, and CI/CD integration.
+                            </p>
+                            <div class="mb-6 flex flex-wrap gap-2">
+                                <span
+                                    class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">Selenium</span>
+                                <span
+                                    class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">Cypress</span>
+                                <span
+                                    class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">Jest</span>
+                            </div>
+                            <div class="mt-auto flex gap-3">
+                                <button
+                                    class="flex-1 rounded-lg bg-primary py-2.5 text-sm font-semibold text-white shadow-md hover:bg-blue-700 hover:shadow-lg transition-all active:scale-95">Invite
+                                    to Job</button>
+                                <button
+                                    class="flex items-center justify-center rounded-lg border border-slate-200 px-3 text-slate-400 hover:bg-slate-50 hover:text-red-500 hover:border-red-200 dark:border-slate-700 dark:hover:bg-slate-800 dark:hover:text-red-500 transition-all"
+                                    title="Save to shortlist">
+                                    <span class="material-symbols-outlined text-[22px]">favorite</span>
+                                </button>
+                            </div>
+                        </div>
 
-<!-- New Developer 5 -->
-<div class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark p-5 shadow-sm hover:shadow-lg hover:border-primary/50 transition-all duration-300">
-<div class="mb-4 flex items-start justify-between gap-3">
-<div class="flex gap-3">
-<div class="relative">
-<div class="size-14 rounded-full bg-cover bg-center border border-slate-100 dark:border-slate-700" data-alt="Portrait of James Wilson, Database Administrator" style='background-image: url("https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80");'></div>
-<div class="absolute bottom-0 right-0 size-3.5 rounded-full bg-green-500 border-2 border-white dark:border-slate-800" title="Online"></div>
-</div>
-<div>
-<div class="flex items-center gap-1">
-<h3 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">James W.</h3>
-<span class="material-symbols-outlined text-primary text-[18px] filled" style="font-variation-settings: 'FILL' 1;">verified</span>
-</div>
-<p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-1">Database Architect</p>
-<div class="flex items-center gap-1 mt-0.5">
-<span class="material-symbols-outlined text-yellow-500 text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="text-xs font-bold text-slate-900 dark:text-white">4.9</span>
-<span class="text-xs text-slate-400">(38 reviews)</span>
-</div>
-</div>
-</div>
-<div class="text-right">
-<div class="font-bold text-lg text-slate-900 dark:text-white">$90<span class="text-sm font-normal text-slate-500">/hr</span></div>
-</div>
-</div>
-<div class="mb-4 grid grid-cols-2 gap-px bg-slate-100 dark:bg-slate-700/50 rounded-lg overflow-hidden border border-slate-100 dark:border-slate-700/50">
-<div class="bg-white dark:bg-surface-dark p-2 text-center">
-<span class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Success</span>
-<span class="block font-bold text-slate-900 dark:text-white text-sm">100%</span>
-</div>
-<div class="bg-white dark:bg-surface-dark p-2 text-center">
-<span class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Earned</span>
-<span class="block font-bold text-slate-900 dark:text-white text-sm"> ₹120k+</span>
-</div>
-</div>
-<p class="text-sm text-slate-600 dark:text-slate-300 mb-4 line-clamp-2">
-                           Expert in database design, optimization, and migration. I specialize in PostgreSQL, MySQL, and NoSQL solutions for high-traffic applications.
-                       </p>
-<div class="mb-6 flex flex-wrap gap-2">
-<span class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">PostgreSQL</span>
-<span class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">MongoDB</span>
-<span class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">Redis</span>
-<span class="rounded-md bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-400 dark:bg-slate-800/50 dark:text-slate-500">+3</span>
-</div>
-<div class="mt-auto flex gap-3">
-<button class="flex-1 rounded-lg bg-primary py-2.5 text-sm font-semibold text-white shadow-md hover:bg-blue-700 hover:shadow-lg transition-all active:scale-95">Invite to Job</button>
-<button class="flex items-center justify-center rounded-lg border border-slate-200 px-3 text-slate-400 hover:bg-slate-50 hover:text-red-500 hover:border-red-200 dark:border-slate-700 dark:hover:bg-slate-800 dark:hover:text-red-500 transition-all" title="Save to shortlist">
-<span class="material-symbols-outlined text-[22px]">favorite</span>
-</button>
-</div>
-</div>
+                        <!-- New Developer 5 -->
+                        <div
+                            class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark p-5 shadow-sm hover:shadow-lg hover:border-primary/50 transition-all duration-300">
+                            <div class="mb-4 flex items-start justify-between gap-3">
+                                <div class="flex gap-3">
+                                    <div class="relative">
+                                        <div class="size-14 rounded-full bg-cover bg-center border border-slate-100 dark:border-slate-700"
+                                            data-alt="Portrait of James Wilson, Database Administrator"
+                                            style='background-image: url("https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80");'>
+                                        </div>
+                                        <div class="absolute bottom-0 right-0 size-3.5 rounded-full bg-green-500 border-2 border-white dark:border-slate-800"
+                                            title="Online"></div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center gap-1">
+                                            <h3
+                                                class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+                                                James W.</h3>
+                                            <span class="material-symbols-outlined text-primary text-[18px] filled"
+                                                style="font-variation-settings: 'FILL' 1;">verified</span>
+                                        </div>
+                                        <p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-1">Database
+                                            Architect</p>
+                                        <div class="flex items-center gap-1 mt-0.5">
+                                            <span class="material-symbols-outlined text-yellow-500 text-[16px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="text-xs font-bold text-slate-900 dark:text-white">4.9</span>
+                                            <span class="text-xs text-slate-400">(38 reviews)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="font-bold text-lg text-slate-900 dark:text-white">$90<span
+                                            class="text-sm font-normal text-slate-500">/hr</span></div>
+                                </div>
+                            </div>
+                            <div
+                                class="mb-4 grid grid-cols-2 gap-px bg-slate-100 dark:bg-slate-700/50 rounded-lg overflow-hidden border border-slate-100 dark:border-slate-700/50">
+                                <div class="bg-white dark:bg-surface-dark p-2 text-center">
+                                    <span
+                                        class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Success</span>
+                                    <span class="block font-bold text-slate-900 dark:text-white text-sm">100%</span>
+                                </div>
+                                <div class="bg-white dark:bg-surface-dark p-2 text-center">
+                                    <span
+                                        class="block text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Earned</span>
+                                    <span class="block font-bold text-slate-900 dark:text-white text-sm"> ₹120k+</span>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 mb-4 line-clamp-2">
+                                Expert in database design, optimization, and migration. I specialize in PostgreSQL,
+                                MySQL, and NoSQL solutions for high-traffic applications.
+                            </p>
+                            <div class="mb-6 flex flex-wrap gap-2">
+                                <span
+                                    class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">PostgreSQL</span>
+                                <span
+                                    class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">MongoDB</span>
+                                <span
+                                    class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-transparent hover:border-slate-300 transition-colors cursor-default">Redis</span>
+                                <span
+                                    class="rounded-md bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-400 dark:bg-slate-800/50 dark:text-slate-500">+3</span>
+                            </div>
+                            <div class="mt-auto flex gap-3">
+                                <button
+                                    class="flex-1 rounded-lg bg-primary py-2.5 text-sm font-semibold text-white shadow-md hover:bg-blue-700 hover:shadow-lg transition-all active:scale-95">Invite
+                                    to Job</button>
+                                <button
+                                    class="flex items-center justify-center rounded-lg border border-slate-200 px-3 text-slate-400 hover:bg-slate-50 hover:text-red-500 hover:border-red-200 dark:border-slate-700 dark:hover:bg-slate-800 dark:hover:text-red-500 transition-all"
+                                    title="Save to shortlist">
+                                    <span class="material-symbols-outlined text-[22px]">favorite</span>
+                                </button>
+                            </div>
+                        </div>
 
-</div>
-</main>
-</div>
-</div>
-</body></html>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <!-- Invite Modal -->
+        <div id="invite-modal"
+            class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-black/60 backdrop-blur-[2px] opacity-0 transition-opacity duration-300">
+            <div class="relative w-full max-w-[500px] scale-95 transform rounded-2xl bg-white p-6 shadow-2xl transition-all duration-300 dark:bg-[#1e293b]"
+                id="modal-content">
+                <!-- Close Button -->
+                <button onclick="closeModal()"
+                    class="absolute right-5 top-5 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200">
+                    <span class="material-symbols-outlined text-[24px]">close</span>
+                </button>
+
+                <!-- Header -->
+                <h2 class="text-xl font-bold text-slate-900 dark:text-white">Invite to Job</h2>
+                <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Send an invitation to start a project with
+                    this talent.</p>
+
+                <!-- Form -->
+                <div class="mt-6 space-y-4">
+                    <div>
+                        <label class="mb-1.5 block text-sm font-medium text-slate-900 dark:text-white">Enter work
+                            type</label>
+                        <input type="text" placeholder="e.g. Full-time Contract, Hourly Project"
+                            class="w-full rounded-lg border border-slate-200 px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-primary focus:ring-1 focus:ring-primary dark:border-slate-600 dark:bg-slate-800 dark:text-white" />
+                    </div>
+
+                    <div>
+                        <label class="mb-1.5 block text-sm font-medium text-slate-900 dark:text-white">Enter working
+                            E-mail id</label>
+                        <input type="email" placeholder="yourname@company.com"
+                            class="w-full rounded-lg border border-slate-200 px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-primary focus:ring-1 focus:ring-primary dark:border-slate-600 dark:bg-slate-800 dark:text-white" />
+                    </div>
+
+                    <div>
+                        <label class="mb-1.5 block text-sm font-medium text-slate-900 dark:text-white">Work
+                            details</label>
+                        <textarea placeholder="Describe the project scope, requirements, and timeline..."
+                            class="h-32 w-full resize-none rounded-lg border border-slate-200 px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-primary focus:ring-1 focus:ring-primary dark:border-slate-600 dark:bg-slate-800 dark:text-white"></textarea>
+                    </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="mt-8 flex justify-end gap-3">
+                    <button onclick="closeModal()"
+                        class="rounded-lg border border-slate-200 bg-white px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700">
+                        Cancel
+                    </button>
+                    <button
+                        class="rounded-lg bg-[#135bec] px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-700 shadow-sm shadow-blue-200 dark:shadow-none">
+                        Send Invitation
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Define modal functions globally
+            window.openModal = function () {
+                const modal = document.getElementById('invite-modal');
+                const modalContent = document.getElementById('modal-content');
+                if (modal && modalContent) {
+                    modal.classList.remove('hidden');
+                    // Small delay to allow display:block to apply before opacity transition
+                    setTimeout(() => {
+                        modal.classList.remove('opacity-0');
+                        modalContent.classList.remove('scale-95');
+                        modalContent.classList.add('scale-100');
+                    }, 10);
+                }
+            };
+
+            window.closeModal = function () {
+                const modal = document.getElementById('invite-modal');
+                const modalContent = document.getElementById('modal-content');
+                if (modal && modalContent) {
+                    modal.classList.add('opacity-0');
+                    modalContent.classList.remove('scale-100');
+                    modalContent.classList.add('scale-95');
+
+                    // Wait for transition to finish before hiding
+                    setTimeout(() => {
+                        modal.classList.add('hidden');
+                    }, 300);
+                }
+            };
+
+            // Use event delegation to handle clicks on any "Invite to Job" button
+            document.addEventListener('click', function (e) {
+                // Find the closest button element if clicked on a child
+                const btn = e.target.closest('button');
+
+                if (btn) {
+                    // Check if the button is an "Invite to Job" button
+                    // Normalize text to handle newlines and multiple spaces
+                    const text = btn.textContent.replace(/\s+/g, ' ').trim();
+                    if (text === 'Invite to Job') {
+                        e.preventDefault();
+                        window.openModal();
+                    }
+                }
+
+                // Close modal when clicking on the backdrop
+                if (e.target.id === 'invite-modal') {
+                    window.closeModal();
+                }
+            });
+        </script>
+</body>
+
+</html>

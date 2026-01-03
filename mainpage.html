@@ -36,6 +36,17 @@
             },
         }
     </script>
+    <script>
+            (function () {
+                const theme = localStorage.getItem('theme') || 'system';
+                const element = document.documentElement;
+                if (theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    element.classList.add('dark');
+                } else {
+                    element.classList.remove('dark');
+                }
+            })();
+    </script>
 </head>
 
 <body class="bg-background-light dark:bg-background-dark text-text-main dark:text-[#f8f9fc] font-display antialiased">
@@ -46,9 +57,13 @@
                 <div class="flex items-center gap-8">
                     <div class="flex items-center gap-2 text-primary">
                         <div class="flex items-center gap-2">
-                         <a href="mainpage.html"><img src="assetes/logo.png" alt="NeXLace Logo" class="h-10 w-auto object-contain" /></a>
-                         <a href="mainpage.html"><h2 class="text-xl font-black tracking-tight text-[#0d121b] dark:text-white">NeXLace</h2></a>
-</div>
+                            <a href="mainpage.html"><img src="assetes/logo.png" alt="NeXLace Logo"
+                                    class="h-10 w-auto object-contain" /></a>
+                            <a href="mainpage.html">
+                                <h2 class="text-xl font-black tracking-tight text-[#0d121b] dark:text-white">NeXLace
+                                </h2>
+                            </a>
+                        </div>
                     </div>
                     <div class="hidden md:flex items-center gap-6">
                         <a class="text-sm font-medium text-text-main dark:text-[#e7ebf3] hover:text-primary dark:hover:text-primary transition-colors"
@@ -70,7 +85,8 @@
                     <button class="text-text-sub hover:text-primary dark:text-gray-400 dark:hover:text-white">
                         <span class="material-symbols-outlined">help</span>
                     </button>
-                    <button onclick="window.location.href='notification.html'" class="text-text-sub hover:text-primary dark:text-gray-400 dark:hover:text-white">
+                    <button onclick="window.location.href='notification.html'"
+                        class="text-text-sub hover:text-primary dark:text-gray-400 dark:hover:text-white">
                         <span class="material-symbols-outlined">notifications</span>
                     </button>
                     <div class="relative">
@@ -118,9 +134,9 @@
                     <h1 class="text-3xl font-bold tracking-tight text-text-main dark:text-white">Good morning, Jason
                     </h1>
                     <button onclick="window.location.href='postjob.html'"
-                                class="flex h-10 items-center justify-center rounded-full bg-primary px-6 text-sm font-bold text-white hover:bg-primary-dark transition-colors shadow-sm">
-                                <span class="material-symbols-outlined text-[18px] mr-1">add</span> Post a job
-                            </button>
+                        class="flex h-10 items-center justify-center rounded-full bg-primary px-6 text-sm font-bold text-white hover:bg-primary-dark transition-colors shadow-sm">
+                        <span class="material-symbols-outlined text-[18px] mr-1">add</span> Post a job
+                    </button>
                 </div>
                 <div>
                     <div class="flex items-center justify-between mb-4">
@@ -271,7 +287,7 @@
                             <li><a class="hover:text-white" href="#">Accessibility</a></li>
                         </ul>
                     </div>
-                    
+
                 </div>
                 <div
                     class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">

@@ -23,6 +23,8 @@
                         "primary-dark": "#0e44b3",
                         "background-light": "#f6f6f8",
                         "background-dark": "#101622",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#151c2b",
                         "card-light": "#ffffff",
                         "card-dark": "#151c2b",
                         "text-main": "#0d121b",
@@ -36,6 +38,17 @@
             },
         }
     </script>
+    <script>
+            (function () {
+                const theme = localStorage.getItem('theme') || 'system';
+                const element = document.documentElement;
+                if (theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    element.classList.add('dark');
+                } else {
+                    element.classList.remove('dark');
+                }
+            })();
+    </script>
 </head>
 
 <body class="bg-background-light dark:bg-background-dark text-text-main dark:text-[#f8f9fc] font-display antialiased">
@@ -46,9 +59,13 @@
                 <div class="flex items-center gap-8">
                     <div class="flex items-center gap-2 text-primary">
                         <div class="flex items-center gap-2">
-                         <a href="mainpage.html"><img src="assetes/logo.png" alt="NeXLace Logo" class="h-10 w-auto object-contain" /></a>
-                         <a href="mainpage.html"><h2 class="text-xl font-black tracking-tight text-[#0d121b] dark:text-white">NeXLace</h2></a>
-</div>
+                            <a href="mainpage.html"><img src="assetes/logo.png" alt="NeXLace Logo"
+                                    class="h-10 w-auto object-contain" /></a>
+                            <a href="mainpage.html">
+                                <h2 class="text-xl font-black tracking-tight text-[#0d121b] dark:text-white">NeXLace
+                                </h2>
+                            </a>
+                        </div>
                     </div>
                     <div class="hidden md:flex items-center gap-6">
                         <a class="text-sm font-medium text-text-main dark:text-[#e7ebf3] hover:text-primary dark:hover:text-primary transition-colors"
@@ -70,7 +87,8 @@
                     <button class="text-text-sub hover:text-primary dark:text-gray-400 dark:hover:text-white">
                         <span class="material-symbols-outlined">help</span>
                     </button>
-                    <button onclick="window.location.href='notification.html'" class="text-text-sub hover:text-primary dark:text-gray-400 dark:hover:text-white">
+                    <button onclick="window.location.href='notification.html'"
+                        class="text-text-sub hover:text-primary dark:text-gray-400 dark:hover:text-white">
                         <span class="material-symbols-outlined">notifications</span>
                     </button>
                     <div class="relative">
@@ -112,234 +130,382 @@
                     </div>
                 </div>
         </header>
-<!-- Main Layout -->
-<main class="flex flex-1 overflow-hidden">
-<!-- Left Sidebar: Conversation List -->
-<aside class="w-full md:w-96 flex flex-col border-r border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark z-10">
-<!-- Sidebar Header -->
-<div class="flex flex-col gap-4 p-4 border-b border-border-light dark:border-border-dark">
-<div class="flex justify-between items-center">
-<h2 class="text-2xl font-bold tracking-tight">Messages</h2>
-<button class="flex items-center justify-center size-10 rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition-colors">
-<span class="material-symbols-outlined text-xl">edit_square</span>
-</button>
-</div>
-<!-- Search -->
-<div class="relative w-full">
-<span class="absolute inset-y-0 left-0 flex items-center pl-3 text-text-secondary-light dark:text-text-secondary-dark">
-<span class="material-symbols-outlined text-xl">search</span>
-</span>
-<input class="w-full h-10 pl-10 pr-4 rounded-lg bg-background-light dark:bg-background-dark border-none focus:ring-2 focus:ring-primary text-sm placeholder:text-text-secondary-light dark:placeholder:text-text-secondary-dark" placeholder="Search conversations..." type="text"/>
-</div>
-<!-- Chips Filter -->
-<div class="flex gap-2 overflow-x-auto no-scrollbar pb-1">
-<button class="px-4 py-1.5 rounded-full bg-primary text-white text-xs font-medium whitespace-nowrap">All</button>
-<button class="px-4 py-1.5 rounded-full bg-background-light dark:bg-background-dark hover:bg-gray-200 dark:hover:bg-gray-700 text-text-secondary-light dark:text-text-secondary-dark text-xs font-medium whitespace-nowrap transition-colors">Unread</button>
-<button class="px-4 py-1.5 rounded-full bg-background-light dark:bg-background-dark hover:bg-gray-200 dark:hover:bg-gray-700 text-text-secondary-light dark:text-text-secondary-dark text-xs font-medium whitespace-nowrap transition-colors">Archived</button>
-<button class="px-4 py-1.5 rounded-full bg-background-light dark:bg-background-dark hover:bg-gray-200 dark:hover:bg-gray-700 text-text-secondary-light dark:text-text-secondary-dark text-xs font-medium whitespace-nowrap transition-colors">Support</button>
-</div>
-</div>
-<!-- Conversations List -->
-<div class="flex-1 overflow-y-auto">
-<!-- Active Item -->
-<div class="group flex items-center gap-3 p-4 cursor-pointer bg-primary/5 border-l-4 border-primary hover:bg-primary/10 transition-colors">
-<div class="relative shrink-0">
-<div class="bg-center bg-no-repeat bg-cover rounded-full size-12" data-alt="Portrait of Sarah Jenkins" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuClboGwbK4px3C5fwaYmYHOG7Lt_jnhSNbyEKG55gmoQ7BEvJAiwwLlpglaGY2VMdmqy_v1gGSwwJMeaXB9JIGPmwnzAAvzgd6R3U7QHS9sd0aKVqGLGXOm-dplNy6UIXTmZabfdJmdaJhIdHMGlJW4yKRkEjXZK9h7HbUyMA0m5c-x1hOKZLRAUibpwth_MnWnNJQiJkybg71UzwPyRzonSGBFVbY1OdefYb8dplCoHx_M1v74GHswArgS7vwshRJUzlIhLZl_n_I");'></div>
-<span class="absolute bottom-0 right-0 size-3 bg-green-500 rounded-full border-2 border-surface-light dark:border-surface-dark"></span>
-</div>
-<div class="flex-1 min-w-0">
-<div class="flex justify-between items-baseline mb-1">
-<h3 class="font-semibold text-sm truncate text-text-main-light dark:text-text-main-dark">Sarah Jenkins</h3>
-<span class="text-xs text-primary font-medium">10:42 AM</span>
-</div>
-<p class="text-sm truncate text-text-main-light dark:text-text-main-dark font-medium">Here are the mockups you asked for.</p>
-</div>
-</div>
-<!-- Regular Item -->
-<div class="group flex items-center gap-3 p-4 cursor-pointer hover:bg-background-light dark:hover:bg-background-dark border-l-4 border-transparent transition-colors">
-<div class="relative shrink-0">
-<div class="bg-center bg-no-repeat bg-cover rounded-full size-12" data-alt="Portrait of Michael Chen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCrBN0anrhlxoRu2iRnGwkWGcSXOwG16rSXSUpiULPWinNFJ2ZkvuwOkViSh9FL62K3Y9yoZ6bR-9eIVt5RvvbX0EIs-r8DqxjMEhpIww0ydLvEESWE4R4RUEyjDNv9exFU_nroi8nRNSyKC3yGZuf3b7x8PVtKV6vxNxjBeNBAdhVHKXTC2pTzCcQl0sbviP-pl55jSb1wDslUFDxEIjPbgZw-3AdO0cHgoBrfRfiWhMKPqJuek-hN-8JZN_CGGNnNS0wlCQTfnQE");'></div>
-<span class="absolute bottom-0 right-0 size-3 bg-gray-400 rounded-full border-2 border-surface-light dark:border-surface-dark"></span>
-</div>
-<div class="flex-1 min-w-0">
-<div class="flex justify-between items-baseline mb-1">
-<h3 class="font-semibold text-sm truncate text-text-main-light dark:text-text-main-dark">Michael Chen</h3>
-<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark">Yesterday</span>
-</div>
-<p class="text-sm truncate text-text-secondary-light dark:text-text-secondary-dark">Can we reschedule the sprint review?</p>
-</div>
-<div class="shrink-0 flex flex-col items-end gap-1">
-<span class="flex items-center justify-center h-5 min-w-5 px-1.5 rounded-full bg-primary text-white text-[10px] font-bold">2</span>
-</div>
-</div>
-<!-- Regular Item -->
-<div class="group flex items-center gap-3 p-4 cursor-pointer hover:bg-background-light dark:hover:bg-background-dark border-l-4 border-transparent transition-colors">
-<div class="relative shrink-0">
-<div class="flex items-center justify-center rounded-full size-12 bg-purple-100 text-purple-600 font-bold text-lg dark:bg-purple-900 dark:text-purple-200">
-                            AC
-                        </div>
-</div>
-<div class="flex-1 min-w-0">
-<div class="flex justify-between items-baseline mb-1">
-<h3 class="font-semibold text-sm truncate text-text-main-light dark:text-text-main-dark">Acme Corp Team</h3>
-<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark">Tue</span>
-</div>
-<p class="text-sm truncate text-text-secondary-light dark:text-text-secondary-dark">David: I pushed the latest commit to...</p>
-</div>
-</div>
-<!-- Regular Item -->
-<div class="group flex items-center gap-3 p-4 cursor-pointer hover:bg-background-light dark:hover:bg-background-dark border-l-4 border-transparent transition-colors">
-<div class="relative shrink-0">
-<div class="bg-center bg-no-repeat bg-cover rounded-full size-12" data-alt="Portrait of Emily Davis" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCAIQrWamTlSNuIJTFidSHy5_hJeR6GTYL8DC0jCNJHTh3HvP82GVzfzK7qZf9IvfFG4nyJNtrXiXG6qn_VAYooA940zMup-8n1ltippi2hKp730VccFj1TrZxf_eKrVTsyH1rc_Xl5TDTjymrmRQ6L7w0v-W62ZfgB4EqoIeXaAJd3PmpF38qBbcttn88eW6kKJhae1FwwlaHBq6WGfh7yBaq4xL8uPypUuMWg1QNfl-djpZqZwC4QFNq8X2-q04d-HNbMvCucBk8");'></div>
-</div>
-<div class="flex-1 min-w-0">
-<div class="flex justify-between items-baseline mb-1">
-<h3 class="font-semibold text-sm truncate text-text-main-light dark:text-text-main-dark">Emily Davis</h3>
-<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark">Jan 12</span>
-</div>
-<p class="text-sm truncate text-text-secondary-light dark:text-text-secondary-dark">Project brief attached. Let me know.</p>
-</div>
-</div>
-</div>
-</aside>
-<!-- Right Pane: Active Conversation -->
-<section class="hidden md:flex flex-col flex-1 bg-background-light dark:bg-background-dark relative">
-<!-- Chat Header -->
-<div class="flex items-center justify-between px-6 py-3 border-b border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark z-10 shadow-sm">
-<div class="flex items-center gap-3">
-<div class="relative">
-<div class="bg-center bg-no-repeat bg-cover rounded-full size-10" data-alt="Small portrait of Sarah Jenkins" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBzdP5KtQYiXkk5ry3hrUngtqeo_P_GPJv4FWkaKnOS5wNbKfnypGEs2R0glpR7-lSlalqBmPEAHxABHdpm78Lf7kn080o0kx56_hNUJ1rXl_z7ek_oDyjVyLcFReFmk4_DqSOQt6TZolHdUBmOaFz9e1LvtG513VCwQ5-y-MRl1f37e4hBDvjBFAhizpyCl8Fg7xkQTwFpQdPMmXwZi_4U1-SbIdmEgdHmNDKDGICeHoul2LMJ4msgJpeRqAbKTfkPwSvGWfCKPVE");'></div>
-<span class="absolute bottom-0 right-0 size-2.5 bg-green-500 rounded-full border-2 border-surface-light dark:border-surface-dark"></span>
-</div>
-<div>
-<h3 class="font-bold text-base text-text-main-light dark:text-text-main-dark">Sarah Jenkins</h3>
-<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark">Front End Project • Active now</p>
-</div>
-</div>
-<div class="flex items-center gap-2">
-<button class="p-2 rounded-lg text-text-secondary-light dark:text-text-secondary-dark hover:bg-background-light dark:hover:bg-background-dark hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[20px]">phone</span>
-</button>
-<button class="p-2 rounded-lg text-text-secondary-light dark:text-text-secondary-dark hover:bg-background-light dark:hover:bg-background-dark hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[20px]">videocam</span>
-</button>
-<button class="p-2 rounded-lg text-text-secondary-light dark:text-text-secondary-dark hover:bg-background-light dark:hover:bg-background-dark hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[20px]">more_vert</span>
-</button>
-<button class="ml-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary text-sm font-semibold rounded-lg transition-colors">
-                        View Contract
-                    </button>
-</div>
-</div>
-<!-- Messages Stream -->
-<div class="flex-1 overflow-y-auto p-6 flex flex-col gap-6" id="chat-stream">
-<!-- System Message -->
-<div class="flex justify-center my-4">
-<span class="px-3 py-1 bg-border-light dark:bg-border-dark rounded-full text-xs font-medium text-text-secondary-light dark:text-text-secondary-dark">
-                        Contract Started - Jan 12
-                    </span>
-</div>
-<!-- Received Message -->
-<div class="flex gap-4 max-w-[80%]">
-<div class="bg-center bg-no-repeat bg-cover rounded-full size-8 mt-1 shrink-0" data-alt="Small avatar of Sarah" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAtY0fOoJZzDiGkxwOj4dPvQNAYBFFNZfLBRLxxLmaUoRxb0H3R98mJRoKn44ISLcQDEZjA5toB1MuaaTGG50w3naeR_r5bEWQagwwQjwQl3nfyBaps_sNLf80inIvDPnsGpKpxTgEr-JeFYQEEkTV5KvOpEHVbpEfQwsqpQsk-95mo2qlTW9MR6-UrIGTBcjJUTg0aWa3NSPHoN3AOlvynGp4qNFk3UuF0q0Rzx5g3NnUa41nmqG_IXBhdrGxJWUKf_-sMqSU6hu8");'></div>
-<div class="flex flex-col gap-1">
-<div class="flex items-baseline gap-2">
-<span class="text-sm font-semibold text-text-main-light dark:text-text-main-dark">Sarah Jenkins</span>
-<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark">10:30 AM</span>
-</div>
-<div class="p-3 bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-2xl rounded-tl-none shadow-sm text-text-main-light dark:text-text-main-dark text-sm leading-relaxed">
-<p>Hi! Could you update the landing page hero section? The client wants the headline to be bigger.</p>
-</div>
-</div>
-</div>
-<!-- Sent Message -->
-<div class="flex flex-row-reverse gap-4 max-w-[80%] self-end">
-<div class="bg-center bg-no-repeat bg-cover rounded-full size-8 mt-1 shrink-0" data-alt="User avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBigY-zC7w3oM8oZJVx2hLR9HH4VBIUZ_Z8G1NLgj4kwWUHhJbg3z382wqkIkk8wcD_uZv0HY6O7dEJudnrLgVXwaYamaZc5I8ARSqm7tU4AmXUZ8dIHLLz4m_RhzaoUstI0uTitxmpLj0KgB-ylZzpCNaEzQKOah7qmxxF5lG_C6o5K_XaMfSlKyHZ4bHmbVJeVuioo2wr0C7VYUYRtf2LjK9C76LnYYe35_oHNxQoHs9ReM2walJB7jpyfL2JmrpSGBT99AqQdYA");'></div>
-<div class="flex flex-col gap-1 items-end">
-<div class="flex items-baseline gap-2">
-<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark">10:32 AM</span>
-<span class="text-sm font-semibold text-text-main-light dark:text-text-main-dark">You</span>
-</div>
-<div class="p-3 bg-primary text-white rounded-2xl rounded-tr-none shadow-sm text-sm leading-relaxed">
-<p>Sure thing. Do they have a specific font size in mind, or should I just bump it up by 20%?</p>
-</div>
-</div>
-</div>
-<!-- Received Message with Code -->
-<div class="flex gap-4 max-w-[80%]">
-<div class="bg-center bg-no-repeat bg-cover rounded-full size-8 mt-1 shrink-0" data-alt="Small avatar of Sarah" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAKta4P_9JdwT8UnscSC5nTP4NrArDnw3KndqSZspve0OvDxg2zyQ3XcMMK4kfRIql7BJsbtOkSdCQN8YyHSuvTFhj4SaNqkRGF9SkMiJCus6DMc4SpVSqoewbeiY64S3KEh7rCf4cMN5v6qO06DYpAuqXLh7u7VpIEq_R_5lvmAu_i9ifItwCipfJbt6_UIiDJhThJq8Cu8BXFgbHFePRhw84Cvs02-OpH1gbTqNcszsEgNWRaGCbDOtg44BJCn9Y4I_G19WjMJAY");'></div>
-<div class="flex flex-col gap-1">
-<div class="flex items-baseline gap-2">
-<span class="text-sm font-semibold text-text-main-light dark:text-text-main-dark">Sarah Jenkins</span>
-<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark">10:35 AM</span>
-</div>
-<div class="p-3 bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-2xl rounded-tl-none shadow-sm text-text-main-light dark:text-text-main-dark text-sm leading-relaxed">
-<p class="mb-2">Just make it responsive. Something like this should work for the main heading class:</p>
-<div class="bg-gray-100 dark:bg-gray-800 p-2 rounded-lg font-mono text-xs text-gray-800 dark:text-gray-200 overflow-x-auto">
-                                .hero-title {<br/>
-                                  font-size: 3rem;<br/>
-                                  line-height: 1.2;<br/>
-                                }
+        <!-- Main Layout -->
+        <main class="flex flex-1 overflow-hidden h-full">
+            <!-- Left Sidebar: Conversation List -->
+            <aside id="message-sidebar"
+                class="w-full md:w-80 flex flex-col border-r border-[#e7ebf3] dark:border-[#2a3447] bg-white dark:bg-card-dark z-10 shrink-0">
+                <!-- Sidebar Header -->
+                <div class="px-5 py-5 pb-3">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-xl font-bold tracking-tight text-text-main dark:text-white">Messages</h2>
+                        <button aria-label="New Message"
+                            class="text-text-sub flex items-center justify-center hover:text-primary transition-colors">
+                            <span class="material-symbols-outlined text-[22px]">edit_square</span>
+                        </button>
+                    </div>
+                    <!-- Search -->
+                    <div class="relative w-full">
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-text-sub">
+                            <span class="material-symbols-outlined text-[20px]">search</span>
+                        </span>
+                        <input
+                            class="w-full h-10 pl-10 pr-4 rounded-lg bg-background-light dark:bg-[#101622] border border-[#e7ebf3] dark:border-[#2a3447] focus:ring-1 focus:ring-primary focus:border-primary text-sm placeholder:text-text-sub dark:text-white"
+                            placeholder="Search messages" type="text" />
+                    </div>
+                </div>
+
+                <!-- Conversations List -->
+                <div class="flex-1 overflow-y-auto">
+                    <!-- Active Item -->
+                    <div
+                        class="relative group flex items-start gap-3 px-5 py-4 cursor-pointer bg-[#f0f6ff] dark:bg-primary/5 transition-colors">
+                        <div class="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
+                        <div class="relative shrink-0 mt-0.5">
+                            <div class="bg-center bg-no-repeat bg-cover rounded-full size-11"
+                                data-alt="Portrait of Sarah Jenkins"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuClboGwbK4px3C5fwaYmYHOG7Lt_jnhSNbyEKG55gmoQ7BEvJAiwwLlpglaGY2VMdmqy_v1gGSwwJMeaXB9JIGPmwnzAAvzgd6R3U7QHS9sd0aKVqGLGXOm-dplNy6UIXTmZabfdJmdaJhIdHMGlJW4yKRkEjXZK9h7HbUyMA0m5c-x1hOKZLRAUibpwth_MnWnNJQiJkybg71UzwPyRzonSGBFVbY1OdefYb8dplCoHx_M1v74GHswArgS7vwshRJUzlIhLZl_n_I");'>
                             </div>
-</div>
-</div>
-</div>
-<!-- Received Message -->
-<div class="flex gap-4 max-w-[80%]">
-<div class="bg-center bg-no-repeat bg-cover rounded-full size-8 mt-1 shrink-0" data-alt="Small avatar of Sarah" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDK6g_vrCzkkUDr0Q75QzE8F2rzyeH1Zt0ctypyq16KUVOP37iEnjUqeteCfjEB15EsC_uRSqwFxLLfZB9r2QQXFM5s_2fL_CvT6Immk-WVyYqWEN4DgwcQRUiwOX4UiUkjeg0ru2XsoG_YfzAx0aH0VYn5XX-SWcqqbmmGG8dNaqN8pFg_ZA5MpCB8CaUlua3mA6qzePod-lDXWsH3dBoKodLtOMfQIj-2jjerRYXdnYZhRWhDjWXKRhFDf_jayTpEwGngTtP85tM");'></div>
-<div class="flex flex-col gap-1">
-<div class="flex items-baseline gap-2">
-<span class="text-sm font-semibold text-text-main-light dark:text-text-main-dark">Sarah Jenkins</span>
-<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark">10:42 AM</span>
-</div>
-<div class="p-3 bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-2xl rounded-tl-none shadow-sm text-text-main-light dark:text-text-main-dark text-sm leading-relaxed">
-<p>Here are the mockups you asked for.</p>
-<!-- File Attachment -->
-<div class="mt-3 flex items-center gap-3 p-2 rounded-lg bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-<div class="bg-red-100 text-red-500 rounded p-1.5">
-<span class="material-symbols-outlined text-[20px]">picture_as_pdf</span>
-</div>
-<div class="flex-1 min-w-0">
-<p class="text-xs font-semibold truncate text-text-main-light dark:text-text-main-dark">Homepage_V2_Final.pdf</p>
-<p class="text-[10px] text-text-secondary-light dark:text-text-secondary-dark">2.4 MB</p>
-</div>
-<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark text-[20px]">download</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Input Area -->
-<div class="p-4 bg-surface-light dark:bg-surface-dark border-t border-border-light dark:border-border-dark z-10">
-<div class="flex flex-col gap-2 bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-xl p-2 focus-within:ring-1 focus-within:ring-primary focus-within:border-primary transition-all">
-<!-- Text Area -->
-<textarea class="w-full bg-transparent border-none focus:ring-0 resize-none max-h-32 min-h-[48px] text-sm text-text-main-light dark:text-text-main-dark placeholder:text-text-secondary-light dark:placeholder:text-text-secondary-dark py-2 px-2" placeholder="Type a message to Sarah..."></textarea>
-<!-- Toolbar -->
-<div class="flex items-center justify-between px-1">
-<div class="flex items-center gap-1">
-<button class="p-1.5 rounded-full text-text-secondary-light dark:text-text-secondary-dark hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" title="Attach file">
-<span class="material-symbols-outlined text-[20px]">attach_file</span>
-</button>
-<button class="p-1.5 rounded-full text-text-secondary-light dark:text-text-secondary-dark hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" title="Insert code block">
-<span class="material-symbols-outlined text-[20px]">code</span>
-</button>
-<button class="p-1.5 rounded-full text-text-secondary-light dark:text-text-secondary-dark hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" title="Add emoji">
-<span class="material-symbols-outlined text-[20px]">sentiment_satisfied</span>
-</button>
-<button class="p-1.5 rounded-full text-text-secondary-light dark:text-text-secondary-dark hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" title="Add image">
-<span class="material-symbols-outlined text-[20px]">image</span>
-</button>
-</div>
-<button class="flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white px-4 py-1.5 rounded-lg text-sm font-semibold transition-colors shadow-sm">
-<span>Send</span>
-<span class="material-symbols-outlined text-[18px]">send</span>
-</button>
-</div>
-</div>
-<div class="text-center mt-2">
-<p class="text-[10px] text-text-secondary-light dark:text-text-secondary-dark">Press <span class="font-mono bg-gray-100 dark:bg-gray-800 px-1 rounded">Enter</span> to send, <span class="font-mono bg-gray-100 dark:bg-gray-800 px-1 rounded">Shift + Enter</span> for new line</p>
-</div>
-</div>
-</section>
-</main>
-</body></html>
+                            <span
+                                class="absolute bottom-0.5 right-0.5 size-2.5 bg-green-500 rounded-full border-2 border-[#f0f6ff] dark:border-[#151c2b]"></span>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <div class="flex justify-between items-baseline mb-0.5">
+                                <h3 class="font-bold text-sm truncate text-text-main dark:text-white">
+                                    Sarah J.</h3>
+                                <span class="text-xs text-primary font-medium">Now</span>
+                            </div>
+                            <p class="text-xs truncate text-text-main dark:text-[#cdcfd4] line-clamp-1"><span
+                                    class="font-medium">You:</span> Invitation sent: Full-time...</p>
+                        </div>
+                    </div>
+
+                    <!-- Regular Item -->
+                    <div
+                        class="group flex items-start gap-3 px-5 py-4 cursor-pointer hover:bg-gray-50 dark:hover:bg-[#1f2937] transition-colors border-b border-[#e7ebf3]/50 dark:border-[#2a3447]/50">
+                        <div class="relative shrink-0 mt-0.5">
+                            <div class="bg-center bg-no-repeat bg-cover rounded-full size-11"
+                                data-alt="Portrait of Michael Chen"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCrBN0anrhlxoRu2iRnGwkWGcSXOwG16rSXSUpiULPWinNFJ2ZkvuwOkViSh9FL62K3Y9yoZ6bR-9eIVt5RvvbX0EIs-r8DqxjMEhpIww0ydLvEESWE4R4RUEyjDNv9exFU_nroi8nRNSyKC3yGZuf3b7x8PVtKV6vxNxjBeNBAdhVHKXTC2pTzCcQl0sbviP-pl55jSb1wDslUFDxEIjPbgZw-3AdO0cHgoBrfRfiWhMKPqJuek-hN-8JZN_CGGNnNS0wlCQTfnQE");'>
+                            </div>
+                            <!-- Offline/Status indicator could go here, omitting for now based on mockup which only shows active green on some -->
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <div class="flex justify-between items-baseline mb-0.5">
+                                <h3 class="font-bold text-sm truncate text-text-main dark:text-white">
+                                    David C.</h3>
+                                <span class="text-xs text-text-sub">2h ago</span>
+                            </div>
+                            <p class="text-xs truncate text-text-sub">That sounds great! When can w...</p>
+                        </div>
+                    </div>
+
+                    <!-- Regular Item -->
+                    <div
+                        class="group flex items-start gap-3 px-5 py-4 cursor-pointer hover:bg-gray-50 dark:hover:bg-[#1f2937] transition-colors border-b border-[#e7ebf3]/50 dark:border-[#2a3447]/50">
+                        <div class="relative shrink-0 mt-0.5">
+                            <div class="bg-center bg-no-repeat bg-cover rounded-full size-11"
+                                data-alt="Portrait of Emily Davis"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCAIQrWamTlSNuIJTFidSHy5_hJeR6GTYL8DC0jCNJHTh3HvP82GVzfzK7qZf9IvfFG4nyJNtrXiXG6qn_VAYooA940zMup-8n1ltippi2hKp730VccFj1TrZxf_eKrVTsyH1rc_Xl5TDTjymrmRQ6L7w0v-W62ZfgB4EqoIeXaAJd3PmpF38qBbcttn88eW6kKJhae1FwwlaHBq6WGfh7yBaq4xL8uPypUuMWg1QNfl-djpZqZwC4QFNq8X2-q04d-HNbMvCucBk8");'>
+                            </div>
+                            <span
+                                class="absolute bottom-0.5 right-0.5 size-2.5 bg-green-500 rounded-full border-2 border-white dark:border-[#151c2b]"></span>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <div class="flex justify-between items-baseline mb-0.5">
+                                <h3 class="font-bold text-sm truncate text-text-main dark:text-white">
+                                    Elena R.</h3>
+                                <span class="text-xs text-text-sub">Yesterday</span>
+                            </div>
+                            <p class="text-xs truncate text-text-sub">File attached: design-v2.fig</p>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Right Pane: Active Conversation -->
+            <section id="chat-section" class="hidden md:flex flex-col flex-1 bg-white dark:bg-background-dark relative">
+
+
+                <!-- Chat Header -->
+                <div
+                    class="flex items-center justify-between px-8 py-4 border-b border-[#e7ebf3] dark:border-[#2a3447] bg-white dark:bg-card-dark">
+                    <div class="flex items-center gap-3">
+                        <button id="back-to-list"
+                            class="md:hidden p-2 -ml-2 text-text-sub hover:text-primary transition-colors"
+                            aria-label="Back to conversations">
+                            <span class="material-symbols-outlined">arrow_back</span>
+                        </button>
+                        <div class="relative">
+                            <div class="bg-center bg-no-repeat bg-cover rounded-full size-11"
+                                data-alt="Small portrait of Sarah Jenkins"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBzdP5KtQYiXkk5ry3hrUngtqeo_P_GPJv4FWkaKnOS5wNbKfnypGEs2R0glpR7-lSlalqBmPEAHxABHdpm78Lf7kn080o0kx56_hNUJ1rXl_z7ek_oDyjVyLcFReFmk4_DqSOQt6TZolHdUBmOaFz9e1LvtG513VCwQ5-y-MRl1f37e4hBDvjBFAhizpyCl8Fg7xkQTwFpQdPMmXwZi_4U1-SbIdmEgdHmNDKDGICeHoul2LMJ4msgJpeRqAbKTfkPwSvGWfCKPVE");'>
+                            </div>
+                            <span
+                                class="absolute bottom-0.5 right-0.5 size-3 bg-green-500 rounded-full border-2 border-white dark:border-[#151c2b]"></span>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-1.5">
+                                <h3 class="font-bold text-lg text-text-main dark:text-white">Sarah J.</h3>
+                                <span class="material-symbols-outlined text-primary text-[18px] filled"
+                                    style="font-variation-settings: 'FILL' 1;">verified</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 text-xs text-text-sub">
+                                <span class="inline-block size-1.5 rounded-full bg-green-500"></span>
+                                <span>Online • Local Time 10:42 AM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button aria-label="Voice Call"
+                            class="p-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors">
+                            <span class="material-symbols-outlined text-[24px]">call</span>
+                        </button>
+                        <button aria-label="Video Call"
+                            class="p-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors">
+                            <span class="material-symbols-outlined text-[24px]">videocam</span>
+                        </button>
+                        <button aria-label="More Options"
+                            class="p-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors">
+                            <span class="material-symbols-outlined text-[24px]">more_vert</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Messages Stream -->
+                <div class="flex-1 overflow-y-auto p-8 flex flex-col items-center scroll-smooth" id="chat-stream">
+                    <!-- System Message -->
+                    <div class="my-6">
+                        <span
+                            class="px-4 py-1.5 bg-[#e7ebf3] dark:bg-[#1f2937] rounded-full text-xs font-semibold text-text-sub">
+                            Today
+                        </span>
+                    </div>
+
+                    <div class="text-xs text-[#a0aec0] mb-8 italic">You started a new conversation with Sarah J.</div>
+
+                    <!-- Job Invitation Card -->
+                    <div class="w-full max-w-xl self-center relative mr-12">
+                        <div
+                            class="bg-white dark:bg-card-dark border border-[#e7ebf3] dark:border-[#2a3447] rounded-xl overflow-hidden shadow-sm">
+                            <div
+                                class="px-6 py-4 bg-[#f0f6ff] dark:bg-[#1a2333] border-b border-[#e7ebf3] dark:border-[#2a3447] flex justify-between items-center">
+                                <div class="flex items-center gap-3">
+                                    <div class="p-2 bg-white dark:bg-[#252f3f] rounded-lg text-primary shadow-sm">
+                                        <span class="material-symbols-outlined text-[20px] filled"
+                                            style="font-variation-settings: 'FILL' 1;">work</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-sm text-primary uppercase tracking-wide">JOB
+                                            INVITATION SENT</h4>
+                                        <p class="text-[10px] uppercase font-semibold text-text-sub tracking-wider">
+                                            Awaiting response</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="mb-5">
+                                    <p class="text-[10px] font-bold text-[#a0aec0] uppercase tracking-wider mb-1">WORK
+                                        TYPE</p>
+                                    <h3 class="font-bold text-base text-text-main dark:text-white">Full-time Contract:
+                                        E-commerce Refactor</h3>
+                                </div>
+                                <div class="mb-6">
+                                    <p class="text-[10px] font-bold text-[#a0aec0] uppercase tracking-wider mb-1">WORK
+                                        DETAILS</p>
+                                    <p class="text-sm text-text-main dark:text-[#cdcfd4] mb-4 leading-relaxed">Hi Sarah,
+                                        based on your impressive React portfolio, I'd like to invite you to lead our
+                                        frontend migration project. We are moving a legacy codebase to Next.js and need
+                                        a senior architect.</p>
+
+                                    <div class="flex items-center gap-2 text-text-sub text-xs">
+                                        <span class="material-symbols-outlined text-[16px]">mail</span>
+                                        <span>sophia.miller@nexlace.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Sender Avatar (You) -->
+                        <div class="absolute -right-12 bottom-0">
+                            <div class="bg-center bg-no-repeat bg-cover rounded-full size-8"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBigY-zC7w3oM8oZJVx2hLR9HH4VBIUZ_Z8G1NLgj4kwWUHhJbg3z382wqkIkk8wcD_uZv0HY6O7dEJudnrLgVXwaYamaZc5I8ARSqm7tU4AmXUZ8dIHLLz4m_RhzaoUstI0uTitxmpLj0KgB-ylZzpCNaEzQKOah7qmxxF5lG_C6o5K_XaMfSlKyHZ4bHmbVJeVuioo2wr0C7VYUYRtf2LjK9C76LnYYe35_oHNxQoHs9ReM2walJB7jpyfL2JmrpSGBT99AqQdYA");'>
+                            </div>
+                            <div class="flex justify-end gap-1 mt-1 pr-1">
+                                <span class="text-[10px] text-text-sub">10:42 AM</span>
+                                <span class="material-symbols-outlined text-[14px] text-primary">done_all</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Input Area -->
+                <div class="p-6 bg-white dark:bg-card-dark z-10"> <!-- Removed top border to match clean look -->
+                    <div class="flex items-center gap-4">
+                        <button aria-label="Create new"
+                            class="flex items-center justify-center size-10 rounded-full bg-[#f6f6f8] dark:bg-[#1f2937] text-text-sub hover:text-primary transition-colors">
+                            <span class="material-symbols-outlined text-[24px]">add</span>
+                        </button>
+
+                        <div class="flex-1 relative">
+                            <input type="text"
+                                class="w-full h-12 rounded-full border border-[#e7ebf3] dark:border-[#2a3447] bg-white dark:bg-background-dark pl-6 pr-14 text-sm focus:ring-1 focus:ring-primary focus:border-primary placeholder:text-[#a0aec0]"
+                                placeholder="Type a message...">
+                            <div class="absolute right-2 top-1/2 -translate-y-1/2 flex items-center pr-2 gap-1">
+                                <button aria-label="Add emoji"
+                                    class="p-1.5 text-text-sub hover:text-primary transition-colors">
+                                    <span class="material-symbols-outlined text-[20px]">sentiment_satisfied</span>
+                                </button>
+                                <button aria-label="Attach file"
+                                    class="p-1.5 text-text-sub hover:text-primary transition-colors">
+                                    <span class="material-symbols-outlined text-[20px] rotate-45">attach_file</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <button aria-label="Send Message"
+                            class="flex items-center justify-center size-12 rounded-full bg-primary text-white hover:bg-primary-dark transition-transform active:scale-95 shadow-lg shadow-blue-600/20">
+                            <span class="material-symbols-outlined text-[22px]">send</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+
+                // Elements
+                const inputField = document.querySelector('input[placeholder="Type a message..."]');
+                const sendBtn = document.querySelector('button[aria-label="Send Message"]');
+                const chatStream = document.getElementById('chat-stream');
+                const sidebar = document.getElementById('message-sidebar');
+                const chatSection = document.getElementById('chat-section');
+                const backBtn = document.getElementById('back-to-list');
+
+                // Default content cache (for Sarah's conversation)
+                const sarahContent = chatStream.innerHTML;
+
+                // Functionality for Sending Messages
+                function sendMessage() {
+                    const text = inputField.value.trim();
+                    if (!text) return;
+
+                    const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+                    const messageHTML = `
+                    <div class="flex flex-row-reverse gap-4 max-w-[80%] self-end animate-in fade-in slide-in-from-bottom-2 duration-300">
+                        <div class="bg-center bg-no-repeat bg-cover rounded-full size-8 mt-1 shrink-0"
+                             style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBigY-zC7w3oM8oZJVx2hLR9HH4VBIUZ_Z8G1NLgj4kwWUHhJbg3z382wqkIkk8wcD_uZv0HY6O7dEJudnrLgVXwaYamaZc5I8ARSqm7tU4AmXUZ8dIHLLz4m_RhzaoUstI0uTitxmpLj0KgB-ylZzpCNaEzQKOah7qmxxF5lG_C6o5K_XaMfSlKyHZ4bHmbVJeVuioo2wr0C7VYUYRtf2LjK9C76LnYYe35_oHNxQoHs9ReM2walJB7jpyfL2JmrpSGBT99AqQdYA");'>
+                        </div>
+                        <div class="flex flex-col gap-1 items-end">
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-xs text-text-sub">${time}</span>
+                                <span class="text-sm font-semibold text-text-main dark:text-white">You</span>
+                            </div>
+                            <div class="p-4 bg-primary text-white rounded-2xl rounded-tr-none shadow-sm text-sm leading-relaxed">
+                                <p>${text}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                    chatStream.insertAdjacentHTML('beforeend', messageHTML);
+                    inputField.value = '';
+                    chatStream.scrollTop = chatStream.scrollHeight;
+                }
+
+                if (sendBtn) sendBtn.addEventListener('click', sendMessage);
+                if (inputField) {
+                    inputField.addEventListener('keypress', (e) => {
+                        if (e.key === 'Enter') sendMessage();
+                    });
+                }
+
+                // Functionality for Sidebar Selection
+                const conversationItems = document.querySelectorAll('aside .group');
+                conversationItems.forEach(item => {
+                    item.addEventListener('click', function () {
+                        // Desktop Styling
+                        conversationItems.forEach(i => {
+                            i.classList.remove('bg-[#f0f6ff]', 'dark:bg-primary/5');
+                            i.classList.add('hover:bg-gray-50', 'dark:hover:bg-[#1f2937]');
+                            const border = i.querySelector('.absolute.left-0');
+                            if (border) border.remove();
+                        });
+
+                        this.classList.remove('hover:bg-gray-50', 'dark:hover:bg-[#1f2937]');
+                        this.classList.add('bg-[#f0f6ff]', 'dark:bg-primary/5');
+
+                        if (!this.querySelector('.absolute.left-0')) {
+                            const border = document.createElement('div');
+                            border.className = 'absolute left-0 top-0 bottom-0 w-1 bg-primary';
+                            this.prepend(border);
+                        }
+
+                        // Content Logic
+                        const name = this.querySelector('h3').innerText;
+
+                        // Handle conversation switch
+                        if (!name.includes('Sarah')) {
+                            chatStream.innerHTML = `
+                            <div class="my-6 text-center">
+                                <span class="px-4 py-1.5 bg-[#e7ebf3] dark:bg-[#1f2937] rounded-full text-xs font-semibold text-text-sub">Today</span>
+                            </div>
+                            <div class="flex flex-col items-center justify-center h-full text-center pb-20 fade-in animate-in">
+                                <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-full mb-3 text-text-sub">
+                                    <span class="material-symbols-outlined text-[32px]">forum</span>
+                                </div>
+                                <h3 class="font-bold text-text-main dark:text-white">Start chatting with ${name}</h3>
+                                <p class="text-sm text-text-sub mt-1">Say hi to start the conversation!</p>
+                            </div>
+                         `;
+                            // Update header name
+                            const headerName = document.querySelector('section h3.text-lg');
+                            if (headerName) headerName.innerText = name;
+                        } else {
+                            // Restore Sarah's content
+                            chatStream.innerHTML = sarahContent;
+                            // Reset header name just in case
+                            const headerName = document.querySelector('section h3.text-lg');
+                            if (headerName) headerName.innerText = "Sarah J.";
+                        }
+
+                        // MOBILE LOGIC: Hide sidebar, show chat
+                        if (window.innerWidth < 768) {
+                            sidebar.classList.add('hidden');
+                            chatSection.classList.remove('hidden');
+                            chatSection.classList.add('flex');
+                        }
+                    });
+                });
+
+                // Handle Back Button (Mobile)
+                if (backBtn) {
+                    backBtn.addEventListener('click', () => {
+                        sidebar.classList.remove('hidden');
+                        chatSection.classList.add('hidden');
+                        chatSection.classList.remove('flex');
+                    });
+                }
+
+                // Filter Search
+                const searchInput = document.querySelector('aside input');
+                if (searchInput) {
+                    searchInput.addEventListener('input', (e) => {
+                        const term = e.target.value.toLowerCase();
+                        conversationItems.forEach(item => {
+                            const name = item.querySelector('h3').innerText.toLowerCase();
+                            if (name.includes(term)) {
+                                item.classList.remove('hidden');
+                                item.classList.add('flex');
+                            } else {
+                                item.classList.add('hidden');
+                                item.classList.remove('flex');
+                            }
+                        });
+                    });
+                }
+            });
+        </script>
+</body>
+
+</html>

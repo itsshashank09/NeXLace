@@ -1,12 +1,18 @@
-<html><head><meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>NeXLace - Profile Settings</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>NeXLace - Profile Settings</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -24,39 +30,63 @@
                     fontFamily: {
                         "display": ["Inter", "sans-serif"]
                     },
-                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
                 },
             },
         }
     </script>
-</head><body class="bg-background-light dark:bg-background-dark text-text-main dark:text-[#f8f9fc] font-display antialiased">
-<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
-<header class="sticky top-0 z-50 w-full border-b border-[#e7ebf3] dark:border-[#2a3447] bg-white dark:bg-card-dark">
-<div class="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-4 sm:px-6 lg:px-8">
-<div class="flex items-center gap-8">
+    <script>
+            // Check local storage and apply theme immediately to avoid flash
+            (function () {
+                const theme = localStorage.getItem('theme') || 'system';
+                const element = document.documentElement;
+                if (theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    element.classList.add('dark');
+                } else {
+                    element.classList.remove('dark');
+                }
+            })();
+    </script>
+</head>
 
-<div class="flex items-center gap-2">
-    <a href="mainpage.html"><img src="assetes/logo.png" alt="NeXLace Logo" class="h-10 w-auto object-contain" /></a>
-    <a href="mainpage.html"><h2 class="text-xl font-black tracking-tight text-[#0d121b] dark:text-white">NeXLace</h2></a>
-</div>
-<div class="hidden md:flex items-center gap-6">
-<a class="text-sm font-medium text-text-main dark:text-[#e7ebf3] hover:text-primary dark:hover:text-primary transition-colors" href="developer.html">Hire Talent</a>
-<a class="text-sm font-medium text-text-main dark:text-[#e7ebf3] hover:text-primary dark:hover:text-primary transition-colors" href="findwork.html">Find Work</a>
-<a class="text-sm font-medium text-text-main dark:text-[#e7ebf3] hover:text-primary dark:hover:text-primary transition-colors" href="#">Messages</a>
-</div>
-</div>
-<div class="flex items-center gap-4">
-<div class="hidden sm:flex relative">
-<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-gray-400 text-[20px]">search</span>
-<input class="h-9 w-64 rounded-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-[#1a2333] pl-10 pr-4 text-sm focus:border-primary focus:ring-primary" placeholder="Search" type="text"/>
-</div>
-<button class="text-text-sub hover:text-primary dark:text-gray-400 dark:hover:text-white">
-<span class="material-symbols-outlined">help</span>
-</button>
-<button class="text-text-sub hover:text-primary dark:text-gray-400 dark:hover:text-white">
-<span class="material-symbols-outlined">notifications</span>
-</button>
-<div class="relative">
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-[#f8f9fc] font-display antialiased">
+    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+        <header
+            class="sticky top-0 z-50 w-full border-b border-[#e7ebf3] dark:border-[#2a3447] bg-white dark:bg-card-dark">
+            <div class="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center gap-8">
+
+                    <div class="flex items-center gap-2">
+                        <a href="mainpage.html"><img src="assetes/logo.png" alt="NeXLace Logo"
+                                class="h-10 w-auto object-contain" /></a>
+                        <a href="mainpage.html">
+                            <h2 class="text-xl font-black tracking-tight text-[#0d121b] dark:text-white">NeXLace</h2>
+                        </a>
+                    </div>
+                    <div class="hidden md:flex items-center gap-6">
+                        <a class="text-sm font-medium text-text-main dark:text-[#e7ebf3] hover:text-primary dark:hover:text-primary transition-colors"
+                            href="developer.html">Hire Talent</a>
+                        <a class="text-sm font-medium text-text-main dark:text-[#e7ebf3] hover:text-primary dark:hover:text-primary transition-colors"
+                            href="findwork.html">Find Work</a>
+                        <a class="text-sm font-medium text-text-main dark:text-[#e7ebf3] hover:text-primary dark:hover:text-primary transition-colors"
+                            href="messege.html">Messages</a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="hidden sm:flex relative">
+                        <span
+                            class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-gray-400 text-[20px]">search</span>
+                        <input
+                            class="h-9 w-64 rounded-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-[#1a2333] pl-10 pr-4 text-sm focus:border-primary focus:ring-primary"
+                            placeholder="Search" type="text" />
+                    </div>
+                    <button class="text-text-sub hover:text-primary dark:text-gray-400 dark:hover:text-white">
+                        <span class="material-symbols-outlined">help</span>
+                    </button>
+                    <button class="text-text-sub hover:text-primary dark:text-gray-400 dark:hover:text-white">
+                        <span class="material-symbols-outlined">notifications</span>
+                    </button>
+                    <div class="relative">
                         <button onclick="document.getElementById('profile-dropdown').classList.toggle('hidden')"
                             class="h-8 w-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm cursor-pointer hover:bg-primary-dark transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-[#151c2b]">
                             JD
@@ -93,229 +123,319 @@
                             </div>
                         </div>
                     </div>
-</div>
-</header>
-<main class="flex-grow py-8">
-<div class="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
-<div class="mb-8">
-<h1 class="text-3xl font-bold tracking-tight text-text-main dark:text-white">Profile Settings</h1>
-<p class="text-text-sub mt-2">Manage your account information, preferences, and workspace settings.</p>
-</div>
-<div class="flex flex-col lg:flex-row gap-8">
-<aside class="w-full lg:w-64 flex-shrink-0">
-<nav class="sticky top-24 space-y-1">
-<a class="flex items-center gap-3 px-4 py-2.5 text-sm font-bold rounded-lg bg-primary/10 text-primary" href="#">
-<span class="material-symbols-outlined text-[20px]">person</span>
-                            My Profile
-                        </a>
-<a class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium rounded-lg text-text-sub hover:bg-gray-50 hover:text-text-main dark:text-gray-400 dark:hover:bg-[#1f2937] dark:hover:text-white transition-colors" href="#theme">
-<span class="material-symbols-outlined text-[20px]">palette</span>
-                            Theme
-                        </a>
-<a class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium rounded-lg text-text-sub hover:bg-gray-50 hover:text-text-main dark:text-gray-400 dark:hover:bg-[#1f2937] dark:hover:text-white transition-colors" href="#">
-<span class="material-symbols-outlined text-[20px]">lock</span>
-                            Login &amp; Security
-                        </a>
-<a class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium rounded-lg text-text-sub hover:bg-gray-50 hover:text-text-main dark:text-gray-400 dark:hover:bg-[#1f2937] dark:hover:text-white transition-colors" href="#">
-<span class="material-symbols-outlined text-[20px]">notifications</span>
-                            Notifications
-                        </a>
-<a class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium rounded-lg text-text-sub hover:bg-gray-50 hover:text-text-main dark:text-gray-400 dark:hover:bg-[#1f2937] dark:hover:text-white transition-colors" href="#">
-<span class="material-symbols-outlined text-[20px]">credit_card</span>
-                            Billing Methods
-                        </a>
-</nav>
-</aside>
-<div class="flex-1 space-y-8">
-<div class="relative overflow-hidden rounded-xl bg-gradient-to-r from-[#101622] to-[#1e2a44] p-8 text-white shadow-lg border border-[#2a3447]">
-<div class="relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-<div>
-<div class="flex items-center gap-2 mb-2">
-<span class="inline-flex items-center rounded-full bg-green-500/20 px-2 py-0.5 text-xs font-medium text-green-400 ring-1 ring-inset ring-green-500/30">New</span>
-<h2 class="text-xl font-bold">Become a NeXLace Developer</h2>
-</div>
-<p class="text-gray-300 max-w-lg">Create a specialized developer profile to showcase your skills, portfolio, and start bidding on high-quality projects today.</p>
-</div>
-<button onclick="window.location.href='createdeveloperprofile.html'" class="flex-shrink-0 rounded-full bg-primary px-6 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-primary-dark transition-all active:scale-95">
-                                Create Developer Profile
-                            </button>
-</div>
-<div class="absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l from-primary/20 to-transparent"></div>
-<span class="absolute right-[-20px] bottom-[-40px] material-symbols-outlined text-[180px] text-white opacity-5 rotate-12">code</span>
-</div>
-<div class="rounded-xl border border-[#e7ebf3] dark:border-[#2a3447] bg-white dark:bg-card-dark shadow-sm">
-<div class="border-b border-[#e7ebf3] px-6 py-4 dark:border-[#2a3447]">
-<h3 class="text-lg font-bold text-text-main dark:text-white">Basic Information</h3>
-<p class="text-sm text-text-sub">This information will be displayed on your public profile.</p>
-</div>
-<div class="p-6">
-<div class="mb-8 flex items-center gap-6">
-<div class="relative">
-<div class="h-24 w-24 rounded-full bg-primary text-white flex items-center justify-center text-2xl font-bold border-4 border-white dark:border-[#2a3447] shadow-md">
+                </div>
+        </header>
+        <main class="flex-grow py-8">
+            <div class="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
+                <div class="mb-8">
+                    <h1 class="text-3xl font-bold tracking-tight text-text-main dark:text-white">Profile Settings</h1>
+                    <p class="text-text-sub mt-2">Manage your account information, preferences, and workspace settings.
+                    </p>
+                </div>
+                <div class="flex flex-col lg:flex-row gap-8">
+                    <aside class="w-full lg:w-64 flex-shrink-0">
+                        <nav class="sticky top-24 space-y-1">
+                            <a class="flex items-center gap-3 px-4 py-2.5 text-sm font-bold rounded-lg bg-primary/10 text-primary"
+                                href="#">
+                                <span class="material-symbols-outlined text-[20px]">person</span>
+                                My Profile
+                            </a>
+                            <a class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium rounded-lg text-text-sub hover:bg-gray-50 hover:text-text-main dark:text-gray-400 dark:hover:bg-[#1f2937] dark:hover:text-white transition-colors"
+                                href="#theme">
+                                <span class="material-symbols-outlined text-[20px]">palette</span>
+                                Theme
+                            </a>
+                            <a class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium rounded-lg text-text-sub hover:bg-gray-50 hover:text-text-main dark:text-gray-400 dark:hover:bg-[#1f2937] dark:hover:text-white transition-colors"
+                                href="#">
+                                <span class="material-symbols-outlined text-[20px]">lock</span>
+                                Login &amp; Security
+                            </a>
+                            <a class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium rounded-lg text-text-sub hover:bg-gray-50 hover:text-text-main dark:text-gray-400 dark:hover:bg-[#1f2937] dark:hover:text-white transition-colors"
+                                href="#">
+                                <span class="material-symbols-outlined text-[20px]">notifications</span>
+                                Notifications
+                            </a>
+                            <a class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium rounded-lg text-text-sub hover:bg-gray-50 hover:text-text-main dark:text-gray-400 dark:hover:bg-[#1f2937] dark:hover:text-white transition-colors"
+                                href="#">
+                                <span class="material-symbols-outlined text-[20px]">credit_card</span>
+                                Billing Methods
+                            </a>
+                        </nav>
+                    </aside>
+                    <div class="flex-1 space-y-8">
+                        <div
+                            class="relative overflow-hidden rounded-xl bg-gradient-to-r from-[#101622] to-[#1e2a44] p-8 text-white shadow-lg border border-[#2a3447]">
+                            <div
+                                class="relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+                                <div>
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <span
+                                            class="inline-flex items-center rounded-full bg-green-500/20 px-2 py-0.5 text-xs font-medium text-green-400 ring-1 ring-inset ring-green-500/30">New</span>
+                                        <h2 class="text-xl font-bold">Become a NeXLace Developer</h2>
+                                    </div>
+                                    <p class="text-gray-300 max-w-lg">Create a specialized developer profile to showcase
+                                        your skills, portfolio, and start bidding on high-quality projects today.</p>
+                                </div>
+                                <button onclick="window.location.href='createdeveloperprofile.html'"
+                                    class="flex-shrink-0 rounded-full bg-primary px-6 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-primary-dark transition-all active:scale-95">
+                                    Create Developer Profile
+                                </button>
+                            </div>
+                            <div
+                                class="absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l from-primary/20 to-transparent">
+                            </div>
+                            <span
+                                class="absolute right-[-20px] bottom-[-40px] material-symbols-outlined text-[180px] text-white opacity-5 rotate-12">code</span>
+                        </div>
+                        <div
+                            class="rounded-xl border border-[#e7ebf3] dark:border-[#2a3447] bg-white dark:bg-card-dark shadow-sm">
+                            <div class="border-b border-[#e7ebf3] px-6 py-4 dark:border-[#2a3447]">
+                                <h3 class="text-lg font-bold text-text-main dark:text-white">Basic Information</h3>
+                                <p class="text-sm text-text-sub">This information will be displayed on your public
+                                    profile.</p>
+                            </div>
+                            <div class="p-6">
+                                <div class="mb-8 flex items-center gap-6">
+                                    <div class="relative">
+                                        <div
+                                            class="h-24 w-24 rounded-full bg-primary text-white flex items-center justify-center text-2xl font-bold border-4 border-white dark:border-[#2a3447] shadow-md">
                                             JD
                                         </div>
-<button class="absolute bottom-0 right-0 rounded-full bg-white dark:bg-[#2a3447] border border-gray-200 dark:border-gray-600 p-1.5 text-text-sub hover:text-primary transition-colors shadow-sm">
-<span class="material-symbols-outlined text-[18px]">photo_camera</span>
-</button>
-</div>
-<div>
-<h4 class="font-bold text-text-main dark:text-white">Profile Photo</h4>
-<p class="text-sm text-text-sub mb-3">Recommended 300x300px JPG or PNG.</p>
-<div class="flex gap-3">
-<button class="rounded-md border border-[#e7ebf3] dark:border-[#2a3447] bg-white dark:bg-[#1a2333] px-3 py-1.5 text-sm font-medium text-text-main dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-[#2a3447] transition-colors">Change Photo</button>
-<button class="rounded-md px-3 py-1.5 text-sm font-medium text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors">Remove</button>
-</div>
-</div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<div>
-<label class="mb-1.5 block text-sm font-medium text-text-main dark:text-gray-300" for="firstName">First Name</label>
-<input class="block w-full rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-[#1a2333] shadow-sm focus:border-primary focus:ring-primary sm:text-sm" id="firstName" type="text" value="Jason"/>
-</div>
-<div>
-<label class="mb-1.5 block text-sm font-medium text-text-main dark:text-gray-300" for="lastName">Last Name</label>
-<input class="block w-full rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-[#1a2333] shadow-sm focus:border-primary focus:ring-primary sm:text-sm" id="lastName" type="text" value="Doe"/>
-</div>
-<div class="md:col-span-2">
-<label class="mb-1.5 block text-sm font-medium text-text-main dark:text-gray-300" for="email">Email Address</label>
-<div class="relative">
-<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-gray-400 text-[18px]">mail</span>
-<input class="block w-full rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-[#1a2333] pl-10 shadow-sm focus:border-primary focus:ring-primary sm:text-sm" id="email" type="email" value="jason@nexlace.com"/>
-</div>
-</div>
-<div class="md:col-span-2">
-<label class="mb-1.5 block text-sm font-medium text-text-main dark:text-gray-300" for="headline">Professional Headline</label>
-<input class="block w-full rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-[#1a2333] shadow-sm focus:border-primary focus:ring-primary sm:text-sm" id="headline" placeholder="e.g. Senior Frontend Developer" type="text"/>
-</div>
-<div class="md:col-span-2">
-<label class="mb-1.5 block text-sm font-medium text-text-main dark:text-gray-300" for="bio">Bio</label>
-<textarea class="block w-full rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-[#1a2333] shadow-sm focus:border-primary focus:ring-primary sm:text-sm" id="bio" placeholder="Tell us a little bit about yourself..." rows="4"></textarea>
-<p class="mt-1.5 text-xs text-text-sub text-right">0/500 characters</p>
-</div>
-</div>
-<div class="mt-8 flex justify-end gap-3 border-t border-[#e7ebf3] pt-6 dark:border-[#2a3447]">
-<button class="rounded-lg px-4 py-2 text-sm font-bold text-text-sub hover:bg-gray-100 dark:hover:bg-[#1f2937] transition-colors">Cancel</button>
-<button class="rounded-lg bg-primary px-6 py-2 text-sm font-bold text-white hover:bg-primary-dark transition-colors shadow-sm">Save Changes</button>
-</div>
-</div>
-</div>
-<div class="rounded-xl border border-[#e7ebf3] dark:border-[#2a3447] bg-white dark:bg-card-dark shadow-sm" id="theme">
-<div class="border-b border-[#e7ebf3] px-6 py-4 dark:border-[#2a3447]">
-<h3 class="text-lg font-bold text-text-main dark:text-white">Interface Theme</h3>
-<p class="text-sm text-text-sub">Choose how NeXLace looks to you.</p>
-</div>
-<div class="p-6">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<label class="relative cursor-pointer group">
-<input class="peer sr-only" name="theme" type="radio" value="light"/>
-<div class="rounded-lg border-2 border-transparent bg-gray-100 p-4 ring-2 ring-transparent peer-checked:border-primary peer-checked:ring-primary/20 hover:bg-gray-200 transition-all dark:bg-[#1a2333]">
-<div class="mb-3 h-24 rounded bg-white border border-gray-200 flex flex-col overflow-hidden shadow-sm">
-<div class="h-4 w-full bg-gray-100 border-b border-gray-200"></div>
-<div class="flex flex-1">
-<div class="w-1/4 border-r border-gray-200 bg-gray-50"></div>
-<div class="flex-1 bg-white"></div>
-</div>
-</div>
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-gray-500">light_mode</span>
-<span class="font-bold text-text-main dark:text-white">Light Mode</span>
-</div>
-</div>
-<div class="absolute right-4 top-4 hidden text-primary peer-checked:block">
-<span class="material-symbols-outlined">check_circle</span>
-</div>
-</label>
-<label class="relative cursor-pointer group">
-<input class="peer sr-only" name="theme" type="radio" value="dark"/>
-<div class="rounded-lg border-2 border-transparent bg-gray-100 p-4 ring-2 ring-transparent peer-checked:border-primary peer-checked:ring-primary/20 hover:bg-gray-200 transition-all dark:bg-[#1a2333]">
-<div class="mb-3 h-24 rounded bg-[#151c2b] border border-[#2a3447] flex flex-col overflow-hidden shadow-sm">
-<div class="h-4 w-full bg-[#101622] border-b border-[#2a3447]"></div>
-<div class="flex flex-1">
-<div class="w-1/4 border-r border-[#2a3447] bg-[#151c2b]"></div>
-<div class="flex-1 bg-[#101622]"></div>
-</div>
-</div>
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-gray-500">dark_mode</span>
-<span class="font-bold text-text-main dark:text-white">Dark Mode</span>
-</div>
-</div>
-<div class="absolute right-4 top-4 hidden text-primary peer-checked:block">
-<span class="material-symbols-outlined">check_circle</span>
-</div>
-</label>
-<label class="relative cursor-pointer group">
-<input checked="" class="peer sr-only" name="theme" type="radio" value="system"/>
-<div class="rounded-lg border-2 border-transparent bg-gray-100 p-4 ring-2 ring-transparent peer-checked:border-primary peer-checked:ring-primary/20 hover:bg-gray-200 transition-all dark:bg-[#1a2333]">
-<div class="mb-3 h-24 rounded bg-gray-100 flex overflow-hidden shadow-sm relative">
-<div class="absolute inset-0 flex">
-<div class="w-1/2 bg-white border-r border-gray-200 flex flex-col">
-<div class="h-4 w-full bg-gray-100 border-b border-gray-200"></div>
-</div>
-<div class="w-1/2 bg-[#151c2b] flex flex-col">
-<div class="h-4 w-full bg-[#101622] border-b border-[#2a3447]"></div>
-</div>
-</div>
-</div>
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-gray-500">desktop_windows</span>
-<span class="font-bold text-text-main dark:text-white">System Default</span>
-</div>
-</div>
-<div class="absolute right-4 top-4 hidden text-primary peer-checked:block">
-<span class="material-symbols-outlined">check_circle</span>
-</div>
-</label>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</main>
-<footer class="mt-12 bg-[#101622] text-white py-12">
-<div class="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
-<div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
-<div>
-<h4 class="font-bold mb-4">About Us</h4>
-<ul class="space-y-2 text-gray-400">
-<li><a class="hover:text-white" href="#">Feedback</a></li>
-<li><a class="hover:text-white" href="#">Community</a></li>
-</ul>
-</div>
-<div>
-<h4 class="font-bold mb-4">Trust &amp; Safety</h4>
-<ul class="space-y-2 text-gray-400">
-<li><a class="hover:text-white" href="#">Help &amp; Support</a></li>
-<li><a class="hover:text-white" href="#">NeXLace Foundation</a></li>
-</ul>
-</div>
-<div>
-<h4 class="font-bold mb-4">Terms of Service</h4>
-<ul class="space-y-2 text-gray-400">
-<li><a class="hover:text-white" href="#">Privacy Policy</a></li>
-<li><a class="hover:text-white" href="#">Accessibility</a></li>
-</ul>
-</div>
-<div>
-<h4 class="font-bold mb-4">Mobile App</h4>
-<div class="flex gap-4 text-gray-400">
-<span class="material-symbols-outlined cursor-pointer hover:text-white">android</span>
-<span class="material-symbols-outlined cursor-pointer hover:text-white">ios</span>
-</div>
-</div>
-</div>
-<div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
-<p>© 2024 NeXLace Global Inc.</p>
-<div class="flex gap-4 mt-4 md:mt-0">
-<a class="hover:text-white" href="#">Follow Us</a>
-<div class="flex gap-3">
-<span class="material-symbols-outlined text-[16px]">public</span>
-<span class="material-symbols-outlined text-[16px]">alternate_email</span>
-</div>
-</div>
-</div>
-</div>
-</footer>
-</div>
-</body></html>
+                                        <button
+                                            class="absolute bottom-0 right-0 rounded-full bg-white dark:bg-[#2a3447] border border-gray-200 dark:border-gray-600 p-1.5 text-text-sub hover:text-primary transition-colors shadow-sm">
+                                            <span class="material-symbols-outlined text-[18px]">photo_camera</span>
+                                        </button>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-text-main dark:text-white">Profile Photo</h4>
+                                        <p class="text-sm text-text-sub mb-3">Recommended 300x300px JPG or PNG.</p>
+                                        <div class="flex gap-3">
+                                            <button
+                                                class="rounded-md border border-[#e7ebf3] dark:border-[#2a3447] bg-white dark:bg-[#1a2333] px-3 py-1.5 text-sm font-medium text-text-main dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-[#2a3447] transition-colors">Change
+                                                Photo</button>
+                                            <button
+                                                class="rounded-md px-3 py-1.5 text-sm font-medium text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors">Remove</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label
+                                            class="mb-1.5 block text-sm font-medium text-text-main dark:text-gray-300"
+                                            for="firstName">First Name</label>
+                                        <input
+                                            class="block w-full rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-[#1a2333] shadow-sm focus:border-primary focus:ring-primary sm:text-sm"
+                                            id="firstName" type="text" value="Jason" />
+                                    </div>
+                                    <div>
+                                        <label
+                                            class="mb-1.5 block text-sm font-medium text-text-main dark:text-gray-300"
+                                            for="lastName">Last Name</label>
+                                        <input
+                                            class="block w-full rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-[#1a2333] shadow-sm focus:border-primary focus:ring-primary sm:text-sm"
+                                            id="lastName" type="text" value="Doe" />
+                                    </div>
+                                    <div class="md:col-span-2">
+                                        <label
+                                            class="mb-1.5 block text-sm font-medium text-text-main dark:text-gray-300"
+                                            for="email">Email Address</label>
+                                        <div class="relative">
+                                            <span
+                                                class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-gray-400 text-[18px]">mail</span>
+                                            <input
+                                                class="block w-full rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-[#1a2333] pl-10 shadow-sm focus:border-primary focus:ring-primary sm:text-sm"
+                                                id="email" type="email" value="jason@nexlace.com" />
+                                        </div>
+                                    </div>
+                                    <div class="md:col-span-2">
+                                        <label
+                                            class="mb-1.5 block text-sm font-medium text-text-main dark:text-gray-300"
+                                            for="headline">Professional Headline</label>
+                                        <input
+                                            class="block w-full rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-[#1a2333] shadow-sm focus:border-primary focus:ring-primary sm:text-sm"
+                                            id="headline" placeholder="e.g. Senior Frontend Developer" type="text" />
+                                    </div>
+                                    <div class="md:col-span-2">
+                                        <label
+                                            class="mb-1.5 block text-sm font-medium text-text-main dark:text-gray-300"
+                                            for="bio">Bio</label>
+                                        <textarea
+                                            class="block w-full rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-[#1a2333] shadow-sm focus:border-primary focus:ring-primary sm:text-sm"
+                                            id="bio" placeholder="Tell us a little bit about yourself..."
+                                            rows="4"></textarea>
+                                        <p class="mt-1.5 text-xs text-text-sub text-right">0/500 characters</p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="mt-8 flex justify-end gap-3 border-t border-[#e7ebf3] pt-6 dark:border-[#2a3447]">
+                                    <button
+                                        class="rounded-lg px-4 py-2 text-sm font-bold text-text-sub hover:bg-gray-100 dark:hover:bg-[#1f2937] transition-colors">Cancel</button>
+                                    <button
+                                        class="rounded-lg bg-primary px-6 py-2 text-sm font-bold text-white hover:bg-primary-dark transition-colors shadow-sm">Save
+                                        Changes</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rounded-xl border border-[#e7ebf3] dark:border-[#2a3447] bg-white dark:bg-card-dark shadow-sm"
+                            id="theme">
+                            <div class="border-b border-[#e7ebf3] px-6 py-4 dark:border-[#2a3447]">
+                                <h3 class="text-lg font-bold text-text-main dark:text-white">Interface Theme</h3>
+                                <p class="text-sm text-text-sub">Choose how NeXLace looks to you.</p>
+                            </div>
+                            <div class="p-6">
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                    <label class="relative cursor-pointer group">
+                                        <input class="peer sr-only" name="theme" type="radio" value="light" />
+                                        <div
+                                            class="rounded-lg border-2 border-transparent bg-gray-100 p-4 ring-2 ring-transparent peer-checked:border-primary peer-checked:ring-primary/20 hover:bg-gray-200 transition-all dark:bg-[#1a2333]">
+                                            <div
+                                                class="mb-3 h-24 rounded bg-white border border-gray-200 flex flex-col overflow-hidden shadow-sm">
+                                                <div class="h-4 w-full bg-gray-100 border-b border-gray-200"></div>
+                                                <div class="flex flex-1">
+                                                    <div class="w-1/4 border-r border-gray-200 bg-gray-50"></div>
+                                                    <div class="flex-1 bg-white"></div>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <span class="material-symbols-outlined text-gray-500">light_mode</span>
+                                                <span class="font-bold text-text-main dark:text-white">Light Mode</span>
+                                            </div>
+                                        </div>
+                                        <div class="absolute right-4 top-4 hidden text-primary peer-checked:block">
+                                            <span class="material-symbols-outlined">check_circle</span>
+                                        </div>
+                                    </label>
+                                    <label class="relative cursor-pointer group">
+                                        <input class="peer sr-only" name="theme" type="radio" value="dark" />
+                                        <div
+                                            class="rounded-lg border-2 border-transparent bg-gray-100 p-4 ring-2 ring-transparent peer-checked:border-primary peer-checked:ring-primary/20 hover:bg-gray-200 transition-all dark:bg-[#1a2333]">
+                                            <div
+                                                class="mb-3 h-24 rounded bg-[#151c2b] border border-[#2a3447] flex flex-col overflow-hidden shadow-sm">
+                                                <div class="h-4 w-full bg-[#101622] border-b border-[#2a3447]"></div>
+                                                <div class="flex flex-1">
+                                                    <div class="w-1/4 border-r border-[#2a3447] bg-[#151c2b]"></div>
+                                                    <div class="flex-1 bg-[#101622]"></div>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <span class="material-symbols-outlined text-gray-500">dark_mode</span>
+                                                <span class="font-bold text-text-main dark:text-white">Dark Mode</span>
+                                            </div>
+                                        </div>
+                                        <div class="absolute right-4 top-4 hidden text-primary peer-checked:block">
+                                            <span class="material-symbols-outlined">check_circle</span>
+                                        </div>
+                                    </label>
+                                    <label class="relative cursor-pointer group">
+                                        <input checked="" class="peer sr-only" name="theme" type="radio"
+                                            value="system" />
+                                        <div
+                                            class="rounded-lg border-2 border-transparent bg-gray-100 p-4 ring-2 ring-transparent peer-checked:border-primary peer-checked:ring-primary/20 hover:bg-gray-200 transition-all dark:bg-[#1a2333]">
+                                            <div
+                                                class="mb-3 h-24 rounded bg-gray-100 flex overflow-hidden shadow-sm relative">
+                                                <div class="absolute inset-0 flex">
+                                                    <div class="w-1/2 bg-white border-r border-gray-200 flex flex-col">
+                                                        <div class="h-4 w-full bg-gray-100 border-b border-gray-200">
+                                                        </div>
+                                                    </div>
+                                                    <div class="w-1/2 bg-[#151c2b] flex flex-col">
+                                                        <div class="h-4 w-full bg-[#101622] border-b border-[#2a3447]">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <span
+                                                    class="material-symbols-outlined text-gray-500">desktop_windows</span>
+                                                <span class="font-bold text-text-main dark:text-white">System
+                                                    Default</span>
+                                            </div>
+                                        </div>
+                                        <div class="absolute right-4 top-4 hidden text-primary peer-checked:block">
+                                            <span class="material-symbols-outlined">check_circle</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="mt-12 bg-[#101622] text-white py-12">
+            <div class="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
+                    <div>
+                        <h4 class="font-bold mb-4">About Us</h4>
+                        <ul class="space-y-2 text-gray-400">
+                            <li><a class="hover:text-white" href="#">Feedback</a></li>
+                            <li><a class="hover:text-white" href="#">Community</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-4">Trust &amp; Safety</h4>
+                        <ul class="space-y-2 text-gray-400">
+                            <li><a class="hover:text-white" href="#">Help &amp; Support</a></li>
+                            <li><a class="hover:text-white" href="#">NeXLace Foundation</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-4">Terms of Service</h4>
+                        <ul class="space-y-2 text-gray-400">
+                            <li><a class="hover:text-white" href="#">Privacy Policy</a></li>
+                            <li><a class="hover:text-white" href="#">Accessibility</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-4">Mobile App</h4>
+                        <div class="flex gap-4 text-gray-400">
+                            <span class="material-symbols-outlined cursor-pointer hover:text-white">android</span>
+                            <span class="material-symbols-outlined cursor-pointer hover:text-white">ios</span>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+                    <p>© 2024 NeXLace Global Inc.</p>
+                    <div class="flex gap-4 mt-4 md:mt-0">
+                        <a class="hover:text-white" href="#">Follow Us</a>
+                        <div class="flex gap-3">
+                            <span class="material-symbols-outlined text-[16px]">public</span>
+                            <span class="material-symbols-outlined text-[16px]">alternate_email</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>
+        // Logic for Theme Radio Buttons
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeRadios = document.getElementsByName('theme');
+            const savedTheme = localStorage.getItem('theme') || 'system';
+
+            // Set initial checked state
+            themeRadios.forEach(radio => {
+                if (radio.value === savedTheme) {
+                    radio.checked = true;
+                }
+
+                radio.addEventListener('change', (e) => {
+                    if (e.target.checked) {
+                        const newTheme = e.target.value;
+                        localStorage.setItem('theme', newTheme);
+
+                        const element = document.documentElement;
+                        if (newTheme === 'dark' || (newTheme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                            element.classList.add('dark');
+                        } else {
+                            element.classList.remove('dark');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
