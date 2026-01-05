@@ -129,10 +129,12 @@
                                 class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-text-sub-light dark:text-text-sub-dark group-focus-within:text-primary transition-colors">
                                 <span class="material-symbols-outlined">mail</span>
                             </div>
-                            <input
+                            <input id="email"
                                 class="w-full h-12 pl-10 pr-4 rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-surface-dark text-text-main-light dark:text-white placeholder:text-text-sub-light/60 dark:placeholder:text-text-sub-dark/60 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-base"
                                 placeholder="name@example.com" type="text" required />
                         </div>
+                        <p id="emailError" class="text-red-500 text-xs font-medium mt-1 hidden">Please enter a valid
+                            @gmail.com address</p>
                     </label>
 
                     <label class="flex flex-col gap-2">
@@ -206,7 +208,7 @@
                 <div class="text-center mt-2">
                     <p class="text-sm text-text-sub-light dark:text-text-sub-dark">
                         Don't have an account?
-                        <a class="text-primary font-bold hover:underline" href="sign up page.html">Join NeXLace</a>
+                        <a class="text-primary font-bold hover:underline" href="signup.html">Join NeXLace</a>
                     </p>
                 </div>
             </div>
@@ -242,15 +244,30 @@
             });
         });
 
-        // Form submission (unchanged)
+        // Form submission
         document.getElementById('loginForm').addEventListener('submit', function (e) {
             e.preventDefault();
 
-            const email = this.querySelector('input[type="text"]').value;
+            const emailInput = document.getElementById('email');
+            const email = emailInput.value.trim();
+            const emailError = document.getElementById('emailError');
             const password = document.getElementById('password').value;
+
+            // Reset error states
+            emailError.classList.add('hidden');
+            emailInput.classList.remove('border-red-500', 'focus:border-red-500', 'focus:ring-red-500/20');
+            emailInput.classList.add('border-border-light', 'dark:border-border-dark', 'focus:border-primary', 'focus:ring-primary/20');
 
             if (!email || !password) {
                 alert('Please fill in all fields.');
+                return;
+            }
+
+            // Email Validation for @gmail.com
+            if (!email.toLowerCase().endsWith('@gmail.com')) {
+                emailError.classList.remove('hidden');
+                emailInput.classList.remove('border-border-light', 'dark:border-border-dark', 'focus:border-primary', 'focus:ring-primary/20');
+                emailInput.classList.add('border-red-500', 'focus:border-red-500', 'focus:ring-red-500/20');
                 return;
             }
 
@@ -259,10 +276,48 @@
                 return;
             }
 
-            alert('Login successful! Redirecting to dashboard...');
-            window.location.href = 'mainpage.html';
+            // Show Success Popup
+            const popup = document.getElementById('successPopup');
+            const progressBar = document.getElementById('progressBar');
+
+            popup.classList.remove('hidden');
+            // Force reflow
+            void popup.offsetWidth;
+
+            popup.classList.remove('opacity-0');
+            popup.querySelector('div').classList.remove('scale-90');
+            popup.querySelector('div').classList.add('scale-100');
+
+            // Start progress bar
+            setTimeout(() => {
+                progressBar.style.width = '100%';
+            }, 100);
+
+            // Redirect after 2 seconds
+            setTimeout(() => {
+                window.location.href = 'mainpage.html';
+            }, 2000);
         });
     </script>
+    <!-- Success Popup -->
+    <div id="successPopup"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+        <div
+            class="bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-2xl p-8 shadow-2xl transform scale-90 transition-all duration-300 flex flex-col items-center gap-4 min-w-[320px]">
+            <div
+                class="h-16 w-16 rounded-full bg-green-50 dark:bg-green-900/20 flex items-center justify-center text-green-500 dark:text-green-400 mb-2">
+                <span class="material-symbols-outlined text-[32px] animate-bounce">check_circle</span>
+            </div>
+            <div class="text-center">
+                <h3 class="text-xl font-bold text-text-main-light dark:text-white mb-2">Login Successful!</h3>
+                <p class="text-text-sub-light dark:text-text-sub-dark">Redirecting to your dashboard...</p>
+            </div>
+            <div class="w-full bg-gray-100 dark:bg-gray-800 rounded-full h-1.5 mt-4 overflow-hidden">
+                <div id="progressBar"
+                    class="bg-primary h-full w-0 rounded-full transition-all duration-[2000ms] ease-out"></div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

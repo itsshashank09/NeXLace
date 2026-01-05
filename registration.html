@@ -22,6 +22,14 @@
                         "primary": "#135bec",
                         "background-light": "#f6f6f8",
                         "background-dark": "#101622",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a2234",
+                        "text-main-light": "#0d121b",
+                        "text-main-dark": "#e7ebf3",
+                        "text-sub-light": "#4c669a",
+                        "text-sub-dark": "#94a3b8",
+                        "border-light": "#cfd7e7",
+                        "border-dark": "#2d3748",
                     },
                     fontFamily: {
                         "display": ["Inter", "sans-serif"]
@@ -115,30 +123,52 @@
 
                     <label class="flex flex-col gap-1.5">
                         <span class="text-sm font-medium text-[#0d121b] dark:text-gray-200">Email Address</span>
-                        <input id="email"
-                            class="h-12 w-full rounded-lg border border-[#cfd7e7] dark:border-gray-700 bg-[#f8f9fc] dark:bg-gray-800/50 px-4 text-base text-[#0d121b] dark:text-white placeholder-[#4c669a] focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors"
-                            placeholder="name@work-email.com" type="email" required />
+                        <div class="relative group">
+                            <div
+                                class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-text-sub-light dark:text-text-sub-dark group-focus-within:text-primary transition-colors">
+                                <span class="material-symbols-outlined">mail</span>
+                            </div>
+                            <input id="email"
+                                class="w-full h-12 pl-10 pr-4 rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-surface-dark text-text-main-light dark:text-white placeholder:text-text-sub-light/60 dark:placeholder:text-text-sub-dark/60 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-base"
+                                placeholder="name@example.com" type="text" required="" fdprocessedid="qe5u0n">
+                        </div>
+                        <p id="emailError" class="text-red-500 text-xs font-medium mt-1 hidden">Please enter a valid
+                            @gmail.com address</p>
                     </label>
 
                     <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
                         <label class="flex flex-col gap-1.5">
                             <span class="text-sm font-medium text-[#0d121b] dark:text-gray-200">Password</span>
-                            <div class="relative">
+                            <div class="relative group">
+                                <div
+                                    class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-text-sub-light dark:text-text-sub-dark group-focus-within:text-primary transition-colors">
+                                    <span class="material-symbols-outlined">lock</span>
+                                </div>
                                 <input id="password"
-                                    class="h-12 w-full rounded-lg border border-[#cfd7e7] dark:border-gray-700 bg-[#f8f9fc] dark:bg-gray-800/50 px-4 pr-10 text-base text-[#0d121b] dark:text-white placeholder-[#4c669a] focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors"
+                                    class="w-full h-12 pl-10 pr-12 rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-surface-dark text-text-main-light dark:text-white placeholder:text-text-sub-light/60 dark:placeholder:text-text-sub-dark/60 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-base"
                                     placeholder="Min 8 chars" type="password" required />
                                 <button type="button"
-                                    class="toggle-password absolute right-3 top-1/2 -translate-y-1/2 text-[#4c669a] hover:text-primary dark:text-gray-500 dark:hover:text-white">
+                                    class="toggle-password absolute inset-y-0 right-0 pr-3 flex items-center text-text-sub-light dark:text-text-sub-dark hover:text-text-main-light dark:hover:text-white transition-colors cursor-pointer">
                                     <span class="material-symbols-outlined text-[20px]">visibility_off</span>
                                 </button>
                             </div>
+                            <p id="passwordError" class="text-red-500 text-xs font-medium mt-1 hidden">Password must be
+                                at least 8 characters</p>
                         </label>
 
                         <label class="flex flex-col gap-1.5">
                             <span class="text-sm font-medium text-[#0d121b] dark:text-gray-200">Confirm Password</span>
-                            <input id="confirmPassword"
-                                class="h-12 w-full rounded-lg border border-[#cfd7e7] dark:border-gray-700 bg-[#f8f9fc] dark:bg-gray-800/50 px-4 text-base text-[#0d121b] dark:text-white placeholder-[#4c669a] focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors"
-                                placeholder="Retype password" type="password" required />
+                            <div class="relative group">
+                                <div
+                                    class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-text-sub-light dark:text-text-sub-dark group-focus-within:text-primary transition-colors">
+                                    <span class="material-symbols-outlined">lock</span>
+                                </div>
+                                <input id="confirmPassword"
+                                    class="w-full h-12 pl-10 pr-4 rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-surface-dark text-text-main-light dark:text-white placeholder:text-text-sub-light/60 dark:placeholder:text-text-sub-dark/60 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-base"
+                                    placeholder="Retype password" type="password" required />
+                            </div>
+                            <p id="confirmPasswordError" class="text-red-500 text-xs font-medium mt-1 hidden">Passwords
+                                do not match</p>
                         </label>
                     </div>
                 </div>
@@ -200,7 +230,7 @@
             <div class="text-center sm:hidden">
                 <p class="text-sm text-[#4c669a] dark:text-gray-400">
                     Already have an account?
-                    <a class="font-bold text-primary hover:underline" href="log in page.html">Log In</a>
+                    <a class="font-bold text-primary hover:underline" href="login.html">Log In</a>
                 </p>
             </div>
         </div>
@@ -211,6 +241,26 @@
             © 2024 NeXLace Inc. All rights reserved.
         </p>
     </footer>
+
+    <!-- Success Popup -->
+    <div id="successPopup"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+        <div
+            class="bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-2xl p-8 shadow-2xl transform scale-90 transition-all duration-300 flex flex-col items-center gap-4 min-w-[320px]">
+            <div
+                class="h-16 w-16 rounded-full bg-green-50 dark:bg-green-900/20 flex items-center justify-center text-green-500 dark:text-green-400 mb-2">
+                <span class="material-symbols-outlined text-[32px] animate-bounce">check_circle</span>
+            </div>
+            <div class="text-center">
+                <h3 class="text-xl font-bold text-text-main-light dark:text-white mb-2">Registration Successful!</h3>
+                <p class="text-text-sub-light dark:text-text-sub-dark">Creating your account...</p>
+            </div>
+            <div class="w-full bg-gray-100 dark:bg-gray-800 rounded-full h-1.5 mt-4 overflow-hidden">
+                <div id="progressBar"
+                    class="bg-primary h-full w-0 rounded-full transition-all duration-[2000ms] ease-out"></div>
+            </div>
+        </div>
+    </div>
 
     <script>
         // Password visibility toggle
@@ -231,10 +281,25 @@
             e.preventDefault();
 
             const fullName = document.getElementById('fullName').value;
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const confirmPassword = document.getElementById('confirmPassword').value;
+            const emailInput = document.getElementById('email');
+            const email = emailInput.value.trim();
+            const emailError = document.getElementById('emailError');
+            const passwordInput = document.getElementById('password');
+            const password = passwordInput.value;
+            const passwordError = document.getElementById('passwordError');
+
+            const confirmPasswordInput = document.getElementById('confirmPassword');
+            const confirmPassword = confirmPasswordInput.value;
+            const confirmPasswordError = document.getElementById('confirmPasswordError');
+
             const terms = document.getElementById('terms').checked;
+
+            // Reset error states
+            [emailError, passwordError, confirmPasswordError].forEach(el => el.classList.add('hidden'));
+            [emailInput, passwordInput, confirmPasswordInput].forEach(el => {
+                el.classList.remove('border-red-500', 'focus:border-red-500', 'focus:ring-red-500/20');
+                el.classList.add('border-border-light', 'dark:border-border-dark', 'focus:border-primary', 'focus:ring-primary/20');
+            });
 
             // Validation
             if (!fullName || !email || !password || !confirmPassword) {
@@ -242,13 +307,25 @@
                 return;
             }
 
+            // Email Validation for @gmail.com
+            if (!email.toLowerCase().endsWith('@gmail.com')) {
+                emailError.classList.remove('hidden');
+                emailInput.classList.remove('border-border-light', 'dark:border-border-dark', 'focus:border-primary', 'focus:ring-primary/20');
+                emailInput.classList.add('border-red-500', 'focus:border-red-500', 'focus:ring-red-500/20');
+                return;
+            }
+
             if (password.length < 8) {
-                alert('Password must be at least 8 characters.');
+                passwordError.classList.remove('hidden');
+                passwordInput.classList.remove('border-border-light', 'dark:border-border-dark', 'focus:border-primary', 'focus:ring-primary/20');
+                passwordInput.classList.add('border-red-500', 'focus:border-red-500', 'focus:ring-red-500/20');
                 return;
             }
 
             if (password !== confirmPassword) {
-                alert('Passwords do not match.');
+                confirmPasswordError.classList.remove('hidden');
+                confirmPasswordInput.classList.remove('border-border-light', 'dark:border-border-dark', 'focus:border-primary', 'focus:ring-primary/20');
+                confirmPasswordInput.classList.add('border-red-500', 'focus:border-red-500', 'focus:ring-red-500/20');
                 return;
             }
 
@@ -257,8 +334,27 @@
                 return;
             }
 
-            alert('Registration successful! Redirecting to dashboard...');
-            window.location.href = 'mainpage.html';
+            // Show Success Popup
+            const popup = document.getElementById('successPopup');
+            const progressBar = document.getElementById('progressBar');
+
+            popup.classList.remove('hidden');
+            // Force reflow
+            void popup.offsetWidth;
+
+            popup.classList.remove('opacity-0');
+            popup.querySelector('div').classList.remove('scale-90');
+            popup.querySelector('div').classList.add('scale-100');
+
+            // Start progress bar
+            setTimeout(() => {
+                progressBar.style.width = '100%';
+            }, 100);
+
+            // Redirect after 2 seconds
+            setTimeout(() => {
+                window.location.href = 'mainpage.html';
+            }, 2000);
         });
     </script>
 </body>
