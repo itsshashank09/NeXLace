@@ -1,0 +1,132 @@
+Line 110: Chapter: CHAPTER 1: INTRODUCTION | Section: 1.3 Overview of NeXLace Platform | Caption: ║  Caption : Figure 1.1 — NeXLace Landing Page (index.html)               ║
+Line 152: Chapter: CHAPTER 1: INTRODUCTION | Section: 1.3 Overview of NeXLace Platform | Caption: ║  Caption : Figure 1.2 — NeXLace Main Dashboard (mainpage.php)           ║
+Line 209: Chapter: CHAPTER 2: PROBLEM STATEMENT | Section: 2.1 Limitations of Existing Freelance Platforms | Caption: ║  Caption : Table 2.1 — Comparison of General vs. Niche Freelance       ║
+Line 311: Chapter: CHAPTER 3: OBJECTIVES OF THE PROJECT | Section: 3.1 Primary Objectives | Caption: ║  Caption : Figure 3.1 — Project Objectives Mind Map                     ║
+Line 492: Chapter: CHAPTER 4: SCOPE OF THE PROJECT | Section: 4.2 Out-of-Scope Features | Caption: ║  Caption : Figure 4.1 — Scope Boundary Diagram                          ║
+Line 536: Chapter: CHAPTER 4: SCOPE OF THE PROJECT | Section: 4.3 Target Users | Caption: ║  Caption : Figure 4.2 — Target User Groups Overview                     ║
+Line 611: Chapter: CHAPTER 5: LITERATURE REVIEW | Section: 5.1 The Rise of the Gig Economy | Caption: ║  Caption : Figure 5.1 — Global Freelance Market Growth (2015–2025)      ║
+Line 673: Chapter: CHAPTER 5: LITERATURE REVIEW | Section: 5.2 Analysis of Existing Freelance Platforms (Upwork, Fiverr, Toptal) | Caption: ║  Caption : Table 5.1 — Side-by-Side Platform Feature Comparison         ║
+Line 774: Chapter: CHAPTER 5: LITERATURE REVIEW | Section: 5.4 Summary and Research Gap | Caption: ║  Caption : Figure 5.2 — Research Gap Positioning Diagram                ║
+Line 817: Chapter: CHAPTER 6: SYSTEM ARCHITECTURE | Section: 6.1 N-Tier Client-Server Architecture Overview | Caption: ║  Caption : Figure 6.1 — N-Tier System Architecture Diagram              ║
+Line 846: Chapter: CHAPTER 6: SYSTEM ARCHITECTURE | Section: 6.2 Presentation Layer (Frontend) | Caption: ║  Caption : Figure 6.2 — Responsive Layout Demonstration                 ║
+Line 951: Chapter: CHAPTER 6: SYSTEM ARCHITECTURE | Section: 6.5 Architecture Diagram (Description) | Caption: ║  Caption : Figure 6.3 — Data Flow Diagram (DFD) — Request/Response Cycle║
+Line 1046: Chapter: CHAPTER 7: TECHNOLOGY STACK | Section: 7.6 Development Tools (VS Code, phpMyAdmin, Git) | Caption: ║  Caption : Table 7.1 — Full Technology Stack Summary                    ║
+Line 1102: Chapter: CHAPTER 8: HARDWARE REQUIREMENTS | Section: 8.3 Server / Hosting Requirements | Caption: ║  Caption : Table 8.1 — Hardware Requirements Summary                    ║
+Line 1158: Chapter: CHAPTER 9: SOFTWARE REQUIREMENTS | Section: 9.3 Browser Compatibility | Caption: ║  Caption : Figure 9.1 — Development Environment Screenshot              ║
+Line 1241: Chapter: CHAPTER 10: PROGRAMMING LANGUAGES USED | Section: 10.5 CSS3 | Caption: ║  Caption : Table 10.1 — Programming Languages Summary                   ║
+Line 1271: Chapter: CHAPTER 11: DESCRIPTION OF SYSTEM COMPONENTS | Section: 10.5 CSS3 | Caption: ║  Caption : Figure 11.0 — System Module Overview Diagram                 ║
+Line 1308: Chapter: CHAPTER 11: DESCRIPTION OF SYSTEM COMPONENTS | Section: 11.1 User Authentication Module | Caption: ║  Caption : Figure 11.1 — Registration & Login Pages                     ║
+Line 1315: Chapter: CHAPTER 11: DESCRIPTION OF SYSTEM COMPONENTS | Section: 11.1 User Authentication Module | Caption: ║  Caption : Figure 11.2 — Authentication Flow Diagram                    ║
+Line 1348: Chapter: CHAPTER 11: DESCRIPTION OF SYSTEM COMPONENTS | Section: 11.2 Job Posting Module | Caption: ║  Caption : Figure 11.3 — Job Posting Interface (postjob.php)            ║
+Line 1381: Chapter: CHAPTER 11: DESCRIPTION OF SYSTEM COMPONENTS | Section: 11.3 Application & Hiring Module | Caption: ║  Caption : Figure 11.4 — Application Submission Modal                   ║
+Line 1389: Chapter: CHAPTER 11: DESCRIPTION OF SYSTEM COMPONENTS | Section: 11.3 Application & Hiring Module | Caption: ║  Caption : Figure 11.5 — Application Lifecycle State Diagram            ║
+Line 1421: Chapter: CHAPTER 11: DESCRIPTION OF SYSTEM COMPONENTS | Section: 11.4 Developer Profile Module | Caption: ║  Caption : Figure 11.6 — Developer Profile Creation Page               ║
+Line 1428: Chapter: CHAPTER 11: DESCRIPTION OF SYSTEM COMPONENTS | Section: 11.4 Developer Profile Module | Caption: ║  Caption : Figure 11.7 — Developer Directory & Full Profile View        ║
+Line 1461: Chapter: CHAPTER 11: DESCRIPTION OF SYSTEM COMPONENTS | Section: 11.5 Real-Time Messaging Module | Caption: ║  Caption : Figure 11.8 — Messaging Interface (messages.php)             ║
+Line 1469: Chapter: CHAPTER 11: DESCRIPTION OF SYSTEM COMPONENTS | Section: 11.5 Real-Time Messaging Module | Caption: ║  Caption : Figure 11.9 — Messaging Flow Diagram                         ║
+Line 1502: Chapter: CHAPTER 11: DESCRIPTION OF SYSTEM COMPONENTS | Section: 11.6 Notification Module | Caption: ║  Caption : Figure 11.10 — Notification Bell & Dropdown                  ║
+Line 1528: Chapter: CHAPTER 11: DESCRIPTION OF SYSTEM COMPONENTS | Section: 11.7 Billing & Payment Module | Caption: ║  Caption : Figure 11.11 — Billing & Payment Page (billingpayment.php)   ║
+Line 1562: Chapter: CHAPTER 11: DESCRIPTION OF SYSTEM COMPONENTS | Section: 11.8 Admin Panel Module | Caption: ║  Caption : Figure 11.12 — Admin Panel Dashboard                         ║
+Line 1569: Chapter: CHAPTER 11: DESCRIPTION OF SYSTEM COMPONENTS | Section: 11.8 Admin Panel Module | Caption: ║  Caption : Figure 11.13 — Admin User Details View                       ║
+Line 1592: Chapter: CHAPTER 11: DESCRIPTION OF SYSTEM COMPONENTS | Section: 11.9 Chatbot Module | Caption: ║  Caption : Figure 11.14 — Chatbot Widget                                ║
+Line 1620: Chapter: CHAPTER 11: DESCRIPTION OF SYSTEM COMPONENTS | Section: 11.10 Search Module | Caption: ║  Caption : Figure 11.15 — Search & Filter Interface                     ║
+Line 1628: Chapter: CHAPTER 11: DESCRIPTION OF SYSTEM COMPONENTS | Section: 11.10 Search Module | Caption: ║  Caption : Table 11.1 — System Modules Summary                          ║
+Line 1649: Chapter: CHAPTER 12: USER ROLES & PERMISSIONS | Section: 11.10 Search Module | Caption: ║  Caption : Figure 12.1 — Role-Based Access Control (RBAC) Diagram       ║
+Line 1746: Chapter: CHAPTER 12: USER ROLES & PERMISSIONS | Section: 12.3 Administrator Role | Caption: ║  Caption : Table 12.1 — Page Access Matrix by Role                      ║
+Line 1755: Chapter: CHAPTER 12: USER ROLES & PERMISSIONS | Section: 12.3 Administrator Role | Caption: ║  Caption : Figure 12.2 — Unauthorised Access Redirect                   ║
+Line 1802: Chapter: CHAPTER 13: UML DIAGRAMS | Section: 13.1 Use Case Diagram | Caption: ║  Caption : Figure 13.1 — NeXLace Use Case Diagram                       ║
+Line 1891: Chapter: CHAPTER 13: UML DIAGRAMS | Section: 13.2 Class Diagram | Caption: ║  Caption : Figure 13.2 — NeXLace Entity-Relationship / Class Diagram    ║
+Line 1917: Chapter: CHAPTER 13: UML DIAGRAMS | Section: 13.3 Activity Diagram | Caption: ║  Caption : Figure 13.3a — Activity Diagram: User Registration & OTP     ║
+Line 1932: Chapter: CHAPTER 13: UML DIAGRAMS | Section: 13.3 Activity Diagram | Caption: ║  Caption : Figure 13.3b — Activity Diagram: Job Posting & Hiring Flow   ║
+Line 1946: Chapter: CHAPTER 13: UML DIAGRAMS | Section: 13.3 Activity Diagram | Caption: ║  Caption : Figure 13.3c — Activity Diagram: Messaging Flow              ║
+Line 1973: Chapter: CHAPTER 13: UML DIAGRAMS | Section: 13.4 Sequence Diagram | Caption: ║  Caption : Figure 13.4a — Sequence Diagram: User Login                  ║
+Line 1990: Chapter: CHAPTER 13: UML DIAGRAMS | Section: 13.4 Sequence Diagram | Caption: ║  Caption : Figure 13.4b — Sequence Diagram: Job Application Submission  ║
+Line 2005: Chapter: CHAPTER 13: UML DIAGRAMS | Section: 13.4 Sequence Diagram | Caption: ║  Caption : Figure 13.4c — Sequence Diagram: Real-Time Notifications     ║
+Line 2030: Chapter: CHAPTER 13: UML DIAGRAMS | Section: 13.5 State Diagram | Caption: ║  Caption : Figure 13.5a — State Diagram: Job Posting Lifecycle          ║
+Line 2049: Chapter: CHAPTER 13: UML DIAGRAMS | Section: 13.5 State Diagram | Caption: ║  Caption : Figure 13.5b — State Diagram: Application Lifecycle          ║
+Line 2067: Chapter: CHAPTER 13: UML DIAGRAMS | Section: 13.5 State Diagram | Caption: ║  Caption : Figure 13.5c — State Diagram: User Account Lifecycle         ║
+Line 2123: Chapter: CHAPTER 14: DATABASE DESIGN | Section: 14.1 ER Diagram and Explanation | Caption: ║  Caption : Figure 14.1 — NeXLace Entity-Relationship (ER) Diagram       ║
+Line 2176: Chapter: CHAPTER 14: DATABASE DESIGN | Section: 14.2 Database Normalisation Strategy | Caption: ║  Caption : Figure 14.2 — Normalisation Levels (1NF → 2NF → 3NF)        ║
+Line 2221: Chapter: CHAPTER 14: DATABASE DESIGN | Section: 14.3 Table Structures | Caption: ║  Caption : Figure 14.3 — `users` Table in phpMyAdmin                    ║
+Line 2262: Chapter: CHAPTER 14: DATABASE DESIGN | Section: 14.3 Table Structures | Caption: ║  Caption : Figure 14.4 — `profiles` Table Structure in phpMyAdmin       ║
+Line 2299: Chapter: CHAPTER 14: DATABASE DESIGN | Section: 14.3 Table Structures | Caption: ║  Caption : Figure 14.5 — `jobs` Table Structure in phpMyAdmin           ║
+Line 2333: Chapter: CHAPTER 14: DATABASE DESIGN | Section: 14.3 Table Structures | Caption: ║  Caption : Figure 14.6 — `applications` Table Structure in phpMyAdmin   ║
+Line 2367: Chapter: CHAPTER 14: DATABASE DESIGN | Section: 14.3 Table Structures | Caption: ║  Caption : Figure 14.7 — `messages` Table Structure in phpMyAdmin       ║
+Line 2399: Chapter: CHAPTER 14: DATABASE DESIGN | Section: 14.3 Table Structures | Caption: ║  Caption : Figure 14.8 — `notifications` Table Structure in phpMyAdmin  ║
+Line 2434: Chapter: CHAPTER 14: DATABASE DESIGN | Section: 14.3 Table Structures | Caption: ║  Caption : Figure 14.9 — `reviews` Table Structure in phpMyAdmin        ║
+Line 2468: Chapter: CHAPTER 14: DATABASE DESIGN | Section: 14.3 Table Structures | Caption: ║  Caption : Figure 14.10 — `sessions` Table Structure in phpMyAdmin      ║
+Line 2486: Chapter: CHAPTER 14: DATABASE DESIGN | Section: 14.4 Key Relationships and Foreign Key Constraints | Caption: ║  Caption : Table 14.1 — Foreign Key Relationships Summary               ║
+Line 2559: Chapter: CHAPTER 14: DATABASE DESIGN | Section: 14.5 Database Connection Configuration (`db_helper.php`) | Caption: ║  Caption : Figure 14.11 — db_helper.php in VS Code                      ║
+Line 2567: Chapter: CHAPTER 14: DATABASE DESIGN | Section: 14.5 Database Connection Configuration (`db_helper.php`) | Caption: ║  Caption : Figure 14.12 — NeXLace Database in phpMyAdmin                ║
+Line 2624: Chapter: CHAPTER 15: SYSTEM DEVELOPMENT METHODOLOGY (SDLC) | Section: 15.1 Choice of Agile Methodology | Caption: ║  Caption : Figure 15.1 — Agile/Scrum Development Cycle Diagram         ║
+Line 2684: Chapter: CHAPTER 15: SYSTEM DEVELOPMENT METHODOLOGY (SDLC) | Section: 15.2 Sprint Planning and Execution | Caption: ║  Caption : Figure 15.2 — Project Gantt Chart                            ║
+Line 2699: Chapter: CHAPTER 15: SYSTEM DEVELOPMENT METHODOLOGY (SDLC) | Section: 15.3 Product Backlog Overview | Caption: ║  Caption : Table 15.1 — NeXLace Product Backlog (Prioritised)           ║
+Line 2837: Chapter: CHAPTER 16: CONSTRUCTION & IMPLEMENTATION DETAILS | Section: 16.1 Environment Setup and Project Structure | Caption: ║  Caption : Figure 16.1 — Project Folder Structure in VS Code Explorer   ║
+Line 2857: Chapter: CHAPTER 16: CONSTRUCTION & IMPLEMENTATION DETAILS | Section: 16.2 Database Construction | Caption: ║  Caption : Figure 16.2 — nexlace_db in phpMyAdmin                       ║
+Line 2888: Chapter: CHAPTER 16: CONSTRUCTION & IMPLEMENTATION DETAILS | Section: 16.3 Backend API Development | Caption: ║  Caption : Figure 16.3 — register.php and login.php in VS Code          ║
+Line 2908: Chapter: CHAPTER 16: CONSTRUCTION & IMPLEMENTATION DETAILS | Section: 16.3 Backend API Development | Caption: ║  Caption : Figure 16.4 — post_job.php and apply_job.php in VS Code      ║
+Line 2931: Chapter: CHAPTER 16: CONSTRUCTION & IMPLEMENTATION DETAILS | Section: 16.3 Backend API Development | Caption: ║  Caption : Figure 16.5 — Messaging API Files in VS Code                 ║
+Line 2958: Chapter: CHAPTER 16: CONSTRUCTION & IMPLEMENTATION DETAILS | Section: 16.3 Backend API Development | Caption: ║  Caption : Figure 16.6 — notifications_stream.php in VS Code            ║
+Line 2975: Chapter: CHAPTER 16: CONSTRUCTION & IMPLEMENTATION DETAILS | Section: 16.3 Backend API Development | Caption: ║  Caption : Figure 16.7 — save_profile.php in VS Code                    ║
+Line 2991: Chapter: CHAPTER 16: CONSTRUCTION & IMPLEMENTATION DETAILS | Section: 16.3 Backend API Development | Caption: ║  Caption : Figure 16.8 — search.php in VS Code                          ║
+Line 3010: Chapter: CHAPTER 16: CONSTRUCTION & IMPLEMENTATION DETAILS | Section: 16.3 Backend API Development | Caption: ║  Caption : Figure 16.9 — Invitation API Files in VS Code                ║
+Line 3032: Chapter: CHAPTER 16: CONSTRUCTION & IMPLEMENTATION DETAILS | Section: 16.4 Frontend Development | Caption: ║  Caption : Figure 16.10 — Landing Page (index.html)                     ║
+Line 3050: Chapter: CHAPTER 16: CONSTRUCTION & IMPLEMENTATION DETAILS | Section: 16.4 Frontend Development | Caption: ║  Caption : Figure 16.11 — Login Page and Registration Page              ║
+Line 3066: Chapter: CHAPTER 16: CONSTRUCTION & IMPLEMENTATION DETAILS | Section: 16.4 Frontend Development | Caption: ║  Caption : Figure 16.12 — Main Dashboard (Client view & Developer view) ║
+Line 3085: Chapter: CHAPTER 16: CONSTRUCTION & IMPLEMENTATION DETAILS | Section: 16.4 Frontend Development | Caption: ║  Caption : Figure 16.13 — Profile Creation & Developer Directory        ║
+Line 3100: Chapter: CHAPTER 16: CONSTRUCTION & IMPLEMENTATION DETAILS | Section: 16.4 Frontend Development | Caption: ║  Caption : Figure 16.14 — Find Work Page (findwork.php)                 ║
+Line 3115: Chapter: CHAPTER 16: CONSTRUCTION & IMPLEMENTATION DETAILS | Section: 16.4 Frontend Development | Caption: ║  Caption : Figure 16.15 — Post Job Page (postjob.php)                   ║
+Line 3131: Chapter: CHAPTER 16: CONSTRUCTION & IMPLEMENTATION DETAILS | Section: 16.4 Frontend Development | Caption: ║  Caption : Figure 16.16 — Messaging Interface (messages.php)            ║
+Line 3147: Chapter: CHAPTER 16: CONSTRUCTION & IMPLEMENTATION DETAILS | Section: 16.4 Frontend Development | Caption: ║  Caption : Figure 16.17 — Notification Center (notification.php)        ║
+Line 3163: Chapter: CHAPTER 16: CONSTRUCTION & IMPLEMENTATION DETAILS | Section: 16.4 Frontend Development | Caption: ║  Caption : Figure 16.18 — Billing & Payment Page (billingpayment.php)   ║
+Line 3177: Chapter: CHAPTER 16: CONSTRUCTION & IMPLEMENTATION DETAILS | Section: 16.4 Frontend Development | Caption: ║  Caption : Figure 16.19 — Profile Settings Page (profilesetting.php)    ║
+Line 3192: Chapter: CHAPTER 16: CONSTRUCTION & IMPLEMENTATION DETAILS | Section: 16.4 Frontend Development | Caption: ║  Caption : Figure 16.20 — Help & Support Page (help.php)                ║
+Line 3209: Chapter: CHAPTER 16: CONSTRUCTION & IMPLEMENTATION DETAILS | Section: 16.4 Frontend Development | Caption: ║  Caption : Figure 16.21 — Admin Panel Dashboard & User Details          ║
+Line 3244: Chapter: CHAPTER 16: CONSTRUCTION & IMPLEMENTATION DETAILS | Section: 16.5 OTP Email Verification System (Nodemailer / OTP Server) | Caption: ║  Caption : Figure 16.22 — OTP Email Verification Flow                   ║
+Line 3252: Chapter: CHAPTER 16: CONSTRUCTION & IMPLEMENTATION DETAILS | Section: 16.5 OTP Email Verification System (Nodemailer / OTP Server) | Caption: ║  Caption : Figure 16.23 — OTP Verification Email in Inbox               ║
+Line 3272: Chapter: CHAPTER 16: CONSTRUCTION & IMPLEMENTATION DETAILS | Section: 16.6 Real-Time Clock & Live Updates | Caption: ║  Caption : Figure 16.24 — Real-Time Clock on Dashboard                  ║
+Line 3301: Chapter: CHAPTER 16: CONSTRUCTION & IMPLEMENTATION DETAILS | Section: 16.7 Chatbot Integration | Caption: ║  Caption : Figure 16.25 — Chatbot Widget Open on Platform Page          ║
+Line 3335: Chapter: CHAPTER 17: SECURITY IMPLEMENTATION | Section: 16.7 Chatbot Integration | Caption: ║  Caption : Table 17.0 — Security Measures Summary                       ║
+Line 3375: Chapter: CHAPTER 17: SECURITY IMPLEMENTATION | Section: 17.1 SQL Injection Prevention (PDO Prepared Statements) | Caption: ║  Caption : Figure 17.1 — PDO Prepared Statement in VS Code              ║
+Line 3413: Chapter: CHAPTER 17: SECURITY IMPLEMENTATION | Section: 17.2 Cross-Site Scripting (XSS) Prevention (`htmlspecialchars()`) | Caption: ║  Caption : Figure 17.2 — htmlspecialchars() Usage in VS Code            ║
+Line 3452: Chapter: CHAPTER 17: SECURITY IMPLEMENTATION | Section: 17.3 Password Hashing (BCrypt via `password_hash()`) | Caption: ║  Caption : Figure 17.3 — Password Hashing in register.php               ║
+Line 3459: Chapter: CHAPTER 17: SECURITY IMPLEMENTATION | Section: 17.3 Password Hashing (BCrypt via `password_hash()`) | Caption: ║  Caption : Figure 17.4 — Hashed Passwords in Database (phpMyAdmin)      ║
+Line 3502: Chapter: CHAPTER 17: SECURITY IMPLEMENTATION | Section: 17.4 CSRF Token Protection | Caption: ║  Caption : Figure 17.5 — CSRF Token Implementation in VS Code           ║
+Line 3546: Chapter: CHAPTER 17: SECURITY IMPLEMENTATION | Section: 17.5 Session Management and Secure Logout | Caption: ║  Caption : Figure 17.6 — Active Sessions View (login&security.php)      ║
+Line 3585: Chapter: CHAPTER 17: SECURITY IMPLEMENTATION | Section: 17.6 Role-Based Access Control | Caption: ║  Caption : Figure 17.7 — auth_helper.php in VS Code                     ║
+Line 3627: Chapter: CHAPTER 17: SECURITY IMPLEMENTATION | Section: 17.7 Brute-Force and Unauthorised Access Prevention | Caption: ║  Caption : Figure 17.8 — Login Lockout After Failed Attempts            ║
+Line 3676: Chapter: CHAPTER 17: SECURITY IMPLEMENTATION | Section: 17.8 File Upload Security (for Attachments) | Caption: ║  Caption : Figure 17.9 — File Upload Validation Code in VS Code         ║
+Line 3685: Chapter: CHAPTER 17: SECURITY IMPLEMENTATION | Section: 17.8 File Upload Security (for Attachments) | Caption: ║  Caption : Figure 17.10 — Security Architecture Overview                ║
+Line 3725: Chapter: CHAPTER 18: TESTING METHODOLOGY | Section: 17.8 File Upload Security (for Attachments) | Caption: ║  Caption : Table 18.0 — Testing Types Summary                           ║
+Line 3785: Chapter: CHAPTER 18: TESTING METHODOLOGY | Section: 18.1 Unit Testing | Caption: ║  Caption : Table 18.1 — Full Unit Test Case Matrix                      ║
+Line 3832: Chapter: CHAPTER 18: TESTING METHODOLOGY | Section: 18.2 Integration Testing | Caption: ║  Caption : Table 18.2 — Integration Test Results                        ║
+Line 3881: Chapter: CHAPTER 18: TESTING METHODOLOGY | Section: 18.3 System / End-to-End Testing | Caption: ║  Caption : Table 18.3 — End-to-End Test Scenarios & Results             ║
+Line 3915: Chapter: CHAPTER 18: TESTING METHODOLOGY | Section: 18.4 User Interface & Compatibility Testing | Caption: ║  Caption : Figure 18.1 — Cross-Browser Compatibility Screenshots        ║
+Line 3965: Chapter: CHAPTER 18: TESTING METHODOLOGY | Section: 18.5 Security Testing | Caption: ║  Caption : Table 18.4 — Security Test Results                           ║
+Line 4006: Chapter: CHAPTER 18: TESTING METHODOLOGY | Section: 18.6 Performance and Stress Testing | Caption: ║  Caption : Figure 18.2 — Browser DevTools Network Tab (Performance)     ║
+Line 4045: Chapter: CHAPTER 18: TESTING METHODOLOGY | Section: 18.7 Mobile Responsiveness Testing | Caption: ║  Caption : Figure 18.3 — Mobile Responsiveness Screenshots              ║
+Line 4060: Chapter: CHAPTER 18: TESTING METHODOLOGY | Section: 18.8 Testing Results Summary Table | Caption: ║  Caption : Table 18.5 — Master Testing Results Summary                  ║
+Line 4076: Chapter: CHAPTER 18: TESTING METHODOLOGY | Section: 18.8 Testing Results Summary Table | Caption: ║  Caption : Figure 18.4 — Testing Coverage Chart                         ║
+Line 4140: Chapter: CHAPTER 19: DEPLOYMENT | Section: 19.1 Development Environment Setup (Laragon Stack) | Caption: ║  Caption : Figure 19.1 — Laragon Running (System Tray / Control Panel)  ║
+Line 4148: Chapter: CHAPTER 19: DEPLOYMENT | Section: 19.1 Development Environment Setup (Laragon Stack) | Caption: ║  Caption : Figure 19.2 — NeXLace Running in Browser (Local)            ║
+Line 4210: Chapter: CHAPTER 19: DEPLOYMENT | Section: 19.2 Local Deployment Steps | Caption: ║  Caption : Figure 19.3 — Local Deployment Flow Diagram                  ║
+Line 4218: Chapter: CHAPTER 19: DEPLOYMENT | Section: 19.2 Local Deployment Steps | Caption: ║  Caption : Figure 19.4 — OTP Server Running in Terminal                 ║
+Line 4226: Chapter: CHAPTER 19: DEPLOYMENT | Section: 19.2 Local Deployment Steps | Caption: ║  Caption : Figure 19.5 — phpMyAdmin nexlace_db Setup                    ║
+Line 4264: Chapter: CHAPTER 19: DEPLOYMENT | Section: 19.3 Version Control (Git) | Caption: ║  Caption : Figure 19.6 — Git Log / Commit History                       ║
+Line 4273: Chapter: CHAPTER 19: DEPLOYMENT | Section: 19.3 Version Control (Git) | Caption: ║  Caption : Figure 19.7 — GitHub Repository Page                         ║
+Line 4330: Chapter: CHAPTER 19: DEPLOYMENT | Section: 19.4 Production Deployment Considerations | Caption: ║  Caption : Figure 19.8 — Production Architecture Diagram                ║
+Line 4371: Chapter: CHAPTER 19: DEPLOYMENT | Section: 19.5 System Start-Up and Shutdown Procedures | Caption: ║  Caption : Figure 19.9 — Laragon "Start All" and All Services Running   ║
+Line 4412: Chapter: CHAPTER 20: RESULTS AND SYSTEM DEMONSTRATION | Section: 20.1 Completed System Features | Caption: ║  Caption : Table 20.1 — Completed Features Summary                      ║
+Line 4448: Chapter: CHAPTER 20: RESULTS AND SYSTEM DEMONSTRATION | Section: 20.2 Platform Demonstration | Caption: ║  Caption : Figure 20.1 — Landing Page — Final Version                   ║
+Line 4456: Chapter: CHAPTER 20: RESULTS AND SYSTEM DEMONSTRATION | Section: 20.2 Platform Demonstration | Caption: ║  Caption : Figure 20.2 — Client Dashboard — Final Version               ║
+Line 4464: Chapter: CHAPTER 20: RESULTS AND SYSTEM DEMONSTRATION | Section: 20.2 Platform Demonstration | Caption: ║  Caption : Figure 20.3 — Developer Dashboard — Final Version            ║
+Line 4472: Chapter: CHAPTER 20: RESULTS AND SYSTEM DEMONSTRATION | Section: 20.2 Platform Demonstration | Caption: ║  Caption : Figure 20.4 — Developer Directory (devprofiles.php)          ║
+Line 4480: Chapter: CHAPTER 20: RESULTS AND SYSTEM DEMONSTRATION | Section: 20.2 Platform Demonstration | Caption: ║  Caption : Figure 20.5 — Find Work Page (findwork.php)                  ║
+Line 4487: Chapter: CHAPTER 20: RESULTS AND SYSTEM DEMONSTRATION | Section: 20.2 Platform Demonstration | Caption: ║  Caption : Figure 20.6 — Messaging Interface (messages.php)             ║
+Line 4495: Chapter: CHAPTER 20: RESULTS AND SYSTEM DEMONSTRATION | Section: 20.2 Platform Demonstration | Caption: ║  Caption : Figure 20.7 — Notification Bell with Live Alerts             ║
+Line 4503: Chapter: CHAPTER 20: RESULTS AND SYSTEM DEMONSTRATION | Section: 20.2 Platform Demonstration | Caption: ║  Caption : Figure 20.8 — Admin Panel Dashboard                          ║
+Line 4528: Chapter: CHAPTER 21: ANALYSIS & DISCUSSION | Section: 21.1 Achievement of Objectives | Caption: ║  Caption : Table 21.1 — Objective Achievement Matrix                    ║
+Line 4639: Chapter: CHAPTER 21: ANALYSIS & DISCUSSION | Section: 21.3 Limitations and Constraints | Caption: ║  Caption : Table 21.2 — Limitations Summary                             ║
+Line 4654: Chapter: CHAPTER 21: ANALYSIS & DISCUSSION | Section: 21.4 Comparison with Existing Platforms | Caption: ║  Caption : Table 21.3 — NeXLace vs Existing Platforms Comparison        ║
+Line 4750: Chapter: CHAPTER 22: FUTURE WORK | Section: 22.7 Two-Factor Authentication (2FA) | Caption: ║  Caption : Figure 22.1 — NeXLace Future Development Roadmap             ║
+Line 4840: Chapter: CHAPTER 23: CONCLUSION | Section: 23.3 Final Conclusion | Caption: ║  Caption : Table 23.1 — Final Project Statistics                        ║

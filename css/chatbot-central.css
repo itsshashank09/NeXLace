@@ -1,0 +1,376 @@
+/* ========================================
+   NeXBot Central Chatbot Styles
+   Embedded dashboard chatbot — NOT the floating widget
+   ======================================== */
+
+/* ===== SCROLLBAR ===== */
+#nexbot-messages::-webkit-scrollbar {
+    width: 5px;
+}
+
+#nexbot-messages::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#nexbot-messages::-webkit-scrollbar-thumb {
+    background: rgba(156, 163, 175, 0.3);
+    border-radius: 10px;
+}
+
+.dark #nexbot-messages::-webkit-scrollbar-thumb {
+    background: rgba(75, 85, 99, 0.4);
+}
+
+#nexbot-messages {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(156, 163, 175, 0.3) transparent;
+}
+
+/* ===== WELCOME SECTION ===== */
+.nexbot-welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem 1rem;
+    text-align: center;
+    animation: nexbot-welcome-in 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nexbot-welcome-avatar {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 4px 20px rgba(19, 91, 236, 0.3));
+    animation: nexbot-avatar-float 4s ease-in-out infinite;
+}
+
+.nexbot-welcome-name {
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.25rem;
+}
+
+.nexbot-welcome-greeting {
+    font-size: 0.95rem;
+    opacity: 0.6;
+    margin-bottom: 1.5rem;
+}
+
+@keyframes nexbot-welcome-in {
+    from {
+        opacity: 0;
+        transform: translateY(16px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes nexbot-avatar-float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+/* ===== QUICK ACTIONS ===== */
+.nexbot-central-quick-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.nexbot-central-quick-btn {
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid #e0e3ea;
+    background: #ffffff;
+    color: #374151;
+}
+
+.dark .nexbot-central-quick-btn {
+    background: rgba(30, 41, 59, 0.6);
+    border-color: #2a3447;
+    color: #d1d5db;
+}
+
+.nexbot-central-quick-btn:hover {
+    background: #135bec;
+    color: white;
+    border-color: #135bec;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(19, 91, 236, 0.35);
+}
+
+/* ===== MESSAGE BUBBLES ===== */
+.nexbot-msg {
+    display: flex;
+    gap: 10px;
+    max-width: 85%;
+    animation: nexbot-msg-slide 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes nexbot-msg-slide {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.nexbot-msg-user {
+    align-self: flex-end;
+    flex-direction: row-reverse;
+}
+
+.nexbot-msg-bot {
+    align-self: flex-start;
+}
+
+.nexbot-msg-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.nexbot-msg-bot .nexbot-msg-avatar {
+    background: linear-gradient(135deg, #135bec, #0d47c7);
+    color: white;
+}
+
+.nexbot-msg-bot .nexbot-msg-avatar .material-symbols-outlined {
+    font-size: 16px;
+}
+
+.nexbot-msg-user .nexbot-msg-avatar {
+    background: #e5e7eb;
+    color: #6b7280;
+}
+
+.nexbot-msg-user .nexbot-msg-avatar .material-symbols-outlined {
+    font-size: 16px;
+}
+
+.dark .nexbot-msg-user .nexbot-msg-avatar {
+    background: #374151;
+    color: #9ca3af;
+}
+
+/* Bubble */
+.nexbot-bubble {
+    padding: 12px 16px;
+    border-radius: 18px;
+    font-size: 14px;
+    line-height: 1.6;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.nexbot-msg-user .nexbot-bubble {
+    background: #135bec;
+    color: white;
+    border-bottom-right-radius: 6px;
+}
+
+.nexbot-msg-bot .nexbot-bubble {
+    background: #f3f4f6;
+    color: #1f2937;
+    border-bottom-left-radius: 6px;
+}
+
+.dark .nexbot-msg-bot .nexbot-bubble {
+    background: #1e293b;
+    color: #e5e7eb;
+}
+
+/* Markdown in bot bubbles */
+.nexbot-msg-bot .nexbot-bubble strong,
+.nexbot-msg-bot .nexbot-bubble b {
+    font-weight: 700;
+    color: #111827;
+}
+
+.dark .nexbot-msg-bot .nexbot-bubble strong,
+.dark .nexbot-msg-bot .nexbot-bubble b {
+    color: #f9fafb;
+}
+
+.nexbot-msg-bot .nexbot-bubble code {
+    background: rgba(0, 0, 0, 0.06);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: 'Fira Code', 'Cascadia Code', monospace;
+    font-size: 12.5px;
+}
+
+.dark .nexbot-msg-bot .nexbot-bubble code {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.nexbot-msg-bot .nexbot-bubble pre {
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 12px 14px;
+    border-radius: 10px;
+    overflow-x: auto;
+    margin: 8px 0;
+    font-size: 12.5px;
+    font-family: 'Fira Code', 'Cascadia Code', monospace;
+    line-height: 1.5;
+}
+
+.nexbot-msg-bot .nexbot-bubble pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+}
+
+.nexbot-msg-bot .nexbot-bubble ul,
+.nexbot-msg-bot .nexbot-bubble ol {
+    margin: 6px 0;
+    padding-left: 18px;
+}
+
+.nexbot-msg-bot .nexbot-bubble li {
+    margin-bottom: 4px;
+}
+
+.nexbot-msg-bot .nexbot-bubble p {
+    margin: 0 0 6px;
+}
+
+.nexbot-msg-bot .nexbot-bubble p:last-child {
+    margin-bottom: 0;
+}
+
+.nexbot-msg-bot .nexbot-bubble a {
+    color: #135bec;
+    text-decoration: underline;
+}
+
+/* ===== TYPING INDICATOR ===== */
+.nexbot-typing {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 14px 18px;
+}
+
+.nexbot-typing-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #9ca3af;
+    animation: nexbot-typing-bounce 1.4s ease-in-out infinite;
+}
+
+.dark .nexbot-typing-dot {
+    background: #6b7280;
+}
+
+.nexbot-typing-dot:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.nexbot-typing-dot:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+@keyframes nexbot-typing-bounce {
+
+    0%,
+    60%,
+    100% {
+        transform: translateY(0);
+    }
+
+    30% {
+        transform: translateY(-7px);
+    }
+}
+
+/* ===== ERROR BUBBLE ===== */
+.nexbot-error-bubble {
+    background: #fef2f2 !important;
+    color: #dc2626 !important;
+    border: 1px solid #fecaca;
+}
+
+.dark .nexbot-error-bubble {
+    background: rgba(220, 38, 38, 0.1) !important;
+    color: #f87171 !important;
+    border-color: rgba(220, 38, 38, 0.2);
+}
+
+/* ===== PARTICLES ===== */
+.nexbot-particle-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.nexbot-particle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0;
+    animation: nexbot-particle-float linear infinite;
+}
+
+@keyframes nexbot-particle-float {
+    0% {
+        opacity: 0;
+        top: 100%;
+        transform: scale(0);
+    }
+
+    10% {
+        opacity: 0.5;
+    }
+
+    90% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 0;
+        top: -10%;
+        transform: scale(1);
+    }
+}
+
+/* Ensure content sits above particles */
+#nexbot-central>div>*:not(.nexbot-particle-container) {
+    position: relative;
+    z-index: 2;
+}
