@@ -39,6 +39,13 @@ if (!isset($_SESSION['name']) || empty($_SESSION['name'])) {
 // Load config
 require_once __DIR__ . '/../config/gemini_config.php';
 
+if (GEMINI_API_KEY === '') {
+    http_response_code(503);
+    echo json_encode(['error' => 'The assistant is not configured.']);
+    exit();
+}
+
+
 // ========== RATE LIMITING ==========
 $userId = $_SESSION['user_id'] ?? session_id();
 $rateLimitFile = sys_get_temp_dir() . '/nexlace_chatbot_' . md5($userId) . '.json';

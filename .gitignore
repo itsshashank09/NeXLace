@@ -1,5 +1,7 @@
 # Environment variables (contains secrets)
 .env
+.env.*
+!.env.example
 
 # Dependencies
 node_modules/
@@ -14,3 +16,7 @@ Thumbs.db
 # IDE files
 .vscode/
 .idea/
+
+# Runtime profile and portfolio uploads
+assetes/profile_images/
+assetes/portfolio_images/

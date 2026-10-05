@@ -3,6 +3,7 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
 const dns = require('dns');
+const { randomInt } = require('node:crypto');
 
 // Fix DNS resolution issues — use Google Public DNS servers
 dns.setServers(['8.8.8.8', '8.8.4.4', '1.1.1.1']);
@@ -32,12 +33,7 @@ setInterval(() => {
 
 // Generate a 6-digit OTP
 function generateOTP() {
-  const digits = '0123456789';
-  let otp = '';
-  for (let i = 0; i < 6; i++) {
-    otp += digits[Math.floor(Math.random() * 10)];
-  }
-  return otp;
+  return String(randomInt(1000000)).padStart(6, '0');
 }
 
 // Configure the transporter with explicit SMTP settings
@@ -53,7 +49,7 @@ const transporter = nodemailer.createTransport({
   greetingTimeout: 10000,
   socketTimeout: 15000,
   tls: {
-    rejectUnauthorized: false, // Allow self-signed certs if needed
+    rejectUnauthorized: true, // Verify the SMTP server certificate
   },
 });
 

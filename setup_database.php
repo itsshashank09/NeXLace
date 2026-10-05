@@ -5,11 +5,11 @@
  */
 
 // Database configuration
-$host = "localhost";
-$port = "3307"; // Adjust if needed
-$username = "root";
-$password = "";
-$dbname = "nexlace";
+$host = getenv('DB_HOST') ?: 'localhost';
+$port = getenv('DB_PORT') ?: '3306';
+$username = getenv('DB_USER') ?: 'root';
+$password = getenv('DB_PASSWORD') ?: '';
+$dbname = getenv('DB_NAME') ?: 'nexlace';
 
 try {
     // 1. Connect to MySQL server (without database selected first)

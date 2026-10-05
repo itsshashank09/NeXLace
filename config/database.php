@@ -1,9 +1,5 @@
 <?php
-/**
- * Database Configuration and Connection
- * MySQL Database: shashank
- * Table: Table_register
- */
+/** MySQL connection settings. Environment overrides keep credentials out of source. */
 
 class Database
 {
@@ -21,6 +17,15 @@ class Database
     public function getConnection()
     {
         $this->conn = null;
+        $this->host = getenv('DB_HOST') ?: $this->host;
+        $this->port = getenv('DB_PORT') ?: $this->port;
+        $this->db_name = getenv('DB_NAME') ?: $this->db_name;
+        $this->username = getenv('DB_USER') ?: $this->username;
+        $password = getenv('DB_PASSWORD');
+        if ($password !== false) {
+            $this->password = $password;
+        }
+
 
         try {
             $dsn = "mysql:host=" . $this->host . ";port=" . $this->port . ";dbname=" . $this->db_name . ";charset=utf8mb4";

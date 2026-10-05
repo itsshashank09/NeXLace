@@ -1,15 +1,8 @@
 <?php
-/**
- * Gemini API Configuration
- * 
- * SECURITY: This file contains sensitive API credentials.
- * - NEVER expose this file to the frontend
- * - NEVER commit this file to version control
- * - Consider using environment variables in production
- */
+/** Server-side assistant settings. Credentials come from the PHP environment. */
 
-define('GEMINI_API_KEY', 'AIzaSyDonX47i9LJsNBvauHgPmWvLiWQsg6dGYQ');
-define('GEMINI_MODEL', 'gemini-2.5-flash');
+define('GEMINI_API_KEY', getenv('GEMINI_API_KEY') ?: '');
+define('GEMINI_MODEL', getenv('GEMINI_MODEL') ?: 'gemini-2.5-flash');
 define('GEMINI_API_URL', 'https://generativelanguage.googleapis.com/v1beta/models/' . GEMINI_MODEL . ':generateContent?key=' . GEMINI_API_KEY);
 
 // Rate limiting settings

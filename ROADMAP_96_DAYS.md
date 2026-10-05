@@ -1,4 +1,6 @@
-# NeXLace Project Log Book (96 Days)
+# NeXLace development roadmap
+
+This planning document includes proposed work and historical notes. It is not a verified record of completed features or test results. See the README for the current implementation and setup gaps.
 
 This comprehensive log book details the engineering and development journey of **NeXLace**, a freelance marketplace platform connecting clients with developers. It covers the full lifecycle from initial concept to final deployment over a 96-day period.
 

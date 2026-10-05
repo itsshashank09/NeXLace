@@ -1,10 +1,9 @@
 {
   "name": "nexlace",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "PHP and MySQL freelance marketplace prototype; optional Node email service.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "check:email": "node --check nodemailer/index.js"
   },
   "keywords": [],
   "author": "",
