@@ -54,58 +54,7 @@ $conn = getDB();
 
 if ($conn) {
     try {
-        // --- AUTO-FIX: Ensure columns exist and have data ---
-        $columnsToCheck = [
-            'user_id' => "INT NOT NULL DEFAULT 0",
-            'job_title' => "VARCHAR(255) NOT NULL",
-            'job_details' => "TEXT NOT NULL",
-            'skills_required' => "TEXT",
-            'estimated_budget' => "INT",
-            'project_timeline' => "VARCHAR(100)",
-            'category' => "VARCHAR(100) DEFAULT 'Web Development'",
-            'project_type' => "VARCHAR(50) DEFAULT 'Fixed Price'",
-            'experience_level' => "VARCHAR(50) DEFAULT 'Intermediate'",
-            'created_at' => "TIMESTAMP DEFAULT CURRENT_TIMESTAMP"
-        ];
-        $defaults = [
-            'category' => 'Web Development',
-            'project_type' => 'Fixed Price',
-            'experience_level' => 'Intermediate'
-        ];
-
-        // Ensure table exists
-        $createTableSql = "CREATE TABLE IF NOT EXISTS post_jobs (
-            id INT AUTO_INCREMENT PRIMARY KEY,
-            user_id INT NOT NULL DEFAULT 0,
-            job_title VARCHAR(255) NOT NULL,
-            job_details TEXT NOT NULL,
-            skills_required TEXT,
-            estimated_budget INT,
-            project_timeline VARCHAR(100),
-            category VARCHAR(100) DEFAULT 'Web Development',
-            project_type VARCHAR(50) DEFAULT 'Fixed Price',
-            experience_level VARCHAR(50) DEFAULT 'Intermediate',
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";
-        $conn->exec($createTableSql);
-
-        foreach ($columnsToCheck as $colName => $colDef) {
-            // Skip check for columns that don't have defaults or handle differently?
-            // Actually, for NOT NULL columns without default, updating existing rows is tricky if empty.
-            // But valid for fresh columns.
-
-            $check = $conn->query("SHOW COLUMNS FROM post_jobs LIKE '$colName'");
-            if ($check->rowCount() == 0) {
-                // Column missing, add it
-                $conn->exec("ALTER TABLE post_jobs ADD COLUMN $colName $colDef");
-            }
-
-            // Only update defaults for specific columns
-            if (isset($defaults[$colName])) {
-                $conn->query("UPDATE post_jobs SET $colName = '{$defaults[$colName]}' WHERE $colName IS NULL OR $colName = ''");
-            }
-        }
-        // ----------------------------------------------------
+        // Tables and defaults are installed by the versioned schema, not page requests.
 
         // Get current user ID for applied jobs lookup
         $currentUserId = $_SESSION['user_id'] ?? 0;
@@ -158,17 +107,6 @@ if ($conn) {
 
         if ($currentUserId > 0) {
             try {
-                // Ensure liked_jobs table exists
-                $conn->exec("CREATE TABLE IF NOT EXISTS liked_jobs (
-                    id INT AUTO_INCREMENT PRIMARY KEY,
-                    user_id INT NOT NULL,
-                    job_id INT NOT NULL,
-                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                    UNIQUE KEY unique_like (user_id, job_id),
-                    INDEX idx_user (user_id),
-                    INDEX idx_job (job_id)
-                )");
-
                 $likedStmt = $conn->prepare("
                     SELECT lj.job_id, lj.created_at as liked_at,
                            pj.job_title, pj.job_details, pj.skills_required, pj.estimated_budget,

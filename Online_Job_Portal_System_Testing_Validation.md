@@ -1,10 +1,10 @@
 # NeXLace verification checklist
 
-This is a manual test plan. The repository does not include PHPUnit, Selenium or load-test suites, and there are no recorded measurements supporting performance or concurrency claims.
+This is a manual test plan. The repository also includes real PHP/MySQL integration checks described in [verification](docs/verification.md). It does not include PHPUnit, Selenium or load-test suites, and there are no recorded measurements supporting performance or concurrency claims.
 
 ## Prerequisites
 
-Use a local PHP/MySQL environment with the matching schema, two disposable users and a configured SMTP service if testing OTPs. See [setup](docs/setup.md). The missing `nexlace_schema.sql` currently prevents a fresh checkout from reproducing the complete workflow.
+Use a local PHP/MySQL environment with the matching schema, two disposable users and a configured SMTP service if testing OTPs. See [setup](docs/setup.md). The checked-in `nexlace_schema.sql` is a tested reconstruction for fresh installations; no original database backup was available.
 
 | Check | Expected behaviour |
 | --- | --- |

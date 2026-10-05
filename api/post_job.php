@@ -61,47 +61,6 @@ try {
         throw new Exception('Database connection failed');
     }
 
-    // Ensure table exists
-    $createTableSql = "CREATE TABLE IF NOT EXISTS post_jobs (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        job_title VARCHAR(255) NOT NULL,
-        job_details TEXT NOT NULL,
-        skills_required TEXT,
-        estimated_budget INT,
-        project_timeline VARCHAR(100),
-        category VARCHAR(100) DEFAULT 'Web Development',
-        project_type VARCHAR(50) DEFAULT 'Fixed Price',
-        experience_level VARCHAR(50) DEFAULT 'Intermediate',
-        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";
-    $conn->exec($createTableSql);
-
-    // Ensure columns exist (Auto-fix)
-    $columnsToCheck = [
-        'user_id' => "INT NOT NULL DEFAULT 0",
-        'job_title' => "VARCHAR(255) NOT NULL",
-        'job_details' => "TEXT NOT NULL",
-        'skills_required' => "TEXT",
-        'estimated_budget' => "INT",
-        'project_timeline' => "VARCHAR(100)",
-        'category' => "VARCHAR(100) DEFAULT 'Web Development'",
-        'project_type' => "VARCHAR(50) DEFAULT 'Fixed Price'",
-        'experience_level' => "VARCHAR(50) DEFAULT 'Intermediate'",
-        'created_at' => "TIMESTAMP DEFAULT CURRENT_TIMESTAMP"
-    ];
-
-    foreach ($columnsToCheck as $colName => $colDef) {
-        try {
-            $stmt = $conn->prepare("SHOW COLUMNS FROM post_jobs LIKE ?");
-            $stmt->execute([$colName]);
-            if ($stmt->rowCount() == 0) {
-                $conn->exec("ALTER TABLE post_jobs ADD COLUMN $colName $colDef");
-            }
-        } catch (Exception $e) {
-            // Ignore error or log it
-        }
-    }
-
     // Get user ID from session
     $user_id = $_SESSION['user_id'];
 

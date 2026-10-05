@@ -4,7 +4,7 @@ A freelance marketplace project for clients and developers. Clients can post job
 
 This project helped me work through a larger PHP application: authentication, relational data, asynchronous requests and workflows that connect several screens.
 
-[Architecture](docs/architecture.md) · [Local setup](docs/setup.md) · [Manual verification](Online_Job_Portal_System_Testing_Validation.md)
+[Architecture](docs/architecture.md) · [Local setup](docs/setup.md) · [Database](docs/database.md) · [Verification](docs/verification.md)
 
 ![NeXLace public landing page](docs/screenshots/landing.png)
 
@@ -43,7 +43,7 @@ cd NeXLace
 
 Set `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER` and `DB_PASSWORD` in the PHP server's environment. The defaults target a local `nexlace` database on port 3306. See [setup](docs/setup.md) for PHP hosting, email configuration and the optional assistant.
 
-**Database setup is currently incomplete in the repository.** `setup_database.php` refers to `nexlace_schema.sql`, which is not checked in. A matching schema is needed to exercise the authenticated workflows. The public landing page can be viewed without it; running the setup script will not reconstruct the missing schema.
+`nexlace_schema.sql` contains a complete fresh-install schema reconstructed from the PHP queries. Import it into an empty database, then use the DML-only application account described in [setup](docs/setup.md). No original database backup was available, so this is not a production export. The real PHP/MySQL integration suite covers 33 checks; see [verification](docs/verification.md) to run it.
 
 ## Code worth reading
 
@@ -60,6 +60,9 @@ api/             JSON endpoints and notification stream
 config/          Database, CSRF, headers and assistant configuration
 includes/        Shared authentication, database and UI helpers
 admin_panel/     Administration pages and authentication
+database/        Application database privilege policy
+scripts/         Explicit CLI administrator provisioning
+tests/           Real PHP/MySQL workflow tests
 nodemailer/      Optional email OTP service
 js/, css/        Browser behaviour and styles
 assetes/         Existing branding and images
@@ -69,9 +72,9 @@ docs/            Setup, architecture and public-page screenshot
 
 ## Current limitations
 
-The next priorities are a versioned database schema, repeatable integration checks and consistent authorization. Some schema changes still happen during requests. Email OTP verification is handled separately from PHP registration and needs server-side binding before it can be treated as an authentication guarantee. The admin authentication code still needs a migration from its legacy plaintext credential handling.
+Fresh schema installation, representative authenticated flows, cross-user isolation and session revocation have been tested. Broader endpoint authorization, attachment access and browser/SSE behaviour still need review. Email OTP verification remains separate from PHP registration and needs server-side binding before it can be treated as an authentication guarantee. Admin sign-in now uses provisioned password hashes; existing plaintext rows need an explicit reset.
 
-The assistant now reads its key from the environment. A key was previously committed: it must be revoked or rotated at the provider, since changing the current file does not remove it from Git history. Do not use real accounts, private documents or production credentials when trying this prototype.
+The assistant now reads its key from the environment. Google already blocks the previously committed key as leaked, but its deletion at the provider is still pending. Changing the current file does not remove it from Git history. Do not use real accounts, private documents or production credentials when trying this prototype.
 
 ## Documentation
 

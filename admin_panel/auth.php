@@ -50,25 +50,6 @@ function authenticateAdmin($username, $password)
     }
 
     try {
-        // Check if admin_users table exists, if not create it
-        $checkTable = $db->query("SHOW TABLES LIKE 'admin_users'");
-        if ($checkTable->rowCount() == 0) {
-            // Create table and insert default admin
-            $db->exec("CREATE TABLE IF NOT EXISTS `admin_users` (
-                `id` int(11) NOT NULL AUTO_INCREMENT,
-                `username` varchar(50) NOT NULL UNIQUE,
-                `password` varchar(255) NOT NULL,
-                `full_name` varchar(100) DEFAULT NULL,
-                `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-                `last_login` timestamp NULL DEFAULT NULL,
-                PRIMARY KEY (`id`)
-            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci");
-
-            // Insert default admin with plain text password
-            $stmt = $db->prepare("INSERT INTO admin_users (username, password, full_name) VALUES (?, ?, ?)");
-            $stmt->execute(['shashank', 'shashank@123', 'Shashank Shankar Madiwal']);
-        }
-
         // Get admin by username
         $stmt = $db->prepare("SELECT id, username, password, full_name FROM admin_users WHERE username = ?");
         $stmt->execute([$username]);
@@ -78,14 +59,16 @@ function authenticateAdmin($username, $password)
             return ['success' => false, 'message' => 'Invalid username or password'];
         }
 
-        // Verify password (plain text comparison)
-        if ($password !== $admin['password']) {
+        // Admin passwords are provisioned as password_hash values.
+        if (!password_verify($password, $admin['password'])) {
             return ['success' => false, 'message' => 'Invalid username or password'];
         }
 
         // Update last login
         $updateStmt = $db->prepare("UPDATE admin_users SET last_login = NOW() WHERE id = ?");
         $updateStmt->execute([$admin['id']]);
+
+        session_regenerate_id(true);
 
         // Set session variables
         $_SESSION['admin_logged_in'] = true;
