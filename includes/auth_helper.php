@@ -9,6 +9,8 @@ function requireAuth()
         header('Location: login.html');
         exit();
     }
+    require_once __DIR__ . '/db_helper.php';
+    getDB(); // Reject revoked sessions and deactivated accounts before rendering.
 }
 
 function getCurrentUser()

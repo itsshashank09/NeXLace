@@ -40,21 +40,6 @@ if (!$conn) {
 
 $user_id = $_SESSION['user_id'];
 
-// Create liked_jobs table if it doesn't exist
-try {
-    $conn->exec("CREATE TABLE IF NOT EXISTS liked_jobs (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        user_id INT NOT NULL,
-        job_id INT NOT NULL,
-        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        UNIQUE KEY unique_like (user_id, job_id),
-        INDEX idx_user (user_id),
-        INDEX idx_job (job_id)
-    )");
-} catch (Exception $e) {
-    // Table might already exist, ignore
-}
-
 // Handle POST request - Toggle like
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {

@@ -22,7 +22,7 @@ The notification stream polls MySQL while maintaining an SSE connection. Releasi
 
 ## Boundaries and remaining work
 
-Prepared queries, user-password hashing and CSRF helpers are present. Their presence does not establish that every endpoint has equivalent protection. In particular, review authorization and CSRF coverage across state-changing routes, the legacy admin credential handling, user uploads and schema changes performed during requests.
+Prepared queries, user-password hashing and CSRF helpers are present. Their presence does not establish that every endpoint has equivalent protection. In particular, review authorization and CSRF coverage across state-changing routes, user uploads and mutation routes not covered by the integration suite. The schema is now installed before requests, the runtime database account has no DDL grants, and administrator passwords use hashes. Persisted-session checks reject revoked devices and deactivated users.
 
 The Node OTP store is process-local and disappears on restart. Its verification response is consumed by the registration page; PHP registration needs a server-verifiable proof of that step. Replacing the random OTP generator with cryptographic randomness and enforcing SMTP certificate verification improves the email service but does not solve that integration gap.
 

@@ -17,6 +17,9 @@ Thumbs.db
 .vscode/
 .idea/
 
+# Disposable integration-test runtime and sessions
+.test-runtime/
+
 # Runtime profile and portfolio uploads
 assetes/profile_images/
 assetes/portfolio_images/

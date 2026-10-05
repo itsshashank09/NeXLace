@@ -1,43 +1,43 @@
 # Local setup
 
-## PHP and MySQL
+## PHP and database
 
-Place the repository in a local Apache/Laragon document root, or use `php -S 127.0.0.1:8080` from the repository root for a basic preview. Open `/index.html`. The built-in PHP server is useful for previewing pages; concurrent SSE requests are better tested under Apache.
-
-The application reads these variables from the PHP process environment:
+Use PHP 8+, MySQL 8+ or MariaDB 10.6+, and extensions `pdo_mysql`, `fileinfo`, `mbstring` and `curl`. The application reads process environment variables; it does not parse `.env` automatically. Configure them in the shell, Apache or your host:
 
 ```text
-DB_HOST=localhost
+DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_NAME=nexlace
-DB_USER=root
-DB_PASSWORD=
+DB_USER=nexlace_app
+DB_PASSWORD=<your-local-password>
 ```
 
-The defaults are for local development. Use a dedicated database user elsewhere. The PHP configuration does not parse a `.env` file automatically: configure variables in the shell, Apache or your hosting environment. An example is provided in `.env.example` for reference.
+For a fresh installation, select an empty database and import `nexlace_schema.sql` with a migration administrator. Alternatively, set the administrator's database environment values temporarily and run `php setup_database.php`. The CLI installer refuses an existing non-empty database and creates no accounts or default passwords. The two historical `migrate_*.php` scripts are CLI-only and are not needed after the complete fresh baseline.
 
-The setup script expects `nexlace_schema.sql`, which is absent. A complete schema export is needed for `register`, `developers`, jobs, applications, invitations, messages, notifications and related session/review data. Some handlers create or alter individual tables, but they do not supply a complete migration system. Do not infer that opening a page creates every prerequisite.
+Create a separate `nexlace_app` MySQL account with a strong password, then apply the privileges in `database/access-policies.sql`. Switch the running PHP process to that account. It needs SELECT/INSERT/UPDATE/DELETE on this database, not CREATE/ALTER/DROP or global privileges.
 
-`setup_database.php` contains seed/reset behaviour. Inspect it and run it only against a disposable local database after obtaining the matching schema. Keep setup, diagnostic and migration scripts out of public production access.
+Run `php -S 127.0.0.1:8080` from the root and open `/index.html`, or use Apache/Laragon. The built-in server is suitable for local development; use a concurrent server when testing long-lived SSE connections. [Database notes](database.md) explain the schema's reconstruction and access boundaries.
+
+## Administrator
+
+Fresh installations contain no administrator. Set `NEXLACE_ADMIN_PASSWORD` in the CLI process to a new password of at least 16 characters and run:
+
+```sh
+php scripts/provision-admin.php myadmin "Local Administrator"
+```
+
+Then remove the password environment variable. This stores a `password_hash` value and intentionally replaces the password of an existing matching username. Do not use a command-line password argument or commit the password. Existing legacy plaintext administrator rows must be explicitly reset with this tool before signing in; there is no plaintext fallback.
 
 ## Optional email service
 
-From `nodemailer/`:
+From `nodemailer/`, run `npm ci`, copy `.env.example` to `.env`, supply your SMTP values, then `npm start`. The local service listens on port 3000. A deployed PHP site needs its own email-service endpoint; localhost in a customer's browser refers to their machine. See [OTP setup](../OTP_SERVER_SETUP.md).
 
-```sh
-npm ci
-# Copy .env.example to .env and supply your SMTP account values.
-npm start
-```
-
-The service listens on port 3000. Registration uses that URL for local hostnames. A deployed PHP site needs an explicitly configured email-service endpoint; localhost in a customer's browser refers to their machine. Read [OTP setup](../OTP_SERVER_SETUP.md).
+The PHP registration endpoint does not yet verify server-bound proof of the Node OTP step. Do not treat the browser's OTP success as an account-security guarantee.
 
 ## Optional assistant
 
-Set `GEMINI_API_KEY` in the PHP server environment. `GEMINI_MODEL` is optional and defaults to the model named in `config/gemini_config.php`. Missing keys produce a configuration error rather than an outbound request with a committed credential.
-
-Rotate any key previously committed before enabling the assistant. Do not paste credentials into a README or client script.
+Set `GEMINI_API_KEY` in the PHP process. `GEMINI_MODEL` is optional. Missing configuration returns an error without an external request. The previously committed key is blocked by Google as leaked; provider deletion is still required before re-enabling the assistant with a replacement key. Keep credentials out of source and browser scripts.
 
 ## Verification
 
-Run PHP syntax checks with an installed PHP runtime, for example `php -l config/database.php` and `php -l config/gemini_config.php`. Run `node --check nodemailer/index.js` for the email service's JavaScript syntax. Full feature checks need the matching database, a configured SMTP service and two disposable user accounts. See the [verification checklist](../Online_Job_Portal_System_Testing_Validation.md).
+[Verification](verification.md) contains reproducible PHP/MySQL tests and their scope. The SMTP and Gemini services are optional and are not called by the integration suite.

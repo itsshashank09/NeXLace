@@ -46,6 +46,7 @@ $errorMessage = '';
 
 // Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['publish_profile'])) {
+    enforceCsrf();
     try {
         // Create database connection
         require_once 'includes/db_helper.php';

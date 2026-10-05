@@ -6,8 +6,8 @@ class Database
     private $host = "localhost";
     private $port = "3306";
     private $db_name = "nexlace";
-    private $username = "root";  // Change if you have a different username
-    private $password = "";      // Add your MySQL password here if any
+    private $username = "nexlace_app";
+    private $password = "";
     private $conn;
 
     /**

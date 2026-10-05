@@ -68,43 +68,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             throw new Exception('You cannot apply to your own job posting');
         }
 
-        // Create job_applications table if it doesn't exist
-        $conn->exec("CREATE TABLE IF NOT EXISTS job_applications (
-            id INT AUTO_INCREMENT PRIMARY KEY,
-            job_id INT NOT NULL,
-            developer_id INT NOT NULL,
-            client_id INT NOT NULL,
-            cover_letter TEXT,
-            proposed_rate DECIMAL(10,2),
-            status ENUM('pending', 'accepted', 'rejected', 'withdrawn') DEFAULT 'pending',
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-            updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-            INDEX idx_job (job_id),
-            INDEX idx_developer (developer_id),
-            INDEX idx_client (client_id)
-        )");
-
-        // Auto-fix columns if they are missing (schema evolution)
-        $columnsToCheck = [
-            'developer_id' => "INT NOT NULL",
-            'client_id' => "INT NOT NULL DEFAULT 0",
-            'proposed_rate' => "DECIMAL(10,2) DEFAULT 0.00"
-        ];
-
-        foreach ($columnsToCheck as $colName => $colDef) {
-            try {
-                $stmt = $conn->prepare("SHOW COLUMNS FROM job_applications LIKE ?");
-                $stmt->execute([$colName]);
-                if ($stmt->rowCount() == 0) {
-                    // Start transaction for safety? No, DDL implicitly commits.
-                    // We can't parameterize column names in ALTER TABLE, but $colName is from our hardcoded array keys (allow-list)
-                    $conn->exec("ALTER TABLE job_applications ADD COLUMN $colName $colDef");
-                }
-            } catch (Exception $e) {
-                // Ignore
-            }
-        }
-
         // Check if already applied
         $checkStmt = $conn->prepare("SELECT id, status FROM job_applications WHERE job_id = ? AND developer_id = ?");
         $checkStmt->execute([$job_id, $user_id]);
@@ -210,20 +173,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
             // If accepted or pending, they already have a conversation
         } else {
-            // Ensure invitations table has job_id and application_id columns (Robust Fix)
-            $invColumns = ['job_id' => 'INT DEFAULT NULL', 'application_id' => 'INT DEFAULT NULL'];
-            foreach ($invColumns as $colName => $colDef) {
-                try {
-                    $stmt = $conn->prepare("SHOW COLUMNS FROM invitations LIKE ?");
-                    $stmt->execute([$colName]);
-                    if ($stmt->rowCount() == 0) {
-                        $conn->exec("ALTER TABLE invitations ADD COLUMN $colName $colDef");
-                    }
-                } catch (Exception $e) {
-                    // Ignore
-                }
-            }
-
             // Create a new invitation for the job application
             $invStmt = $conn->prepare("
                 INSERT INTO invitations (sender_id, receiver_id, work_type, work_email, work_details, job_id, application_id, status) 

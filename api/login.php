@@ -77,17 +77,7 @@ if (!$db) {
 }
 
 try {
-    // --- Brute Force Protection ---
-    // Create login_attempts table if it doesn't exist
-    $db->exec("CREATE TABLE IF NOT EXISTS login_attempts (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        ip_address VARCHAR(45) NOT NULL,
-        email VARCHAR(255) NOT NULL,
-        attempts INT DEFAULT 1,
-        last_attempt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-        INDEX idx_ip_email (ip_address, email)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4");
-
+    // Schema is installed ahead of requests; the runtime account has no DDL grants.
     $ipAddress = $_SERVER['REMOTE_ADDR'] ?? 'Unknown';
     $maxAttempts = 5;
     $lockoutMinutes = 15;

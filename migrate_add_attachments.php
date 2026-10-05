@@ -1,4 +1,5 @@
 <?php
+if (PHP_SAPI !== 'cli') { http_response_code(404); exit(); }
 /**
  * Database Migration: Add attachment columns to messages table
  * Run this file once to add the necessary columns for file attachments
